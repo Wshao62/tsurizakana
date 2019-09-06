@@ -1,0 +1,490 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ リクエスト魚一覧  #page_request
+→ オファー魚一覧  #page_requestfish
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- リクエスト魚一覧 ------------*/
+#page_request {
+  font-size: 1.4rem;
+  color: #2e2e2e;
+  line-height: 1.92857142857143;
+  counter-reset: number 0;
+}
+#page_request .request {
+  margin-top: 8rem;
+  margin-bottom: 13.3rem;
+}
+#page_request .request .request_search {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border: 1px solid #e5e5e5;
+}
+#page_request .request .request_search h3 {
+  padding-top: 2.95rem;
+  padding-bottom: 1.85rem;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.125;
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+}
+#page_request .request .request_search + p {
+  padding-top: 3.95rem;
+  padding-bottom: 1.25rem;
+}
+#page_request .request .request_search_input {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 2.45rem;
+}
+#page_request .request .request_search_input input,
+#page_request .request .request_search_input select {
+  display: block;
+  padding: .15rem .9rem;
+  border: 1px solid #d2d2d2;
+  padding: .7rem 1rem .7rem 1rem;
+  border-radius: 8px;
+}
+#page_request .request .request_search_input select {
+  padding: .15rem 3.7rem .15rem .9rem;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+}
+#page_request .request .request_search_input label > span {
+  display: block;
+  padding-bottom: .45rem;
+}
+#page_request .request .request_search_fish {
+  width: 26.058631921824105%;
+  margin-right: 6.514657980456026%;
+}
+#page_request .request .request_search_fish input {
+  width: 100%;
+}
+#page_request .request .request_search_area {
+  margin-right: 2.0629750271444083%;
+}
+#page_request .request .request_search_area div {
+  position: relative;
+}
+#page_request .request .request_search_area div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 2.8rem;
+  height: 100%;
+  z-index: 2;
+  background-color: #333;
+  border-radius: 0 .4rem .4rem 0;
+  pointer-events: none;
+}
+#page_request .request .request_search_area div::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: .9rem;
+  display: block;
+  width: 1rem;
+  height: .6rem;
+  background: url(../img/icon/icon_arrow_down_white.png) no-repeat;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+#page_request .request .request_search_area select {
+  width: 12.2rem;
+  z-index: 1;
+  padding: .7rem 1rem .7rem 1rem;
+  border-radius: 8px;
+}
+
+#page_request .request .request_search_detail {
+  width: 19.54397394136808%;
+  margin-right: 7.514657980456026%;
+}
+#page_request .request .request_search_day {
+  width: 24.9728555917481%;
+}
+#page_request .request .request_search_day input {
+  width: 100%;
+}
+#page_request .request .request_search .content_button {
+  width: 15.2rem;
+  margin-top: 3rem;
+  margin-bottom: 2.9rem;
+  padding: .65rem 1rem;
+  background-color: #4d4d4d;
+}
+#page_request .request .request_table {
+  width: 100%;
+  margin-bottom: 4.9rem;
+  text-align: center;
+  letter-spacing: .12em;
+}
+#page_request .request th,
+#page_request .request td {
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
+#page_request .request thead th {
+  min-height: 4rem;
+  padding: 1.15rem 1rem;
+  color: #fff;
+  background-color: #008cb8;
+  font-weight: normal;
+}
+#page_request .request thead th:first-of-type {
+  width: 33.16326530612245%;
+}
+#page_request .request thead th:nth-of-type(2) {
+  width: 15.10204081632653%;
+}
+#page_request .request thead th:nth-of-type(3) {
+  width: 15.510204081632653%;
+}
+#page_request .request thead th:nth-of-type(4) {
+  width: 16.428571428571427%;
+}
+#page_request .request thead th:last-of-type {
+  width: 19.7959183673471%;
+}
+#page_request .request tbody tr {
+  border-bottom: 1px solid #dcdcdc;
+}
+#page_request .request tbody th > div,
+#page_request .request tbody td > div {
+  margin: 1.5rem 1rem;
+  word-break: break-all;
+}
+#page_request .request tbody th:not(:first-of-type) {
+  display: none;
+}
+
+#page_request .content_button {
+  display: block;
+  width: 100%;
+  max-width: 15.2rem;
+  padding: .35rem 1rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+.xdsoft_datetimepicker {
+  margin-top: 2.1rem;
+  margin-left: .7rem;
+  box-shadow: 0 0 15px 1px rgba(87,87,87,0.1);
+}
+
+#page_request .disable_disp{
+  cursor: not-allowed;
+  background-color: #4d4d4d;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+#page_request .hide_disp{
+  cursor: not-allowed;
+  background-color: #4d4d4d;
+  text-decoration: none;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/*----------- オファー魚一覧 ------------*/
+#page_requestfish .list_area {
+  margin-top: 15.6rem;
+}
+#page_requestfish .pickup {
+  padding-top: 0;
+  padding-bottom: 9.9rem;
+}
+#page_requestfish .pickup .pickup_inner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+#page_requestfish .pickup .pickup_card {
+  width: 	23.46938775510204%;
+  margin: 0 2.04081632653066% 5rem 0;
+  border: 0;
+}
+#page_requestfish .pickup .pickup_card:hover {
+  box-shadow: none;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#page_requestfish .pickup .pickup_card:nth-of-type(4n) {
+  margin-right: 0;
+}
+#page_requestfish .pickup .pickup_band {
+  padding: .35rem 1rem;
+  margin-bottom: .6rem;
+  font-size: 1.4rem;
+  background-color: #00a8ba;
+  border-radius: .6rem;
+  text-align: center;
+  color: #fff;
+  line-height: 1.92857142857143;
+}
+#page_requestfish .pickup .pickup_card .fit_image {
+  position: relative;
+  height: 23rem;
+  max-height: 23rem;
+}
+#page_requestfish .pickup .pickup_card .fit_image .over_wrap {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: rgba(46, 46, 46, 0.7);
+}
+#page_requestfish .pickup .pickup_card .fit_image .over_wrap p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  transform: translate(-50%,-50%);
+}
+@media only screen and (max-width: 1000px) {
+  #page_requestfish .pickup .pickup_card .fit_image {
+    height: 23vw;
+  }
+}
+#page_requestfish .pickup .pickup_textarea {
+  border: 1px solid #efefef;
+}
+#page_requestfish .pickup .pickup_title_middle {
+  font-weight: 500;
+}
+#page_requestfish .pickup .pickup_price {
+  font-weight: 500;
+}
+#page_requestfish .pickup .pickup_location {
+  font-weight: 500;
+}
+#page_requestfish .icon_before.icon_before_location::before {
+  background-size: contain;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- リクエスト魚一覧 ------------*/
+  #page_request {
+    font-size: 1.2rem;
+  }
+  #page_request .request {
+    margin-top: 4.3rem;
+    margin-bottom: 3.1rem;
+  }
+  #page_request .request .request_search {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+  }
+  #page_request .request .request_search h3 {
+    padding-top: 1.9rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+  #page_request .request .request_search + p {
+    padding-bottom: 0;
+  }
+  #page_request .request .request_search_input {
+    flex-wrap: wrap;
+    margin-top: 1.442855rem;
+  }
+  #page_request .request .request_search_input label > span {
+    padding-bottom: 0;
+  }
+  #page_request .request .request_search_fish {
+    width: 60%;
+    margin-right: 40%;
+  }
+  #page_request .request .request_search_area {
+    width: 50%;
+    padding-right: 2rem;
+    margin-top: 1rem;
+    margin-right: 0;
+  }
+  #page_request .request .request_search_area select {
+    width: 100%;
+  }
+  #page_request .request .request_search_detail {
+    width: 50%;
+    margin-right: 0;
+  }
+  #page_request .request .request_search_day {
+    width: 60%;
+    margin-top: 1rem;
+  }
+  #page_request .request .request_search .content_button {
+    width: 100%;
+    max-width: 22rem;
+    padding: .35rem 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  #page_request .request th,
+  #page_request .request td {
+    border-left: 0;
+    border-right: 0;
+  }
+  #page_request .request th {
+    font-weight: normal;
+  }
+  #page_request .request thead {
+    display: none;
+  }
+  #page_request .request tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    border-bottom: 0;
+  }
+  #page_request .request tbody td {
+    display: block;
+  }
+  #page_request .request tbody th > div,
+  #page_request .request tbody td > div {
+    margin: 0;
+  }
+  #page_request .request tbody th > div {
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+  }
+  #page_request .request tbody td > div {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: .95rem 0;
+  }
+  #page_request .request tbody th:not(:first-of-type) {
+    display: flex;
+    align-items: center;
+    width: 9.75rem;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #f7f7f7;
+    text-align: left;
+  }
+  #page_request .request tbody td {
+    width: calc(100% - 9.75rem);
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    text-align: left;
+  }
+  #page_request .request tbody th > div {
+    padding-top: .95rem;
+    padding-bottom: .95rem;
+  }
+  #page_request .request .request_table {
+    margin-bottom: 5rem;
+  }
+  #page_request .request .request_table_number {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #008cb8;
+  }
+  #page_request .request .request_table_number > div {
+    margin: 0;
+    padding: .35rem 1rem;
+  }
+  #page_request .request .request_table_number > div:before {
+    counter-increment: number 1;
+    content: counter(number);
+  }
+  #page_request .request .request_table_item + td > div,
+  #page_request .request .request_table_name + td > div,
+  #page_request .request .request_table_date + td > div {
+    padding: .95rem 0;
+  }
+  #page_request .content_button {
+    max-width: 20rem;
+    padding: .15rem 1rem;
+    margin: .55rem auto;
+    font-size: 1.3rem;
+  }
+  .xdsoft_datetimepicker {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  /*----------- オファー魚一覧 ------------*/
+  #page_requestfish .list_area {
+    margin-top: 0;
+  }
+  #page_requestfish .pickup {
+    padding-top: 4.85rem;
+    padding-bottom: 1.7rem;
+  }
+  #page_requestfish .pickup .pickup_card {
+    width: 47.9970326409496%;
+    margin: 0 4.00593471810089% 1.4rem 0;
+  }
+  #page_requestfish .pickup .pickup_card:nth-of-type(2n) {
+    margin: 0 0 1.4rem 0;
+  }
+  #page_requestfish .pickup .pickup_band {
+    font-size: 1.3rem;
+  }
+  #page_requestfish .pickup .pickup_card .fit_image {
+    height: 43.1333333333333vw;
+    max-height: none;
+    max-width: none;
+  }
+  #page_requestfish .pickup .pickup_textarea {
+    padding: .9485rem 1.3rem .944885rem 1.3rem;
+  }
+  #page_requestfish .pickup .pickup_textarea p {
+    font-size: 1.3rem;
+    line-height: 1.46384615384615;
+  }
+  #page_requestfish .pickup .pickup_title_middle {
+    padding-bottom: .297rem;
+  }
+  #page_requestfish .pickup .pickup_tax {
+    font-size: 1.04rem;
+  }
+  #page_requestfish .pickup p.pickup_location {
+    padding-top: .916575rem;
+    font-size: 1rem;
+  }
+  #page_requestfish .pickup p.pickup_time {
+    padding-top: .51296rem;
+    font-size: 1.1rem;
+  }
+  #page_requestfish .pickup .pickup_textarea .icon_before_location::before {
+    width: .75rem;
+    height: 1.2rem;
+  }
+  #page_requestfish .pickup .pickup_textarea .icon_before_clock::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  #page_requestfish .pager {
+    margin-top: 2.1rem;
+  }
+}

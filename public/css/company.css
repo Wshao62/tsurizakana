@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ 運営会社  #page_company
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- 運営会社 ------------*/
+#page_company .title {
+  margin-bottom: 13.6rem;
+}
+#page_company .company {
+  padding-bottom: 10rem;
+}
+#page_company .company .company_title,
+#page_company .map .map_title {
+  height: 5.5rem;
+  margin: 0 auto;
+  padding: 1.35rem 0;
+  background-image: url(../img/title/title_company.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-weight: bold;
+}
+#page_company .company .company_table {
+  width: 100%;
+  margin-top: 3.9rem;
+  border: 1px solid #d2d2d2;
+  font-size: 1.6rem;
+  line-height: 1.6875;
+}
+#page_company .company .company_table tr + tr {
+  border-top: 1px solid #d2d2d2;
+}
+#page_company .company .company_table th,
+#page_company .company .company_table td {
+  height: 7.8rem;
+  padding: 1.15rem 4.2rem;
+  text-align: left;
+}
+#page_company .company .company_table th {
+  width: 27.55102040816326%;
+  background-color: #005e89;
+  color: #fff;
+  font-weight: normal;
+}
+#page_company .company .company_table td {
+  width: 72.4489795918368%;
+  color: #535353;
+}
+#page_company .company td.company_table_small {
+  font-size: 1.4rem;
+  line-height: 1.92857142857143;
+  padding: 2.55rem 2.8rem 5.65rem 4rem;
+  letter-spacing: -0.04em;
+}
+#page_company .map {
+  padding-top: 9.6rem;
+  background-color: #fafafa;
+}
+#page_company .map .map_title {
+  background-image: url(../img/title/title_access.png);
+}
+#page_company .map .map_frame {
+  margin-top: 4rem;
+  line-height: 1;
+}
+#page_company .map .map_address {
+  display: flex;
+  font-size: 1.4rem;
+  padding-top: 3.75rem;
+  padding-bottom: 7.55rem;
+}
+#page_company .map .map_address a {
+  position: relative;
+  padding-left: 2.9rem;
+  margin: 0 0 0 auto;
+  color: #666;
+  font-weight: bold;
+}
+#page_company .map .map_address a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #666;
+  transform: translateY(-50%);
+}
+#page_company .map .map_address a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: .6rem;
+  width: .6rem;
+  height: 1.1rem;
+  background: url(../img/icon/icon_arrow_right.png) no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- 運営会社 ------------*/
+  #page_company .title {
+    margin-bottom: 4.35rem;
+  }
+  #page_company .company .company_title,
+  #page_company .map .map_title {
+    height: 2.5rem;
+    padding: .35rem 0;
+  }
+  #page_company .company {
+    padding-bottom: 5rem;
+  }
+  #page_company .company .company_table,
+  #page_company .company td.company_table_small {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  #page_company .company .company_table th,
+  #page_company .company .company_table td {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #page_company .company .company_table {
+    margin-top: 2.55rem;
+  }
+  #page_company .company .company_table th {
+    padding: 1rem 1.5rem;
+  }
+  #page_company .company .company_table td {
+    padding: 1.5rem;
+  }
+  #page_company .map {
+    padding-top: 5.3rem;
+  }
+  #page_company .map .layout {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #page_company .map .map_frame {
+    margin-top: 2.35rem;
+  }
+  #page_company .map .map_frame iframe {
+    height: 28rem;
+  }
+  #page_company .map .map_address {
+    display: block;
+    padding: 2.16rem 1.9rem 5.7rem 1.9rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  #page_company .map .map_address p {
+    padding-bottom: 2.21rem;
+  }
+  #page_company .map .map_address a {
+    display: block;
+    width: 24.5rem;
+    max-width: 100%;
+    text-align: center;
+    padding: 1.15rem 3.4rem 1.15rem 3.4rem;
+    margin: 0 auto;
+    border: 1px solid #4d4d4d;
+    border-radius: 2.25rem;
+  }
+  #page_company .map .map_address a::before {
+    left: auto;
+    right: 1.85rem;
+    width: .55rem;
+    height: .9rem;
+    background-image: url(../img/icon/icon_arrow_right_gray.png);
+    background-color: transparent;
+    background-size: cover;
+  }
+  #page_company .map .map_address a::after {
+    content: normal;
+  }
+
+
+}

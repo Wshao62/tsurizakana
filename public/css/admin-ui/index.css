@@ -1,0 +1,223 @@
+h1 {
+  font-size: 24px;
+}
+
+.u-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 30px;
+}
+
+.header-icons-group {
+  display: flex;
+  order: 3;
+  margin-left: auto;
+  height: 100%;
+  border-left: 0px !important;
+  width:70px;
+}
+.header-icons-group .c-header-icon:last-child {
+  border-right: 0;
+}
+
+.c-header-icon {
+  position: relative;
+  display: flex;
+  float: left;
+  width: 140px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.light-logo{
+    width: 200px;
+    height: 40px;
+    padding-left:20px;
+}
+.l-header {
+  padding-left: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  background: #ffffff;
+  -webkit-transition: padding 0.5s ease-in-out;
+  -moz-transition: padding 0.5s ease-in-out;
+  -ms-transition: padding 0.5s ease-in-out;
+  -o-transition: padding 0.5s ease-in-out;
+  transition: padding 0.5s ease-in-out;
+  box-shadow: 0 6px 6px -6px rgba(0,0,0,.15);
+}
+.l-header__inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: stretch;
+  border-bottom: 0px !important;
+}
+.sidebar-is-expanded .l-header {
+  padding-left: 220px;
+}
+
+.l-sidebars {
+  font-family: century gothic;
+  font-size: 16px;
+  width: 240px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: #2f373e;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -ms-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
+}
+
+.c-side-icon{
+    margin-top:40px;
+}
+
+.c-menu > ul {
+  display: flex;
+  flex-direction: column;
+}
+.c-menu > ul .c-menu__item {
+  color: #fff;
+  max-width: 100%;
+  overflow: hidden;
+}
+.c-menu > ul .c-menu__item__inner {
+  padding-left:30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 40px;
+  position: relative;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.c-menu > ul .c-menu__item .c-menu__item__inner {
+  color:#fff;
+}
+
+.c-menu > ul .c-menu__item.is-active .c-menu__item__inner {
+  background-color: #1e3e6f;
+  border-right:5px solid #2962ff;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+
+}
+
+.c-menu > ul .c-menu__item.is-active .c-menu__item__inner {
+  color:#fff;
+}
+
+.c-menu > ul .c-menu__item:not(.is-active):hover .c-menu__item__inner {
+  background-color: #1e3e6f;
+}
+
+main.l-main {
+  width: 100%;
+  height: 100%;
+  padding: 0px 0 0 240px;
+  -webkit-transition: padding 0.5s ease-in-out;
+  -moz-transition: padding 0.5s ease-in-out;
+  -ms-transition: padding 0.5s ease-in-out;
+  -o-transition: padding 0.5s ease-in-out;
+  transition: padding 0.5s ease-in-out;
+}
+main.l-main .content-wrapper {
+  padding: 25px;
+  padding-top: 50px;
+  height: 100%;
+
+}
+main.l-main .content-wrapper--with-bg .page-content {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #d0d0d0;
+  padding: 25px;
+}
+main.l-main .page-title {
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+.sidebar-is-expanded main.l-main {
+  padding-left: 220px;
+}
+
+.list-chat{
+  width: 100% !important;
+  height: 650px !important;
+  overflow-x: hidden;
+  background: #33333308;
+}
+
+.chat_box {
+  width: 100% !important;
+  height: 650px !important;
+  overflow-x: hidden;
+  padding: 20px;
+  background: #33333308;
+}
+
+.list-chats.new {
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  background: #e9f0f3;
+}
+
+.list-chats {
+  background: #FFF;
+  padding: 10px;
+}
+
+.list-chats .list-chats-image-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.list-chats .list-chats-image {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.list-chats .list-chats-text {
+  font-family: century gothic;
+  display: table-cell;
+  padding-left: 15px;
+  vertical-align: middle;
+  color: #747F8B;
+  cursor: pointer;
+  font-size: 15px;
+  word-spacing: 2px;
+  line-height: 21px;
+}
+
+ .list-chats .list-chats-text .highlight {
+  font-weight: bold;
+}

@@ -1,0 +1,677 @@
+/* SP用CSS */
+
+
+/* =======================================
+    買主、売主共通CSS
+======================================= */
+/* 表示・非表示設定 */
+.sp {
+  display: block;
+}
+.pc {
+  display: none;
+}
+
+
+/* sp用 文字サイズ自動調整の制御*/
+html {
+  -webkit-text-size-adjust: none;
+}
+
+
+/*各ブロック*/
+body {
+  width: 100%;
+  min-width: 100%;
+}
+main {
+  margin-top: 60px;
+}
+.section{
+  padding: 3em 0;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+/*text*/
+p {}
+
+
+/*title*/
+.ttl_main {
+  width: 90%;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 0 auto 1em;
+}
+.ttl_en {
+  font-size: 12px;
+}
+p {
+  font-size: 12px;
+}
+
+
+/* ----------- header ------------ */
+header {
+  min-width: 300px;
+  height: 60px;
+}
+.header_logo {
+  padding-top: 15px;
+  padding-left: 12px;
+}
+.header_logo > a > img {
+  width: 155px;
+}
+
+
+/* ハンバーガーメニュー */
+.sp_header_menu {
+  width: 100%;
+}
+.menu_btn_container {}
+.menu_btn {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+  margin-top: 22px;
+  margin-right: 20px;
+  float: right;
+}
+.menu_btn > img {
+  width: 22px;
+  height: auto;
+}
+
+
+/* ドロワー */
+.nav {
+  display: none;
+  background-color: white;
+  width: 100%;
+  overflow-y: scroll;
+}
+.nav_container {
+  width: 95%;
+  margin: 0 auto;
+}
+.sp_menu {
+  padding: 0;
+  margin-bottom: 20px;
+}
+.sp_menu li a {
+  box-sizing: border-box;
+  color: #2e2e2e;
+  display: block;
+  font-size: 13px;
+  text-indent: 10px;
+  line-height: 55px;
+  width: 100%;
+  border-bottom: 1px dotted black;
+  position: relative;
+  background: url(../img/common/arrow.png)no-repeat center right 10px / 5px auto;
+}
+.nav_sns {
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.nav_sns a{
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: white !important;
+  line-height: 45px;
+  width: 48%;
+  border-radius: 30px;
+}
+.nav_tw {
+  background-color: rgb(27, 161, 243);
+  float: left;
+}
+.nav_fb {
+  background-color: rgb(58, 89, 150);
+  float: right;
+}
+.nav_sns img {
+  position: relative;
+  top: 3px;
+  width: 13px;
+  height: auto;
+  margin-right: 3px;
+}
+.close {
+  width: 100%;
+  height: 45px;
+  background-color: rgb(162, 162, 162);
+  margin-bottom: 25px;
+}
+.close_contents {
+  height: 100%;
+  width: 75px;
+  margin: 0 auto;
+}
+.close_contents > img {
+  width: 10px;
+  height: auto;
+  margin-top: 16.5px;
+  float: left;
+}
+.close_contents > p {
+  font-size: 14px;
+  line-height: 45px;
+  color: white;
+  letter-spacing: 2px;
+  float: right;
+}
+.scroll-prevent {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ----------- main ------------ */
+/* TOPへ戻るボタン */
+.icons {
+  width: 54px;
+  position: fixed;
+  bottom: 70px;
+  right: 10px;
+  z-index: 1000;
+}
+.btn_pagetop,.btn_pagetop_sp{
+  margin-bottom: 0;
+}
+.btn_pagetop_sp{
+  display: block;
+}
+#buyer .btn_pagetop{
+  display: none;
+}
+#seller .btn_pagetop{
+  display: none;
+}
+.icons a{
+  display: none;
+}
+
+
+/* ----------- footer ------------ */
+footer {
+  padding-bottom: 6em;
+}
+footer > img {
+  width: 200px;
+}
+footer > p {
+  line-height: 18px;
+  margin-top: 10px;
+}
+
+
+/* 追従事前登録ボタン */
+.registration_btn {
+  width: 100%;
+  height: 60px;
+  background-color: #D0D0D0;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+}
+.registration_btn > a {
+  display: block;
+  border-radius: 30px;
+  width: 225px;
+  height: 45px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  line-height: 45px;
+  margin: 0 auto;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+
+/* コピー */
+.copy {
+  height: auto;
+  position: relative;
+}
+.copy_bg_img {
+  width: 100%;
+  height: auto;
+}
+.copy_text_img {
+  width: 80%;
+  height: auto;
+  position: absolute;
+  top: 27%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+/* 釣魚商店について */
+.about_service {
+  padding-bottom: 2em;
+}
+.about_service > .container {
+  position: relative;
+  top: -70px;
+  margin-bottom: -70px;
+  padding: 3em 0;
+}
+.about_service p {
+  letter-spacing: 1px;
+  width: 80%;
+  margin: 0 auto 2em;
+}
+.about_service > .container > img {
+  width: 50%;
+}
+/* スライダー */
+#slider {
+  margin-top: 0px;
+  overflow: hidden;
+}
+.swiper-container {
+  width: 1176px;
+  height: auto;
+}
+.swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+
+/* メリット */
+#merits {
+  background: url("../img/common/merit_bg_sp.jpg")repeat top center / 100% auto;
+}
+.marit {
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2em;
+  padding: 1.5em 0;
+}
+.marit:nth-child(4),.marit:nth-child(5){
+  margin: 0 auto 2em;
+}
+.merit_number {
+  font-size: 38px;
+  line-height: 45px;
+  position: relative;
+  top: -43px;
+  margin-bottom: -30px;
+}
+.marit > h3 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+.marit img {
+  width: 74px;
+  margin-bottom: 10px;
+}
+.merit_description {
+}
+#merits > img {
+  width: 355px;
+}
+.marit_left_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.marit_right_img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+/* サービス */
+#services {
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+.services_title {
+  margin-bottom: 40px;
+  position: relative;
+}
+.services_title > img{
+  min-height: 120px;
+}
+.services_title_text {
+}
+.service {
+  position: relative;
+}
+.s_img_container > .service_img {
+  width: 70%;
+  height: auto;
+  margin: 0 15% 7% 15%;
+}
+.s_img_container {
+  position: relative;
+}
+.service_bg {
+  width: 58%;
+  height: auto;
+  z-index: -10;
+}
+.service_01 .service_bg, .service_03 .service_bg {
+  position: absolute;
+  top: 25%;
+  left: 0;
+}
+.service_02 .service_bg {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+.service_number {
+  font-size: 12px;
+  line-height: 22px;
+  width: 79px;
+  margin-bottom: 15px;
+}
+.service_contents {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 0px;
+}
+.service_contents > h3 {
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.service_description {
+  margin-bottom: 40px;
+}
+.service_01 > .s_img_container, .service_03 > .s_img_container {
+  float: none;
+}
+.service_01 > .service_contents, .service_03 > .service_contents {
+  float: none;
+}
+.service_02 > .s_img_container {
+  float: none;
+}
+
+
+/* こんな使い方ができる */
+#how_to{}
+.how_to_title {
+  height: auto;
+  padding: 40px 0;
+}
+#how_to .ttl_main{
+  margin: 0 auto;
+}
+.how_to_contents > img {
+  width: 100%;
+  min-width: 100%;
+  display: block;
+}
+.how_to_contents > img.sp {
+  width: 100%;
+  display: block;
+}
+.how_to_contents > img.pc {
+  display: none;
+}
+.how_to_text_container {
+  width: 90%;
+  margin: 0 auto;
+}
+.how_to_number {
+  font-size: 60px;
+  margin-bottom: 15px;
+}
+.how_to_discription > .how_to_text_container > h3{
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.how_to_discription {
+  height: auto;
+  padding: 1.5em 0;
+}
+.how_to_contents {
+  position: static;
+}
+.how_to_discription1 {
+  width: 100%;
+  position: static;
+}
+.how_to_discription2 {
+  width: 100%;
+  position: static;
+}
+.how_to_discription > h3 {
+  font-size: 20px;
+}
+.how_to_text {
+  margin-bottom: 1.5em;
+}
+.how_to_text:last-child {
+  margin-bottom: 0;
+}
+
+/* 事前登録 */
+#registration {
+  height: auto;
+  padding: 60px 0;
+  position: relative;
+  top: 0px;
+  margin-bottom: 0px;
+}
+#registration .ttl_en {
+  opacity: 0.8;
+}
+.registration_contents > p {
+  width: 90%;
+  line-height: 20px;
+  margin: 20px auto;
+}
+.registration_form_container {
+  width: 90%;
+  padding: 25px 0;
+  height: auto;
+}
+.registration_form_container > p {
+  width: 90%;
+  margin: 0 auto;
+  line-height: 20px;
+  padding-top: 0;
+  padding-bottom: 15px;
+}
+.registration_form {
+  width: 86%;
+  margin: 0 auto;
+}
+.registration_form > input[type="text"] {
+  width: 82%;
+  height: 34px;
+  padding-left: 10px;
+}
+.registration_form > input[type="submit"] {
+  width: 18%;
+  height: 34px;
+}
+
+
+/* お問い合わせ */
+#contact {
+  height: auto;
+}
+#contact > .container {
+  height: auto;
+  padding: 40px 0;
+}
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+.forms {
+  padding-bottom: 20px;
+}
+.forms dt{
+  width: 100%;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.forms dt > span{
+  float: none;
+  line-height: 24px;
+  width: 43px;
+}
+.forms dd{
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
+.form > label > input, textarea, select {
+  border: 1px solid #D2D2D2;
+  padding-left: 10px;
+  height: 38px;
+  box-sizing: border-box;
+}
+.form_name > label > input {
+  width: 100%;
+}
+.form_mail > label > input {
+  width: 100%;
+  float: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.form_mail > p {
+  line-height: 38px;
+  text-align: center;
+  width: 10%;
+  float: left;
+}
+select {
+  width: 90%;
+  padding-left: 5px;
+  float: left;
+  background: url("../img/common/select_arrow_sp.png") 98% 50% no-repeat;
+  background-size: 8px, 100%;
+}
+select::-ms-expand {
+ display: none;
+}
+.form_phone > label > input {
+  width: 25%;
+}
+.form_phone > p {
+  line-height: 38px;
+  width: 12.5%;
+  font-size: 14px;
+  padding: 0;
+  text-align: center;
+}
+textarea {
+  width: 100%;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+dt {
+  width: auto;
+  font-size: 14px;
+  line-height: 20px;
+  float: none;
+  margin-bottom: 10px;
+}
+dt > span {
+  font-size: 13px;
+  line-height: 20px;
+  width: 38px;
+  float: none;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+dd {
+  margin-bottom: 20px;
+  padding-left: 0px;
+}
+.privacy {
+  width: 100%;
+  height: 240px;
+  padding: 1em;
+}
+.privacy > h3 {
+  font-size: 14px;
+  line-height: 35px;
+}
+.privacy > h4, .privacy > p {
+  font-size: 12px;
+  line-height: 20px;
+}
+.submit_container {
+  width: 139px;
+  margin: 0 auto;
+}
+.submit {
+  width: 139px;
+  height: 45px;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+
+/* =======================================
+    買主CSS
+======================================= */
+/* 追従事前登録ボタン */
+#buyer .registration_btn > a {
+  background-color: #CD4600;
+}
+
+
+/* こんな使い方ができる */
+#buyer .how_to_discription1 {
+  background-color: rgba(157, 254, 255, 0.1);
+}
+#buyer .how_to_discription2 {
+  background-color: rgba(245, 255, 255, 0.5);
+}
+
+
+/* 事前登録 */
+#buyer #registration {
+  background-image: url("../img/img_buyer/registration_bg_sp.jpg");
+}
+
+
+/* =======================================
+    売主CSS
+======================================= */
+/* 追従事前登録ボタン */
+#seller .registration_btn > a {
+  background-color: #B28030;
+}
+
+
+/* こんな使い方ができる */
+#seller .how_to_discription1 {
+  background-color: rgba(245, 247, 239, 0.1);
+}
+#seller .how_to_discription2 {
+  background-color: rgba(245, 247, 239, 0.5);
+}
+
+
+/* 事前登録 */
+#seller #registration {
+  background-image: url("../img/img_seller/registration_bg_sp.jpg");
+}

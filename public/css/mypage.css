@@ -1,0 +1,4097 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ ログイン  #page_login
+→ マイページトップ  #page_mypage
+→ プロフィール編集  #page_profileedit
+→ プロフィール編集確認  #page_profileconfirm
+→ ブログ管理  #page_blog
+→ 記事を投稿する  #page_add
+→ 記事を確認する  #page_addconfirm
+→ 記事投稿完了  #page_addcomplete
+→ 領収証ダウンロード  #page_receipt
+→ 評価一覧  #page_grade
+→ 釣魚アップロード/売買情報編集  #page_upload
+→ 商品一覧  #page_items
+→ 釣魚アップロード確認画面  #page_uploadconfirm
+→ 釣魚アップロード完了  #page_uploadcompleted
+→ 魚リクエスト  #page_request
+→ 魚リクエスト投稿  #page_addrequest
+→ 取引メッセージ一覧  #page_message
+→ 取引メッセージ詳細  #page_messagedetail
+→ 購入希望者一覧 #page_applicant
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- 共通部分 ------------*/
+.mainimg {
+  height: 350px;
+  background-image: url("../img/mypage/mypage_bg_pc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 185px;
+}
+.mainimg a {
+  display: block;
+  color: white;
+  width: 200px;
+  line-height: 44px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #005e89;
+  position: absolute;
+  right: 35px;
+  bottom: 20px;
+}
+.my_img {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  position: absolute;
+  bottom: -80px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+.my_img .fit_image {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+.my_img p {
+  font-size: 19px;
+  color: #2e2e2e;
+  font-weight: 500;
+}
+.mp_cont {
+  padding-bottom: 120px;
+}
+.content_button {
+  color: white !important;
+  text-align: center;
+  display: block;
+}
+.btn_g {
+  background-color: #4d4d4d;
+}
+.btn_lg {
+  background-color: #c2c2c2;
+}
+.tab_baloon_button {
+  padding: 0 !important;
+}
+.tab a, .tab p.not_active {
+  color: white;
+  display: block;
+  line-height: 59px;
+}
+.sell_btn {
+  width: 153px;
+  height: 153px;
+}
+.sell_btn img {
+  width: 153px;
+  height: 153px;
+}
+.up_wrap {
+  width: 100%;
+  border: 1px solid #eeeeee;
+  padding: 40px 0;
+}
+.up_form {
+  width: 900px;
+  margin: 0 auto;
+}
+.up_btns {
+  width: 480px;
+  margin: 0 auto;
+}
+.up_btns > input {
+  width: 230px;
+  height: 50px !important;
+  border: none;
+  cursor: pointer;
+}
+.up_btns > input:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+.up_btns > input:first-child {
+  float: right;
+}
+.up_btns > input:nth-child(2) {
+  float: left;
+  background-color: #d1d1d1;
+}
+.up_ess {
+  display: inline-block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: white;
+  line-height: 21px;
+  width: 43px;
+  background-color: #b15056;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+.drop_area {
+  height: 230px;
+  background-color: #f5f5f5;
+  border: 1px dotted #383838;
+  text-align: center;
+  padding-top: 70px;
+  margin-bottom: 40px;
+}
+.drop_area img {
+  width: 40px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.drop_area p {
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 500;
+}
+#fake_box {
+  width: 370px;
+  height: 40px !important;
+  border-right: none;
+  float: left;
+}
+.form_pic label > button {
+  display: inline-block;
+  font-size: 13px;
+  width: 100px;
+  line-height: 40px;
+  color: white;
+  background-color: #4a4a4a;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+}
+.form_pic label > button:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+.form_pic > p {
+  font-size: 14px;
+  color: #b1b1b1;
+  margin-top: 15px;
+}
+.user_bg {
+  height:35rem;
+  background-size: cover;
+  background-position: center;
+}
+.link_line {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6.51rem;
+}
+.link_line a {
+  display: block;
+  color: #a5a5a5;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+}
+
+.identification_box {
+  margin-top: -4rem;
+  margin-bottom: 6rem;
+}
+
+/*----------- ログイン ------------*/
+#page_login {
+  background-color: #f8f8f8;
+}
+#page_login .mp_cont {
+  padding-top: 90px;
+  padding-bottom: 3.51rem;
+  text-align: center;
+}
+#page_login h3 {
+  font-weight: bold;
+}
+.login_box {
+  width: 460px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 40px rgba(123, 123, 123, 0.1);
+  padding: 50px 0;
+  margin-top: 40px;
+}
+.login_box p {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#page_login .content_button {
+  width: 270px;
+  line-height: 50px;
+  margin: 0 auto;
+}
+#page_login input {
+  width: 350px;
+  height: 50px;
+  padding-left: 20px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  display: block;
+}
+#page_login hr {
+  border: none;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 35px 0;
+}
+
+.login_form {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+#page_login .mp_cont > a {
+  color: #a5a5a5;
+  margin: 0 20px;
+}
+
+.link_profile {
+  position: absolute;
+  top: 37.4rem;
+  right: 3.5rem;
+  display: block;
+  width: 20rem;
+  padding: .85rem 1rem;
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1.92857142857143;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #005e89;
+}
+a.link_profile {
+  color: #fff;
+}
+.user_info {
+  position: relative;
+  margin-bottom: 8.07rem;
+}
+.user_info .fit_image {
+  position: absolute;
+  top: -12.4rem;
+  left: 50%;
+  width: 20rem;
+  height: 20rem;
+  margin: 0 auto;
+  transform: translateX(-50%);
+}
+.user_info .user_info_name {
+  padding-top: 10.2rem;
+  font-size: 1.9rem;
+  font-weight: 500;
+  text-align: center;
+  color: #2e2e2e;
+  line-height: 1.42105263157895;
+}
+.user_info .user_info_number {
+  padding-top: .55rem;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 1.92857142857143;
+}
+.identification_box {
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+}
+#page_login .link_line {
+  padding-bottom: 13.7rem;
+}
+
+/*----------- マイページトップ ------------*/
+.mpt_list {
+  width: 100%;
+  padding-bottom: 40px;
+}
+#page_mypage {
+  overflow: hidden;
+}
+#page_mypage .user_info {
+  margin-bottom: 4.6rem;
+}
+#page_mypage .mp_cont {
+  min-width: 1000px;
+}
+#page_mypage .tab {
+  margin-bottom: 8rem;
+}
+.mp_fish_cont {
+  width: 220px;
+  float: left;
+  margin-right: 30px;
+}
+#page_mypage .mp_fish_cont > .fit_image {
+  width: 22rem;
+  height: 18rem;
+  margin-bottom: 2.5rem;
+}
+#page_mypage .mp_fish_cont > a {
+  background-color: #f2b42b;
+  width: 220px;
+  line-height: 40px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+}
+.mpt_table > a {
+  display: none;
+}
+.mpt_table {
+  float: right;
+  width: 730px;
+}
+.mpt_table table {
+  width: 100%;
+  text-align: justify;
+}
+#page_mypage .it_l {
+  width: 115px;
+}
+.mpt_table td {
+  height: 35px;
+}
+#page_mypage .tdd_title {
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px dotted black;
+  line-height: 1;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+#page_mypage span {
+  display: inline-block;
+  width: 18px;
+  text-align: center;
+  margin-right: 8px;
+}
+#page_mypage .price {
+  width: 18px;
+  height: auto;
+}
+#page_mypage .location {
+  width: 12px;
+  height: auto;
+}
+#page_mypage .clock {
+  width: 16px;
+  height: auto;
+}
+#page_mypage hr {
+  border: none;
+  height: 1px;
+  background-color: #eeeeee;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+#page_mypage .mp_cont > a {
+  width: 240px;
+  line-height: 50px;
+  float: right;
+  margin-top: -20px;
+}
+
+/*----------- プロフィール編集 ------------*/
+#page_profileedit {
+  position: relative;
+  background-color: #fff;
+}
+#page_profileedit .link_profile {
+  background-color: #079dd0;
+}
+#page_profileedit .user_info {
+  margin-bottom: 6rem;
+}
+#page_profileedit .user_info_change {
+  padding-top: 10.5rem;
+  display: flex;
+  justify-content: center;
+}
+#page_profileedit .user_info_change .content_button {
+  width: 20rem;
+  padding: 1.4rem 1rem;
+  background-color: #4d4d4d;
+  border-radius: 2.5rem;
+  font-size: 1.3rem;
+}
+#page_profileedit .edit_form {
+  margin-top: 6rem;
+  margin-bottom: 10rem;
+  border: 1px solid #eee;
+}
+#page_profileedit .edit_form input {
+  height: 4.5rem;
+  padding: 0 1.9rem;
+}
+#page_profileedit .edit_form select {
+  width: 24rem;
+  height: 4.5rem;
+  padding: 0 7.9rem 0 1.9rem;
+  background-color: #fff;
+  border: 1px solid #c9c9c9;
+}
+#page_profileedit .edit_form label {
+  display: flex;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+#page_profileedit .edit_form label:first-child{
+  margin-top: 0;
+}
+#page_profileedit .edit_form label span {
+  width: 12rem;
+  font-weight: 500;
+}
+#page_profileedit .edit_form label span + input {
+  width: calc(100% - 12rem);
+}
+#page_profileedit .edit_form .edit_form_inner {
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page_profileedit .edit_form .edit_form_split {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  margin-top: 3.7rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+#page_profileedit .edit_form .edit_form_split::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: .6rem;
+  height: 1.4rem;
+  background-color: #036bab;
+  border-radius: .2rem;
+  transform: translateY(-50%);
+}
+#page_profileedit .edit_form .edit_form_split:first-of-type {
+  margin-top: 5.6rem;
+}
+#page_profileedit .edit_form div + label {
+  margin-top: 2.8rem;
+}
+#page_profileedit .edit_form .edit_form_select {
+  position: relative;
+  transition: opacity .2s ease-in-out;
+  border-radius: 0 .6rem .6rem 0;
+}
+#page_profileedit .edit_form .edit_form_select:hover {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileedit .edit_form .edit_form_select::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 6rem;
+  height: 100%;
+  z-index: 2;
+  background-color: #4a4a4a;
+  border-radius: 0 .6rem .6rem 0;
+  pointer-events: none;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileedit .edit_form .edit_form_select:hover::before {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileedit .edit_form .edit_form_select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 2.1rem;
+  display: block;
+  width: 1.8rem;
+  height: 1.1rem;
+  background: url(../img/icon/icon_arrow_down_white.png) no-repeat;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+#page_profileedit .edit_form .input_length_short {
+  width: 24rem;
+}
+#page_profileedit .edit_form .input_length_full {
+  width: 100%;
+}
+#page_profileedit .edit_form .content_button {
+  width: 100%;
+  max-width: 23rem;
+  padding: 1.25rem 1rem;
+  margin: 5.9rem auto 6rem auto;
+}
+#page_profileedit .modal .modal_layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  max-width: 98rem;
+}
+#page_profileedit .modal .modal_inner {
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+#page_profileedit .upload {
+  display: flex;
+  padding: 0 3.9rem 3.6rem 3.9rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileedit .upload {
+    display: block;
+  }
+}
+#page_profileedit .upload .upload_drag p {
+  padding-top: 2.65rem;
+  padding-bottom: 1.45rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+#page_profileedit .upload .upload_drag_area {
+  position: relative;
+  width: 43rem;
+  height: 23rem;
+  background: url(../img/mypage/profile_dragarea.jpg) no-repeat;
+  background-color: #f5f5f5;
+  background-size: cover;
+}
+#page_profileedit .upload .black_cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #cccccc48;
+}
+#page_profileedit .upload .upload_input {
+  width: 100%;
+  padding-left: 3rem;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileedit .upload .upload_input {
+    padding-left: 0;
+  }
+}
+#page_profileedit .upload .upload_input > p {
+  padding-top: 6.2rem;
+  padding-bottom: .4rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+#page_profileedit .upload .upload_input label {
+  position: relative;
+  display: block;
+  max-width: 31.675rem;
+  height: 4.1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 0 .6rem .6rem 0;
+  transition: opacity .2s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileedit .upload .upload_input label {
+    max-width: 43rem;
+  }
+}
+#page_profileedit .upload .upload_input label:hover {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+}
+#page_profileedit .upload .upload_input label::before {
+  content: '選択';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 10rem;
+  height: 100%;
+  padding: .95rem 0;
+  background-color: #4a4a4a;
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 0 .6rem .6rem 0;
+}
+#page_profileedit .upload .upload_input label p {
+  padding: .95rem 11.7rem .95rem 1.7rem;
+  font-size: 1.3rem;
+  color: #b3b3b3;
+}
+#page_profileedit .upload .upload_input label input {
+  display: none;
+}
+#page_profileedit .upload .upload_input > span {
+  display: block;
+  padding-top: 1.31rem;
+  font-size: 1.4rem;
+  color: #b1b1b1;
+}
+#page_profileedit textarea {
+  border: 1px solid #c9c9c9;
+  height: 15rem;
+}
+#page_profileedit hr {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+#page_profileedit p.alert {
+  margin-bottom: 2rem;
+}
+#page_profileedit .radio_bank_type {
+  margin-right: 2rem
+}
+/*----------- プロフィール編集確認 ------------*/
+#page_profileconfirm {
+  position: relative;
+  background-color: #fff;
+}
+#page_profileconfirm .link_profile {
+  background-color: #079dd0;
+}
+#page_profileconfirm .user_info {
+  margin-bottom: 6rem;
+}
+#page_profileconfirm .user_info_change {
+  padding-top: 10.5rem;
+  display: flex;
+  justify-content: center;
+}
+#page_profileconfirm .user_info_change .content_button {
+  width: 20rem;
+  padding: 1.4rem 1rem;
+  background-color: #4d4d4d;
+  border-radius: 2.5rem;
+  font-size: 1.3rem;
+}
+#page_profileconfirm .edit_form {
+  margin-top: 6rem;
+  margin-bottom: 10rem;
+  text-align: center;
+  border: 1px solid #eee;
+  word-break: break-all;
+}
+#page_profileconfirm .edit_form label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.65rem;
+}
+#page_profileconfirm .edit_form label span {
+  width: 9rem;
+  font-weight: 500;
+}
+#page_profileconfirm .edit_form p {
+  font-size: 1.4rem;
+}
+#page_profileconfirm .edit_form .edit_form_inner {
+  max-width: 50rem;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+#page_profileconfirm .edit_form .edit_form_split {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+  margin-top: 4.81rem;
+  margin-bottom: 2.61rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+#page_profileconfirm .edit_form .edit_form_split::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: .6rem;
+  height: 1.4rem;
+  background-color: #036bab;
+  border-radius: .2rem;
+  transform: translateY(-50%);
+}
+#page_profileconfirm .edit_form .edit_form_split:first-of-type {
+  margin-top: 5.6rem;
+}
+#page_profileconfirm .edit_form div + label {
+  margin-top: 3.675rem;
+}
+#page_profileconfirm .edit_form .edit_form_select {
+  position: relative;
+  transition: opacity .2s ease-in-out;
+  border-radius: 0 .6rem .6rem 0;
+}
+#page_profileconfirm .edit_form .edit_form_select:hover {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileconfirm .edit_form .edit_form_select::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 6rem;
+  height: 100%;
+  z-index: 2;
+  background-color: #4a4a4a;
+  border-radius: 0 .6rem .6rem 0;
+  pointer-events: none;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileconfirm .edit_form .edit_form_select:hover::before {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+}
+#page_profileconfirm .edit_form .edit_form_select::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 2.1rem;
+  display: block;
+  width: 1.8rem;
+  height: 1.1rem;
+  background: url(../img/icon/icon_arrow_down_white.png) no-repeat;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+#page_profileconfirm .edit_form .content_button {
+  width: 100%;
+  max-width: 23rem;
+  padding: 1.25rem 1rem;
+  margin: 6.875rem auto 6rem auto;
+}
+#page_profileconfirm .modal .modal_layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 2rem);
+  max-width: 98rem;
+}
+#page_profileconfirm .modal .modal_inner {
+  width: auto;
+  height: auto;
+  overflow: auto;
+}
+#page_profileconfirm .upload {
+  display: flex;
+  padding: 0 3.9rem 3.6rem 3.9rem;
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileconfirm .upload {
+    display: block;
+  }
+}
+#page_profileconfirm .upload .upload_drag p {
+  padding-top: 2.65rem;
+  padding-bottom: 1.45rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+#page_profileconfirm .upload .upload_drag_area {
+  width: 43rem;
+  height: 23rem;
+  background: url(../img/mypage/profile_dragarea.jpg) no-repeat;
+  background-color: #f5f5f5;
+  background-size: cover;
+}
+#page_profileconfirm .upload .upload_input {
+  width: 100%;
+  padding-left: 3rem;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileconfirm .upload .upload_input {
+    padding-left: 0;
+  }
+}
+#page_profileconfirm .upload .upload_input > p {
+  padding-top: 6.2rem;
+  padding-bottom: .4rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+#page_profileconfirm .upload .upload_input label {
+  position: relative;
+  display: block;
+  max-width: 31.675rem;
+  height: 4.1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 0 .6rem .6rem 0;
+  transition: opacity .2s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 999px) {
+  #page_profileconfirm .upload .upload_input label {
+    max-width: 43rem;
+  }
+}
+#page_profileconfirm .upload .upload_input label:hover {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+}
+#page_profileconfirm .upload .upload_input label::before {
+  content: '選択';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 10rem;
+  height: 100%;
+  padding: .95rem 0;
+  background-color: #4a4a4a;
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 0 .6rem .6rem 0;
+}
+#page_profileconfirm .upload .upload_input label p {
+  padding: .95rem 11.7rem .95rem 1.7rem;
+  font-size: 1.3rem;
+  color: #b3b3b3;
+}
+#page_profileconfirm .upload .upload_input label input {
+  display: none;
+}
+#page_profileconfirm .upload .upload_input > span {
+  display: block;
+  padding-top: 1.31rem;
+  font-size: 1.4rem;
+  color: #b1b1b1;
+}
+
+/*----------- ブログ管理 ------------*/
+#page_blog .tab {
+  margin-bottom: 6rem;
+}
+#page_blog .content_button.blogpage_btn {
+  width: 180px;
+  line-height: 40px;
+  float: left;
+  margin-right: 15px;
+}
+#page_blog table {
+  width: 100%;
+  min-width: 980px;
+  text-align: center;
+  margin-top: 2.9rem;
+}
+#page_blog td, #page_blog th {
+  border: 1px #dcdcdc solid;
+}
+#page_blog th {
+  width: 170px;
+  background-color: #008cb8;
+  height: 60px;
+  color: white;
+}
+#page_blog td {
+  height: 70px;
+  padding: 1rem;
+  vertical-align: middle;
+  word-break: break-all;
+}
+#page_blog .b_check {
+  width: 70px;
+  position: relative;
+}
+#page_blog .b_title {
+  width: 400px;
+}
+#page_blog .b_date {
+  width: 210px;
+}
+#page_blog input {
+  display: none;
+}
+#page_blog label, #page_blog input {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+/* #page_blog span:after,  #page_blog span:before{
+	content: "";
+	display: block;
+  position: absolute;
+}
+#page_blog span:after {
+	width: 15px;
+	height: 15px;
+	border: 1px solid #d2d2d2;
+}
+#page_blog span:before {
+  margin-top: 2px;
+	width: 17px;
+	height: 22px;
+  background-image: url("../img/mypage/check.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+}
+#page_blog input:checked + span:before {
+	opacity: 1;
+} */
+
+/*----------- 記事を投稿する ------------*/
+#page_add .tab {
+  margin-bottom: 6.7rem;
+}
+#page_add dt {
+  color: #2e2e2e;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+#page_add dd {
+  border: 1px solid #eeeeee;
+  margin-bottom: 60px;
+}
+#page_add dd > input, #page_add textarea {
+  border: none;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+#page_add dd > input {
+  width: 100%;
+  height: 60px;
+}
+#page_add dd > input::placeholder {
+  font-size: 15px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+#page_add dd:nth-of-type(2) {
+  padding: 40px;
+}
+#page_add .drop_area {
+  margin-bottom: 30px;
+}
+#page_add .form_pic > p:first-child {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+  margin-bottom: 8px;
+}
+#page_add #fake_box {
+  padding-left: 1.7rem;
+  padding-right: 1.7rem;
+}
+#page_add dd:nth-of-type(3), #page_add dd:nth-of-type(4) {
+  border: none;
+}
+#page_add textarea {
+  width: 100%;
+  min-height: 42.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-top: 10px;
+  border: 1px solid #eee;
+  line-height: 1.8;
+  resize: vertical;
+}
+#page_add textarea::placeholder {
+  font-size: 15px;
+  font-weight: 500;
+  color: #bdbdbd;
+}
+#page_add dt:nth-of-type(4) {
+  margin-bottom: 20px;
+}
+#page_add dd:nth-of-type(4) input {
+  display: none;
+}
+#page_add dd:nth-of-type(4) label {
+  float: left;
+}
+#page_add dd:nth-of-type(4) label p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  width: 125px;
+}
+#page_add .radio:after, #page_add .radio:before{
+	content: "";
+	display: block;
+  float: left;
+}
+#page_add .radio:after {
+	width: 17px;
+	height: 17px;
+  background-image: url("../img/mypage/blog_radio.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 7px;
+}
+#page_add .radio:before {
+	width: 9px;
+	height: 9px;
+  background-image: url("../img/mypage/blog_radio_check.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 4px;
+  left: 13px;
+  margin-left: -9px;
+  opacity: 0;
+}
+#page_add dd:nth-of-type(4) input:checked + span:before {
+	opacity: 1;
+}
+#page_add form > input {
+  border: none;
+  width: 230px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-top: 130px;
+}
+#page_add form > input:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#page_add form > a {
+  display: block;
+  padding: 1rem;
+  margin-top:4rem;
+  text-decoration: underline;
+  text-align: center;
+}
+#page_add dt:nth-of-type(3) {
+  margin-bottom: 15px;
+}
+#page_add dd:nth-of-type(3) input {
+  width: 77px;
+  height: 30px;
+  padding: 0 .8rem;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555555;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+  cursor: pointer;
+  margin-bottom: 10px;
+  margin-right: 7px;
+}
+#page_add dd:nth-of-type(3) input:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+
+/*----------- 記事を確認する ------------*/
+#page_addconfirm{}
+
+/*----------- 記事投稿完了 ------------*/
+.ac_box {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 100px 0;
+}
+.acb_inner {
+  width: 480px;
+  margin: 0 auto;
+}
+.acb_inner > p {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.ac_info > p:first-child, .ac_info > p:nth-child(2) {
+  font-size: 14px;
+  line-height: 2;
+  padding-left: 40px;
+}
+.ac_info a {
+  word-break: break-all;
+}
+.acb_inner > a {
+  width: 230px;
+  line-height: 50px;
+  margin-top: 40px;
+  font-weight: 500;
+}
+.acb_inner > a:first-of-type {
+  background-color: #1da1f2;
+  float: left;
+}
+.acb_inner > a:nth-of-type(2) {
+  background-color: #295396;
+  float: right;
+}
+.acb_inner > a img {
+  position: relative;
+  bottom: 2px;
+  margin-right: 8px;
+}
+.acb_inner > a:first-of-type img {
+  width: 22px;
+  height: auto;
+}
+.acb_inner > a:nth-of-type(2) img {
+  width: 18px;
+  height: auto;
+}
+#page_addcomplete .mp_cont > a {
+  width: 280px;
+  line-height: 50px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: #4d4d4d;
+  font-weight: 500;
+}
+#page_addcomplete .tab {
+  margin-bottom: 6.8rem;
+}
+
+/*----------- 領収証ダウンロード ------------*/
+#page_receipt .mp_cont {
+  padding-bottom: 0;
+}
+#page_receipt table {
+  width: 100%;
+  text-align: justify;
+  margin-bottom: 100px;
+}
+#page_receipt table:first-of-type {
+  margin-top: 10.2rem;
+}
+#page_receipt th {
+  width: 100%;
+  padding-bottom: 18px;
+}
+#page_receipt th > p {
+  font-size: 16px;
+  border-bottom: 1px solid #d2d2d2;
+  padding-bottom: 7px;
+  color: #2e2e2e;
+  font-weight: 500;
+}
+#page_receipt th > p:first-of-type {
+  position: relative;
+  display: flex;
+  padding-left: 1.7rem;
+}
+#page_receipt th > p:first-of-type::before {
+  content: '';
+  position: absolute;
+  top: .6rem;
+  left: 0;
+  width: .6rem;
+  height: 1.6rem;
+  background-color: #005e89;
+  border-radius: .2rem;
+}
+#page_receipt th > p:first-of-type span {
+  display: block;
+  margin: 0 0 0 auto;
+}
+#page_receipt span > img {
+  width: 6px;
+  height: auto;
+  margin-bottom: 3px;
+  margin-right: 10px;
+}
+.rece_desc {
+  color: #898989;
+  font-size: 14px;
+  font-weight: 400;
+}
+#page_receipt td {
+  padding: 5px 0;
+}
+#page_receipt td > a {
+  color: #2e2e2e;
+  font-size: 14px;
+  font-weight: 500;
+}
+#page_receipt td > a:hover {
+  border-bottom: 1px solid #2e2e2e;
+}
+/*----------- 評価一覧 ------------*/
+#page_grade .user_info {
+  margin-bottom: 4.85rem;
+}
+#page_grade .title_band {
+  padding: 1.55rem 2rem;
+  margin-bottom: 5rem;
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.22727272727273;
+  color: #fff;
+  background-color: #008cb8;
+  text-align: center;
+}
+#page_grade .tab {
+  margin-bottom: 6rem;
+}
+#page_grade .tab .tab_baloon:hover {
+  cursor: pointer;
+}
+#page_grade .tab .tab_baloon_button {
+  padding: 1.55rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #2e2e2e;
+  background-color: #f6f6f6;
+  line-height: 1.8;
+  border-radius: 0;
+  border: 1px solid #eee;
+}
+#page_grade .tab .tab_baloon_button.current {
+  background-color: #fff;
+  border-bottom: 0;
+}
+#page_grade .tab .tab_baloon_button.current::before {
+  content: none;
+}
+
+#page_grade .tab .tab_baloon_button + .tab_baloon_button {
+  margin-left: 0;
+  border-left: 0;
+}
+#page_grade .tab .tab_baloon_inner {
+  padding: 2.7rem 3rem 0 3rem;
+  border: 1px solid #eee;
+  border-top: 0;
+}
+#page_grade .tab .tab_baloon_inner .fit_image {
+  width: 8rem;
+  height: 8rem;
+}
+#page_grade .grade {
+  position: relative;
+  word-break: break-all;
+}
+#page_grade .grade::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1.2rem;
+  height: 2.1rem;
+  background: url(../img/icon/icon_arrow_right_black.png) no-repeat;
+  background-size: cover;
+  transform: translateY(-50%);
+  transition: opacity .2s ease-in-out;
+}
+#page_grade .grade:hover {
+  cursor: pointer;
+}
+#page_grade .grade:hover::before {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#page_grade .grade + .grade::before {
+  content: '';
+  position: relative;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: .1rem;
+  background-color: #e5e5e5;
+}
+#page_grade .grade p {
+  color: #2e2e2e;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.92857142857143;
+}
+#page_grade .grade .grade_inner {
+  display: flex;
+  padding-top: 2.1rem;
+  padding-bottom: 2.35rem;
+}
+#page_grade .grade .grade_info {
+  width: calc(100% - 8rem);
+  padding-left: 2.6rem;
+  padding-right: 3.8rem;
+}
+#page_grade .grade .grade_name {
+  margin-top: -.6rem;
+  margin-bottom: .3rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+#page_grade .grade .grade_day {
+  position: relative;
+  padding-left: 2.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+#page_grade .grade .grade_day::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: url(../img/icon/icon_clock.png) no-repeat;
+  background-size: cover;
+  transform: translateY(-50%);
+}
+#page_grade .grade .grade_value {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.45rem;
+}
+#page_grade .grade .grade_value_icon {
+  position: relative;
+  padding-left: 2.2rem;
+  margin-right: 3.1rem;
+  line-height: 1;
+}
+#page_grade .grade .grade_value_icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+}
+#page_grade .grade .grade_value_good::before {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icon/icon_circle.png);
+}
+#page_grade .grade .grade_value_normal::before {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icon/icon_triangle.png);
+}
+#page_grade .grade .grade_value_bad::before {
+  width: 1.5rem;
+  height: 1.7rem;
+  background-image: url(../img/icon/icon_closs_black.png);
+}
+#page_grade .grade .grade_comment {
+  font-weight: normal;
+}
+#page_grade .pager {
+  margin-bottom: 10rem;
+}
+#page_grade.lower_bg::before {
+  height: 35rem;
+  background-position: center;
+}
+
+/*----------- 釣魚アップロード/売買情報編集 ------------*/
+#page_upload {
+  position: relative;
+}
+#page_upload .mp_cont {
+  padding-bottom: 180px;
+}
+#page_upload .tab {
+  margin-bottom: 7.1rem;
+}
+#page_upload .up_form {
+  width: calc(100% - 8rem);
+  margin-bottom: 6rem;
+}
+#page_upload .up_forms input {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#page_upload .up_forms textarea {
+  min-height: 25.5rem;
+  padding: 1rem;
+  resize: vertical;
+}
+#page_upload .up_wrap {
+  padding-bottom: 0;
+}
+#page_upload .tab .tab_select {
+  background-color: #fff;
+}
+.up_forms input, .up_forms textarea {
+  width: 100%;
+  border: 1px solid #D2D2D2;
+}
+textarea {
+  padding-top: 10px;
+}
+.up_forms > dt {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.up_forms > dt:first-child {
+  margin-bottom: 5px;
+}
+#page_upload input {
+  height: 45px;
+}
+.form_price input {
+  width: 210px;
+  float: left;
+  margin-right: 10px;
+}
+.form_price p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2e2e2e;
+  line-height: 45px;
+}
+.up_forms dd {
+  margin-bottom: 40px;
+}
+.uped_pic {
+  width: 100%;
+  height: 117px;
+  margin-top: 10px;
+}
+.uppi_box {
+  width: 116px;
+  height: 117px;
+  border: 1px dotted #3f3f3f;
+  position: relative;
+  float: left;
+  margin-right: 30px;
+  background-color: #fff;
+}
+.uppi_box .fit_image {
+  width: 114px;
+  height: 114px;
+}
+.uppi_box input {
+  width: 25px;
+  height: 25px !important;
+  border-radius: 50%;
+  border: none;
+  background-color: #626262;
+  background-image: url("../img/mypage/uped_pic_peke.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -11px;
+  right: -10px;
+  cursor: pointer;
+}
+#page_upload .link_line {
+  display: none;
+}
+
+/*----------- 商品一覧 ------------*/
+#page_items {
+  overflow: hidden;
+  word-break: break-all;
+}
+#page_items .tab {
+  margin-bottom: 6.2rem;
+}
+#page_items .my_fish_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 5px solid #005e89;
+  padding-top: 2rem;
+}
+#page_items .type_tab {
+  width: 100%;
+}
+#page_items .type_tab * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#page_items .type_tab a {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+  border: 1px solid #005e89;
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+}
+#page_items .type_tab a.current {
+  color:white;
+  background-color: #005e89;
+}
+#page_items .type_tab a.current:hover {
+  opacity: 1;
+  cursor: default;
+}
+#page_items .my_fish {
+  position: relative;
+  display: block;
+  width: calc(50% - 1.5rem);
+  padding: 3rem 3rem 4rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 3rem;
+  background-color: #eff5f8;
+}
+#page_items .my_fish:nth-of-type(odd){
+  margin-left: 0;
+}
+#page_items .my_fish:nth-of-type(even) {
+  margin-right: 0;
+}
+#page_items .it_cont {
+  display: flex;
+}
+#page_items .item_box .fit_image {
+  width: 14rem;
+  height: 14rem;
+  margin-bottom: 1.5rem;
+}
+#page_items table {
+  width: calc(100% - 14rem);
+  margin-left: 2rem;
+  color: #2e2e2e;
+  text-align: justify;
+}
+#page_items .tdd_title {
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px dotted black;
+  line-height: 1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+#page_items td {
+  padding: 5px 0;
+  letter-spacing: 0;
+  vertical-align: top;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+#page_items .it_l {
+  width: 110px;
+}
+#page_items table span {
+  display: inline-block;
+  width: 18px;
+  text-align: center;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+}
+#page_items .price {
+  width: 18px;
+  height: auto;
+}
+#page_items .location {
+  width: 12px;
+  height: auto;
+}
+#page_items .clock {
+  width: 16px;
+  height: auto;
+}
+#page_items .finish_cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 46, 46, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#page_items .finish_cover p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  color: white;
+  font-weight: normal;
+  text-align: center;
+  transform: translate(-50%,-50%);
+}
+#page_items {
+  position: relative;
+}
+#page_items .pager {
+  margin-top: 30px;
+}
+#page_items .links {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+#page_items .links .content_button {
+  padding: 1rem 3rem;
+  z-index: 10;
+}
+#page_items .delete_link {
+  background: transparent;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+/*----------- 釣魚アップロード確認画面 ------------*/
+#page_uploadconfirm .tab {
+  margin-bottom: 7.1rem;
+}
+#page_uploadconfirm .tab .tab_select {
+  background-color: #fff;
+}
+#page_uploadconfirm .up_form_slider {
+  display: none;
+}
+#page_uploadconfirm .up_wrap {
+  padding: 4rem;
+}
+#page_uploadconfirm .up_form {
+  width: 100%;
+}
+#page_uploadconfirm .up_form .up_form_image {
+  display: flex;
+  margin-bottom: 5rem;
+}
+#page_uploadconfirm .up_form .fit_image {
+  width: 31.8518518518519%;
+  height: 18rem;
+  margin-right: 2.22222222222222%;
+}
+@media only screen and (max-width: 1000px) {
+  #page_uploadconfirm .up_form .fit_image {
+    height: 18vw;
+  }
+}
+#page_uploadconfirm .up_form .fit_image:last-of-type {
+  margin-right: 0;
+}
+.up_form > .fit_image:nth-of-type(2) {
+  margin: 0 21px;
+}
+.upconf_tt {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+  margin-bottom: 7px;
+}
+.up_form > p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+#page_uploadconfirm .up_btns {
+  margin-top: 70px;
+}
+
+/*----------- 釣魚アップロード完了 ------------*/
+#page_uploadcompleted .mp_cont > p {
+  text-align: center;
+  font-size: 14px;
+  color: #282828;
+  font-weight: 500;
+  padding: 30px 0;
+}
+#page_uploadcompleted .mp_cont > a {
+  width: 320px;
+  line-height: 50px;
+  background-color: #8a8a8a;
+  margin: 0 auto;
+}
+#page_uploadcompleted  .tab {
+  margin-bottom: 8rem;
+}
+#page_uploadcompleted .tab .tab_select {
+  background-color: #fff;
+}
+
+/*----------- 魚リクエスト ------------*/
+#page_request .tab {
+  margin-bottom: 6rem;
+}
+#page_request .mp_cont {
+  padding-bottom: 1px;
+}
+#page_request .mp_cont > a {
+  width: 313px;
+  line-height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.sp_title {
+  display: none !important;
+}
+#page_request .layout > dl {
+  width: 100%;
+  min-width: 980px;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+  margin: 50px 0;
+}
+
+#page_request .request .request_search {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border: 1px solid #e5e5e5;
+}
+#page_request .request .request_search h3 {
+  padding-top: 2.95rem;
+  padding-bottom: 1.85rem;
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.125;
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+}
+#page_request .request .request_search_input {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 2.45rem;
+  margin-left:15rem;
+}
+#page_request .request .request_search_input select {
+  padding: .15rem 3.7rem .15rem .9rem;
+  background-color: #fff;
+  border: 1px solid #d2d2d2;
+}
+#page_request .request .request_search_input label > span {
+  display: block;
+  padding-bottom: .45rem;
+}
+#page_request .request .request_search_fish {
+  width: 26.058631921824105%;
+  margin-right: 6.514657980456026%;
+}
+#page_request .request .request_search_fish input {
+  width: 100%;
+  padding: .7rem 1rem .7rem 1rem;
+  border-radius: 8px;
+  margin-left: 1.2rem;
+}
+#page_request .request .request_search_area,
+#page_request .request .request_search_detail {
+  margin-right: 2.0629750271444083%;
+  margin-left: 2.0629750271444083%;
+}
+#page_request .request .request_search_area div {
+  position: relative;
+}
+#page_request .request .request_search_area div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 2.8rem;
+  height: 100%;
+  z-index: 2;
+  background-color: #333;
+  border-radius: 0 .4rem .4rem 0;
+  pointer-events: none;
+}
+#page_request .request .request_search_area div::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: .9rem;
+  display: block;
+  width: 1rem;
+  height: .6rem;
+  background: url(/img/icon/icon_arrow_down_white.png) no-repeat;
+  background-size: cover;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+#page_request .request .request_search_area select {
+  width: 15.2rem;
+  border-radius: 0 .4rem .4rem 0;
+  z-index: 1;
+}
+
+#page_request .request .request_search .content_button.requestpage_btn {
+  width: 15.2rem;
+  margin-top: 3rem;
+  margin-bottom: 2.9rem;
+  padding: .65rem 1rem;
+  background-color: #4d4d4d;
+}
+
+#page_request .content_button.requestpage_btn {
+  display: block;
+  width: 100%;
+  padding: .35rem 1rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+}
+
+.req_status, .req_name, .req_area {
+  border-right: 1px solid #e1e1e1;
+}
+.list_cont {
+  border-top: 1px solid #e1e1e1;
+}
+#page_request dt > dl, #page_request dd > dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.req_status {
+  width: 15%;
+}
+.req_name {
+  width: 45%;
+}
+.req_name a:hover{
+  opacity: .7;
+  text-decoration: none;
+  transition: opacity .2s ease-in-out;
+  cursor: pointer;
+}
+.req_area, .req_date {
+  width: 20%;
+}
+.pc_title dt {
+  padding: 12px 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  background-color: #008cb8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list_cont dt, .list_cont dd {
+  padding: 13px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sp_num {
+  display: none !important;
+}
+#page_request dl p {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+  line-height: 1.5;
+}
+.list_cont:not(.applicant_list) dt:last-of-type, .list_cont:not(.applicant_list) dd:last-of-type {
+  padding: 20px 16px;
+  border-top: 1px solid #e1e1e1;
+  background-color: #f7f7f7;
+}
+.list_cont:not(.applicant_list) dt:last-of-type {
+  width: 70%;
+  justify-content: flex-start;
+}
+.list_cont:not(.applicant_list) dt:last-of-type p {
+  color: #323232 !important;
+  position: relative;
+  bottom: 3px;
+}
+.list_cont:not(.applicant_list) dd:last-of-type {
+  width: 30%;
+  justify-content: flex-end;
+}
+.req_status div {
+  width: 114px;
+  line-height: 34px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+}
+.displaying {
+  background-color: #00479d;
+}
+.stop_disp {
+  background-color: #333333;
+}
+
+.disp {
+  display: block;
+}
+.no_disp {
+  display: none;
+}
+
+.list_cont a {
+  font-weight: 500;
+  width: 178px !important;
+  line-height: 46px;
+  margin-right: 8px;
+}
+.list_cont span {
+  font-size: 24px;
+}
+#page_request .pager {
+  margin-top: 50px;
+}
+#page_request .request .request_search_area select,
+#page_request .request .request_search_detail,
+#page_request .request .request_search_day input {
+  padding: .7rem 1rem .7rem 1rem;
+  border-radius: 8px;
+}
+/*----------- 魚リクエスト投稿 ------------*/
+#page_addrequest .user_info {
+  margin-bottom: 4.6rem;
+}
+#page_addrequest .tab {
+  margin-bottom: 7rem;
+}
+#page_addrequest .text_point {
+  position: relative;
+  padding: .2rem 0 .2rem 1.8rem;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #4d4d4d;
+  line-height: 1;
+}
+#page_addrequest .text_point::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: .6rem;
+  height: 100%;
+  border-radius: .2rem;
+  background-color: #036bab;
+  transform: translateY(-50%);
+}
+#page_addrequest form {
+  width: 100%;
+  height: auto;
+  padding: 3.7rem 3.9rem 4rem 3.9rem;
+  margin-bottom: 10rem;
+  border: 1px solid #eee;
+}
+#page_addrequest form > p img {
+  height: 24px;
+  width: auto;
+  margin-bottom: 4px;
+  margin-right: 10px;
+}
+#page_addrequest form > input[type="text"] {
+  width: 100%;
+  height: 4.5rem;
+  border: 1px solid #eee;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+#page_addrequest form > p:nth-of-type(2) {
+  width: calc(100% - 19.8rem);
+  font-size: 14px;
+  font-weight: 500;
+  color: #323232;
+  float: left;
+  margin-bottom: 60px;
+}
+#page_addrequest form > p:nth-of-type(2) > span {
+  font-size: 24px;
+}
+#page_addrequest form a {
+  width: 178px;
+  line-height: 46px;
+  background-color: #7d7d7d;
+  font-size: 14px;
+  font-weight: 500;
+  float: right;
+}
+#page_addrequest select {
+  width: 32rem;
+  height: 4.5rem;
+  padding-left: 1.5rem;
+  padding-right: 7.5rem;
+  border: 1px solid #d2d2d2;
+  border-right: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 1.4rem;
+}
+#page_addrequest label {
+  display: block;
+  width: 320px;
+  height: 45px;
+  position: relative;
+}
+#page_addrequest label::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 60px;
+  height: 45px;
+  background-color: #4a4a4a;
+  border-radius: 0 6px 6px 0;
+  pointer-events: none;
+}
+#page_addrequest label::after {
+  position: absolute;
+  top: 17px;
+  right: 21px;
+  content: "";
+  width: 18px;
+  height: 11px;
+  background-image: url("../img/mypage/drop_arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+#page_addrequest form > input[type="button"] {
+  width: 313px;
+  height: 60px;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 auto;
+  margin-top: 60px;
+  cursor: pointer;
+}
+#page_addrequest form > input[type="button"]:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+
+/*----------- 取引メッセージ詳細 ------------*/
+#page_messagedetail .mp_cont {
+  min-width: 980px;
+  padding-top: 70px;
+}
+.mede_fishname {
+  width: 643px;
+  height: auto;
+  float: right;
+  margin-bottom: 20px;
+}
+.mede_fishname > p{
+  color: #2e2e2e;
+  font-size: 20px;
+  font-weight: 500;
+}
+#page_messagedetail .mp_cont > .fit_image {
+  width: 297px;
+  height: 297px;
+  float: left;
+}
+.mess_table1 {
+  width: 643px;
+  border: 1px solid #e5e5e5;
+  float: right;
+}
+.mess_table1 tr {
+  border-bottom: 1px solid #eeeeee;
+}
+.mess_table1 th {
+  background-color: #f7f7f7;
+  width: 135px;
+  padding: 0 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #282828;
+}
+.mess_table1 td {
+  padding: 1.5rem 3rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #535353;
+}
+.mess_table1 td > p:first-child {
+  font-size: 17px;
+  font-weight: 500;
+  color: #535353;
+  margin-bottom: 5px;
+}
+.mess_table1 td > a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #646464;
+  display: inline-block;
+  margin-bottom: 13px;
+}
+.mess_table1 td > a > img {
+  width: 6px;
+  height: auto;
+  margin-bottom: 2px;
+  margin-right: 7px;
+}
+.mess_eval {
+  font-size: 14px;
+  font-weight: 500;
+  color: #535353;
+  float: left;
+  margin-right: 30px;
+}
+.mess_eval img {
+  width: 16px;
+  height: auto;
+  margin-bottom: 2px;
+  margin-right: 6px;
+}
+.message_cont {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 50px;
+  margin: 50px 0;
+}
+.chat_box {
+  width: 880px;
+  height: 500px;
+  overflow-x: hidden;
+  padding-right:20px;
+}
+.chat_cont {
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+.chat_partner {
+  width: 390px;
+  float: left;
+}
+.chpa_img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+}
+.chpa_bll {
+  width: 330px;
+  float: right;
+}
+.chpa_bll > p:first-child {
+  font-size: 14px;
+  color: #5e5e5e;
+  margin-bottom: 5px;
+}
+.chat_balloon {
+  max-width: 100%;
+  padding: 15px 25px 15px 15px;
+  background-color: #e5e5e5;
+  border-radius: 0 20px 20px 20px;
+}
+.chat_balloon p {
+  font-size: 14px;
+  color: #2e2e2e;
+  word-break: break-all;
+  margin-right: 5px;
+}
+.chat_time {
+  color: #2e2e2e !important;
+  margin-top: 5px;
+}
+.chat_partner .chat_time {
+  float: right;
+}
+.chat_me {
+  float: right;
+}
+.chat_me .chat_balloon {
+  max-width: 500px;
+  background-color: #228ebf;
+  border-radius: 20px 0 20px 20px;
+}
+.chat_me p {
+  color: white;
+}
+.chat_date {
+  text-align: center;
+  font-size: 14px;
+  color: #afafaf;
+  margin: 25px 0;
+}
+.chat_img {
+  padding: 0;
+  max-width: 395px !important;
+  max-height: 395px !important;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+#page_messagedetail .message_cont textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #e5e5e5;
+  padding: 10px;
+}
+.message_cont input[type="file"] {
+  display: none;
+}
+.message_cont label {
+  display: block;
+  width: 100%;
+  height: 35px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  margin-top: -7px;
+  margin-bottom: 40px;
+  padding-left: 12px;
+}
+.message_cont label > p {
+  font-size: 14px;
+  color: #b1b1b1;
+  line-height: 35px;
+}
+.message_cont label img {
+  width: 19px;
+  height: auto;
+  margin-bottom: 4px;
+  margin-right: 10px;
+}
+.message_cont input[type="button"] {
+  border: none;
+  background-color: #7d7d7d;
+  width: 320px;
+  height: 50px;
+  font-weight: 500;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.message_cont input[type="button"]:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+.mesbtm_buy {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+  border: 1px solid #dcdcdc;
+  text-align: center;
+}
+.mesbtm_buy p {
+  font-size: 16px;
+  color: #535353;
+  line-height: 1;
+  margin-bottom: 25px;
+}
+.mesbtm_buy span {
+  font-size: 41px;
+}
+.mesbtm_buy a {
+  width: 320px;
+  line-height: 50px;
+  margin: 0 auto;
+}
+.mess_finish {
+  background-color: #4d4d4d;
+}
+.mesbtm_sell {
+  width: 100%;
+  background-color: #fafafa;
+  padding: 60px;
+  text-align: center;
+  margin-top: 80px;
+}
+.mesbtm_sell > p {
+  font-size: 26px;
+  font-weight: bold;
+  color: #4a4a4a;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+.mesbtm_sell > table {
+  width: 535px;
+  margin: 0 auto;
+}
+.mesbtm_sell > table tr {
+  border: 1px solid #e5e5e5;
+}
+.mesbtm_sell > table th, .mesbtm_sell > table td {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.mesbtm_sell > table th {
+  width: 136px;
+  background-color: #535353;
+  color: white;
+}
+.mesbtm_sell > table td {
+  text-align: justify;
+  padding-left: 15px;
+  background: white;
+}
+#mess_stop {
+  width: 625px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 70px;
+}
+#stop_dealing {
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: 500;
+  color: #6b6b6b;
+  border-bottom: 1px solid;
+  display: inline-block;
+  cursor: pointer;
+}
+#stop_dealing:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#stop_dealing_box {
+  display: none;
+  margin-top: 20px;
+  background-color: #eeeeee;
+  padding: 40px;
+}
+.stop_dealing_open {
+  display: block !important;
+}
+#mess_stop form > input[type="text"] {
+  width: 475px;
+  height: 40px;
+  padding-left: 10px;
+  float: left;
+  border: none;
+}
+#mess_stop form > input[type="text"]::placeholder {
+  font-size: 14px;
+  color: #ababab;
+  font-weight: 500;
+}
+#mess_stop form > input[type="submit"] {
+  width: 70px;
+  height: 40px;
+  color: white;
+  background-color: #4d4d4d;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  float: left;
+  border: none;
+}
+#mess_stop form > input[type="submit"]:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#stop_dealing_box > p {
+  color: #6b6b6b;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: justify;
+  margin-top: 15px;
+}
+.deal_finished {
+  width: 545px;
+  margin: 2rem auto 0;
+  background-color: #7d7d7d;
+  text-align: center;
+  padding: 15px 0;
+}
+.deal_finished p {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+}
+#rate_box {
+  background-color: #f5f5f5;
+  padding: 30px;
+}
+#rate_box > p:first-child {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 35px;
+  color: white;
+  background-color: #5c5c5c;
+  margin-bottom: 35px;
+}
+#rate_box .fit_image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+#rate_box > p:nth-of-type(2) {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #2e2e2e;
+}
+#rate_box > p:nth-of-type(3) {
+  color: #545454;
+  font-size: 14px;
+  text-align: center;
+}
+#rate_box > div:nth-of-type(2) {
+  padding: 35px 0 30px 315px;
+}
+#rate_box label > input {
+  display: none;
+}
+#rate_box label {
+  float: left;
+}
+#rate_box label > p {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: #2e2e2e;
+  width: 125px;
+}
+#rate_box label > p img {
+  width: 16px;
+  height: auto;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+#rate_box span:after, #rate_box span:before{
+	content: "";
+	display: block;
+  float: left;
+}
+#rate_box span:after {
+	width: 17px;
+	height: 17px;
+  background-image: url("../img/mypage/blog_radio.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 7px;
+}
+#rate_box span:before {
+	width: 9px;
+	height: 9px;
+  background-image: url("../img/mypage/blog_radio_check.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 4px;
+  left: 13px;
+  margin-left: -9px;
+  opacity: 0;
+}
+#rate_box label input:checked + span:before {
+	opacity: 1;
+}
+#rate_box textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  resize: vertical;
+}
+#rate_box > p:nth-of-type(4) {
+  color: #2e2e2e;
+  font-size: 14px;
+  margin-top: 5px;
+}
+#rate_box input[type="submit"] {
+  border: none;
+  width: 270px;
+  height: 50px;
+  margin: 30px auto;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #2e2e2e;
+  cursor: pointer;
+}
+#rate_box input[type="submit"]:hover {
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+
+/*----------- 購入希望者一覧 ------------*/
+#page_applicant .layout > dl {
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  text-align: center;
+  margin-bottom: 55px;
+}
+.appl_name, .appl_area, .appl_rate {
+  border-right: 1px solid #e1e1e1;
+}
+#page_applicant dt > dl, #page_applicant dd > dl {
+  display: flex;
+}
+.appl_name {
+  width: 27%;
+}
+.appl_area {
+  width: 20%;
+}
+.appl_rate{
+  width: 36%;
+}
+.appl_btn {
+  width: 17%!important;
+}
+.appl_btn .content_button {
+  padding: 5px 10px;
+}
+
+.list_cont .appl_name {
+  justify-content: flex-start !important;
+}
+.appl_name a {
+  display: flex;
+  align-items: center;
+}
+.sp_num {
+  display: none !important;
+}
+#page_applicant dl .fit_image {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+}
+#page_applicant dl p {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.appl_rate > p:nth-of-type(2) {
+  margin: 0 15px;
+}
+.appl_name p {
+  width: 150px;
+  text-align: justify;
+}
+#page_applicant .pager {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+#page_applicant #page_items {
+  margin: 2rem auto 20px;
+}
+#page_applicant #page_items .my_fish {
+  margin: 0 auto;
+  width: 80%;
+}
+#page_applicant #page_items .it_l {
+  width: 120px;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- 共通部分 ------------*/
+  .mp_cont {
+    padding-bottom: 1px;
+  }
+  .mainimg {
+    height: 125px;
+    background-image: url("../img/mypage/mypage_bg_sp.jpg");
+    background-position: 50% 20%;
+    margin-bottom: 90px;
+  }
+  .mainimg a {
+    display: none;
+  }
+  .my_img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: -30px;
+  }
+  .my_img .fit_image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+  .my_img p {
+    font-size: 13px;
+  }
+  .tab a {
+    width: auto;
+    height: auto;
+  }
+  .sell_btn {
+    width: 50px;
+    height: 50px;
+  }
+  .sell_btn img {
+    width: 50px;
+    height: 50px;
+  }
+  .up_wrap {
+    border: none;
+    padding: 0;
+  }
+  .up_form {
+    width: 100%;
+  }
+  .up_btns {
+    width: 245px;
+  }
+  .up_btns > input {
+    width: 245px;
+    height: 45px;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    float: none;
+  }
+  .up_btns > input:first-child {
+    background-image: url("../img/mypage/up_conf.png");
+    margin-bottom: 15px;
+  }
+  .up_btns > input:nth-child(2) {
+    background-image: url("../img/mypage/up_cancel.png");
+  }
+  .up_ess {
+    font-size: 12px;
+    line-height: 20px;
+    width: 40px;
+    margin-left: 10px;
+  }
+  #fake_box {
+    width: 200px;
+  }
+  .form_pic label > button {
+    width: 60px;
+    line-height: 40px;
+  }
+  .form_pic > p {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .link_profile {
+    display: none;
+  }
+  .user_bg {
+    height: 12.5rem;
+  }
+  .user_info {
+    margin-bottom: 5rem;
+  }
+  .user_info .fit_image {
+    top: -7.25rem;
+    width: 10rem;
+    height: 10rem;
+  }
+  .user_info .user_info_name {
+    padding-top: 3.776315rem;
+    font-size: 1.3rem;
+  }
+  .user_info .user_info_number {
+    padding-top: .776315rem;
+    font-size: 1.3rem;
+    line-height: 1;
+  }
+  .link_line {
+  padding: 2.595rem 0 3.495rem 0;
+  }
+  .link_line a {
+    padding: 1rem 1.7rem;
+    font-size: 1.3rem;
+  }
+  @media screen and (max-width: 374px) {
+    .link_line {
+      justify-content: space-around;
+    }
+    .link_line a {
+      padding: 1rem .4rem;
+    }
+  }
+
+  /*----------- ログイン ------------*/
+  #page_login .mp_cont {
+    padding-top: 50px;
+  }
+  #page_login h3 {
+    font-size: 23px;
+  }
+  .login_box {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: none;
+    padding: 35px 0;
+    margin-top: 3rem;
+  }
+  .login_box p {
+    margin-bottom: 10px;
+  }
+  #page_login .content_button {
+    width: calc(100% - 4rem);
+    max-width: 24.5rem;
+    line-height: 45px;
+  }
+  #page_login input {
+    width: calc(100% - 4rem);
+    max-width: 35rem;
+    height: 4.5rem;
+  }
+  #page_login hr {
+    margin: 20px 0;
+  }
+  .login_form {
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  #page_login .mp_cont > a {
+    margin: 0 10px;
+  }
+
+  /*----------- マイページトップ ------------*/
+  #page_mypage .user_info {
+    margin-bottom: 2.845rem;
+  }
+  #page_mypage .tab {
+    margin-bottom: 15px;
+  }
+  #page_mypage .mp_cont {
+    min-width: 290px;
+  }
+  .mpt_list {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+  .mp_fish_cont {
+    width: 110px;
+    float: none;
+    margin: 0 auto;
+  }
+  #page_mypage .mp_fish_cont > .fit_image {
+    width: 11rem;
+    height: 9rem;
+    margin-bottom: 5px;
+    background-color: #fff;
+  }
+  .mp_fish_cont > a {
+    display: none;
+  }
+  .mpt_table > a {
+    display: block;
+    color: white;
+    width: 100%;
+    line-height: 45px;
+    border-radius: 45px;
+    margin-top: 15px;
+  }
+  .mpt_table {
+    float: none;
+    width: 245px;
+    margin: 0 auto;
+  }
+  #page_mypage .it_l {
+    width: 100px;
+  }
+  .mpt_table td {
+    height: 20px;
+  }
+  .mpt_table tr > td:first-child {
+    text-align: right;
+  }
+  #page_mypage .tdd_title {
+    width: 245px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #page_mypage span {
+    width: 11.5px;
+    margin-right: 5px;
+  }
+  #page_mypage .price {
+    width: 11.5px;
+  }
+  #page_mypage .location {
+    width: 8.5px;
+  }
+  #page_mypage .clock {
+    width: 11.5px;
+  }
+  #page_mypage hr {
+    margin-top: 25px;
+    margin-bottom: 0px;
+  }
+  #page_mypage .mp_cont > a {
+    width: 245px;
+    line-height: 45px;
+    float: none;
+    margin: 40px auto;
+  }
+
+  /*----------- プロフィール編集 ------------*/
+  #page_profileedit .user_info {
+    margin-bottom: 0;
+  }
+  #page_profileedit .user_info_change {
+    flex-wrap: wrap;
+    padding-top: 5.75rem;
+  }
+  #page_profileedit .user_info_change .content_button {
+    width: 15.25rem;
+    padding: .6rem 1rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+  }
+  #page_profileedit .user_info_change .content_button.change_img_btn {
+    margin-left: .5rem;
+    margin-right: 0;
+    background-color: #079dd0;
+  }
+  #page_profileedit .identification_box {
+    margin-top: 1rem;
+  }
+
+  @media screen and (max-width: 360px) {
+    #page_profileedit .user_info_change {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    #page_profileedit .user_info_change .content_button {
+      margin-right: 0;
+    }
+    #page_profileedit .user_info_change .content_button:last-of-type {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
+  #page_profileedit .edit_form {
+    margin-top: 3.74rem;
+    border: 0;
+  }
+  #page_profileedit .edit_form input {
+    height: 3.7rem;
+    padding: 0 1.25rem;
+    font-size: 1.2rem;
+  }
+  #page_profileedit .edit_form select {
+    width: 100%;
+    height: 3.7rem;
+    padding: 0 6.2rem 0 1.25rem;
+    font-size: 1.2rem;
+  }
+  #page_profileedit .edit_form label {
+    margin-bottom: 1.45rem;
+  }
+  #page_profileedit .edit_form label span {
+    width: 8rem;
+    font-size: 1.1rem;
+  }
+  #page_profileedit .edit_form label span + input {
+    width: calc(100% - 8rem);
+  }
+  #page_profileedit .edit_form div + label {
+    margin-top: 1.74rem;
+  }
+  #page_profileedit .edit_form .edit_form_account span {
+    width: 7.85rem;
+  }
+  #page_profileedit .edit_form .edit_form_account span + input {
+    width: calc(100% - 7.85rem);
+  }
+  #page_profileedit .edit_form .edit_form_inner {
+    width: calc(100% - 5.9rem);
+  }
+  #page_profileedit .edit_form .edit_form_select {
+    width: calc(100% - 7.85rem);
+  }
+  #page_profileedit .edit_form .edit_form_select::before {
+    width: 4.95rem;
+
+  }
+  #page_profileedit .edit_form .edit_form_select::after {
+    right: 1.7rem;
+    width: 1.5rem;
+    height: .9rem;
+  }
+  #page_profileedit .edit_form .edit_form_split {
+    margin-top: 2.24rem;
+    margin-bottom: 1.04rem;
+  }
+  #page_profileedit .edit_form .edit_form_split::before {
+    width: .6rem;
+    height: 1.25rem;
+  }
+  #page_profileedit .edit_form .edit_form_split:first-of-type {
+    margin-top: 0;
+  }
+  #page_profileedit .edit_form .input_length_short {
+    width: 13rem;
+  }
+  #page_profileedit .edit_form .edit_form_select.input_length_short {
+    width: 13rem;
+  }
+  #page_profileedit .edit_form .content_button {
+    margin: 5rem auto 0 auto;
+  }
+  #page_profileedit .modal .modal_layout {
+    width: calc(100% - 3.8rem);
+  }
+  #page_profileedit .upload {
+    max-width: 33.386rem;
+    padding: 0 3rem 3.14rem 3rem;
+  }
+  #page_profileedit .upload .upload_drag {
+    display: none;
+  }
+  #page_profileedit .upload .upload_input > p {
+    padding-top: 3rem;
+    font-size: 1.4rem;
+  }
+  #page_profileedit .upload .upload_input > span {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+  }
+  #page_profileedit .upload .upload_input label {
+    height: 3.7rem;
+  }
+  #page_profileedit .upload .upload_input label p {
+    padding: .75rem 7rem .75rem 1rem;
+    font-size: 1.2rem;
+  }
+  #page_profileedit .upload .upload_input label::before {
+    width: 6rem;
+    padding: .75rem 0;
+    font-size: 1.2rem;
+  }
+
+  /*----------- プロフィール編集確認 ------------*/
+  #page_profileconfirm .user_info {
+    margin-bottom: 0;
+  }
+  #page_profileconfirm .user_info_change {
+    flex-wrap: wrap;
+    padding-top: 5.75rem;
+  }
+  #page_profileconfirm .user_info_change .content_button {
+    width: 15.25rem;
+    padding: .6rem 1rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+  }
+  #page_profileconfirm .user_info_change .content_button:last-of-type {
+    margin-left: .5rem;
+    margin-right: 0;
+    background-color: #079dd0;
+  }
+  @media screen and (max-width: 360px) {
+    #page_profileconfirm .user_info_change {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    #page_profileconfirm .user_info_change .content_button {
+      margin-right: 0;
+    }
+    #page_profileconfirm .user_info_change .content_button:last-of-type {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
+  #page_profileconfirm .edit_form {
+    margin-top: 3.74rem;
+    border: 0;
+  }
+  #page_profileconfirm .edit_form p {
+    width: calc(100% - 7.85rem);
+    font-size: 1.2rem;
+  }
+  #page_profileconfirm .edit_form label {
+    margin-bottom: 1.45rem;
+  }
+  #page_profileconfirm .edit_form label span {
+    width: 7.85rem;
+    font-size: 1.1rem;
+  }
+  #page_profileconfirm .edit_form div + label {
+    margin-top: 1.74rem;
+  }
+  #page_profileconfirm .edit_form .edit_form_account span {
+    width: 7.85rem;
+  }
+  #page_profileconfirm .edit_form .edit_form_inner {
+    width: calc(100% - 5.9rem);
+  }
+  #page_profileconfirm .edit_form .edit_form_select {
+    width: calc(100% - 7.85rem);
+  }
+  #page_profileconfirm .edit_form .edit_form_select::before {
+    width: 4.95rem;
+
+  }
+  #page_profileconfirm .edit_form .edit_form_select::after {
+    right: 1.7rem;
+    width: 1.5rem;
+    height: .9rem;
+  }
+  #page_profileconfirm .edit_form .edit_form_split {
+    margin-top: 2.24rem;
+    margin-bottom: 1.04rem;
+  }
+  #page_profileconfirm .edit_form .edit_form_split::before {
+    width: .6rem;
+    height: 1.25rem;
+  }
+  #page_profileconfirm .edit_form .edit_form_split:first-of-type {
+    margin-top: 0;
+  }
+  #page_profileconfirm .edit_form .edit_form_split + p {
+    width: 100%;
+  }
+  #page_profileconfirm .edit_form .content_button {
+    margin: 5rem auto 0 auto;
+    max-width: initial;
+  }
+  #page_profileconfirm .modal .modal_layout {
+    width: calc(100% - 3.8rem);
+  }
+  #page_profileconfirm .upload {
+    max-width: 33.386rem;
+    padding: 0 3rem 3.14rem 3rem;
+  }
+  #page_profileconfirm .upload .upload_drag {
+    display: none;
+  }
+  #page_profileconfirm .upload .upload_input > p {
+    padding-top: 3rem;
+    font-size: 1.4rem;
+  }
+  #page_profileconfirm .upload .upload_input > span {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+  }
+  #page_profileconfirm .upload .upload_input label {
+    height: 3.7rem;
+  }
+  #page_profileconfirm .upload .upload_input label p {
+    padding: .75rem 7rem .75rem 1rem;
+    font-size: 1.2rem;
+  }
+  #page_profileconfirm .upload .upload_input label::before {
+    width: 6rem;
+    padding: .75rem 0;
+    font-size: 1.2rem;
+  }
+
+  /*----------- ブログ管理 ------------*/
+  #page_blog .tab {
+    margin-bottom: 4rem;
+  }
+  #page_blog .content_button {
+    width: 245px;
+    line-height: 45px;
+    float: none;
+    margin: 15px auto;
+    font-weight: bold;
+  }
+  #page_blog table {
+    text-align: justify;
+    margin-bottom: 30px;
+    min-width: 280px;
+  }
+  #page_blog th {
+    width: 768px;
+    text-align: center;
+    height: 40px;
+  }
+  #page_blog td {
+    height: 30px;
+    padding: 0 1rem;
+    font-weight: 500;
+  }
+  .b_title {
+    border-bottom: none !important;
+    vertical-align: bottom;
+  }
+  .b_cate, .b_date, .b_stt {
+    border-top: none !important;
+    vertical-align: top;
+  }
+  .b_cate, .b_date {
+    border-right: none !important;
+  }
+  #page_blog .b_check {
+    width: 40px;
+  }
+  .b_cate {
+    width: 65px;
+  }
+  .b_stt {
+    width: 110px;
+    border-left: none !important;
+  }
+  #page_blog label, #page_blog input {
+    top: 35%;
+    left: 25%;
+  }
+  #page_blog span:after {
+    width: 20px;
+  	height: 20px;
+  }
+  #page_blog span:before {
+  	width: 20px;
+    height: 18px;
+  }
+
+  /*----------- 記事を投稿する ------------*/
+  #page_add {
+    background-color: #f8f8f8;
+  }
+  #page_add .tab {
+    margin-bottom: 4.1rem;
+  }
+  #page_add .mp_cont {
+    padding-bottom: 6rem;
+  }
+  #page_add dt {
+    font-size: 15px;
+  }
+  #page_add dd > input, #page_add textarea {
+    padding-left: 10px;
+  }
+  #page_add dd > input {
+    height: 45px;
+  }
+  #page_add dd > input::placeholder {
+    font-size: 13px;
+  }
+  #page_add dd {
+    margin-bottom: 30px;
+  }
+  #page_add dd:nth-of-type(2) {
+    padding: 0;
+    border: none;
+  }
+  .form_pic > p:first-child {
+    display: none;
+  }
+  .form_pic > p {
+    margin-top: 10px;
+  }
+  #page_add textarea {
+    height: 230px;
+    padding: 1rem;
+  }
+  #page_add textarea::placeholder {
+    font-size: 13px;
+  }
+  #page_add dd:nth-of-type(4) {
+    margin-bottom: 10px;
+  }
+  #page_add dd:nth-of-type(4) label {
+    margin-bottom: 20px;
+  }
+  #page_add form > input {
+    margin-top: 0;
+  }
+  #page_add #fake_box {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #page_add .tab_select {
+    background-color: #fff;
+  }
+
+  /*----------- 記事投稿完了 ------------*/
+  #page_addcomplete .tab {
+    margin-bottom: 4rem;
+  }
+  #page_addcomplete .ac_box {
+    padding: 5rem 2rem;
+  }
+  #page_addcomplete .ac_info > p:first-child,
+  #page_addcomplete .ac_info > p:nth-child(2) {
+    padding-left: 0;
+  }
+  .ac_box {
+    padding: 50px 0;
+  }
+  #page_addcomplete .acb_inner > a {
+    line-height: 4.5rem;
+  }
+  .acb_inner {
+    width: 100%;
+  }
+  .acb_inner > a:first-of-type {
+    float: none;
+  }
+  .acb_inner > a:nth-of-type(2) {
+    float: none;
+  }
+  .acb_inner > p {
+    margin-bottom: 20px;
+  }
+  .acb_inner > a {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .acb_inner > a:first-of-type {
+    margin-top: 35px;
+  }
+  #page_addcomplete .mp_cont {
+    padding-bottom: 6rem;
+  }
+  #page_addcomplete .mp_cont > a {
+    width: 230px;
+    margin-top: 30px;
+    line-height: 4.5rem;
+  }
+
+  /*----------- 領収証ダウンロード ------------*/
+  #page_receipt table {
+    margin-bottom: 70px;
+  }
+  #page_receipt table:first-of-type {
+    margin-top: 5rem;
+  }
+  #page_receipt th {
+    padding-bottom: 5px;
+  }
+  #page_receipt th > p {
+    font-size: 14px;
+  }
+  #page_receipt th > p:first-of-type {
+    padding-left: 1.5rem;
+  }
+  #page_receipt th > p:first-of-type::before {
+    top: .5rem;
+    left: 0;
+    width: .65rem;
+    height: 1.35rem;
+  }
+  #page_receipt th > p:first-of-type span {
+    display: none;
+  }
+  #page_receipt span > img {
+    width: 6px;
+    height: auto;
+    margin-bottom: 3px;
+    margin-right: 8px;
+  }
+  .rece_desc {
+    font-size: 11px !important;
+    color: #898989 !important;
+    font-weight: 400 !important;
+    border: none !important;
+    float: none;
+    padding-top: 7px;
+  }
+  #page_receipt td {
+    padding: 5px 0;
+  }
+  #page_receipt td > a {
+    font-size: 13px;
+  }
+
+  /*----------- 評価一覧 ------------*/
+  #page_grade .user_info {
+    margin-bottom: 3.55rem;
+  }
+  #page_grade .title_band {
+    padding: .9rem 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.4rem;
+  }
+  #page_grade .tab {
+    margin-bottom: 3rem;
+  }
+  #page_grade .tab .tab_baloon {
+    display: flex;
+  }
+  #page_grade .tab .tab_baloon_button {
+    padding: .65rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #page_grade .tab .tab_baloon_inner {
+    padding: 0 .9rem 0 1rem;
+  }
+  #page_grade .tab .tab_baloon_inner .fit_image {
+    width: 4rem;
+    height: 4rem;
+  }
+  #page_grade .grade::after {
+    width: .6rem;
+    height: 1.05rem;
+  }
+  #page_grade .grade p {
+    font-size: 1rem;
+    line-height: 3.33333333333333;
+  }
+  #page_grade .grade .grade_inner {
+    padding-top: 2.05rem;
+    padding-bottom: 1.17rem;
+  }
+  #page_grade .grade .grade_info {
+    width: calc(100% - 4rem);
+    padding-left: 1rem;
+    padding-right: 1.6rem;
+  }
+  #page_grade .grade .grade_name {
+    margin-top: -.2rem;
+    margin-bottom: .65rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #page_grade .grade .grade_day {
+    padding-left: 1.05rem;
+    margin-bottom: .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #page_grade .grade .grade_day::before {
+    width: .8rem;
+    height: .8rem;
+  }
+  #page_grade .grade .grade_value {
+    margin-bottom: .13rem;
+  }
+  #page_grade .grade .grade_value_icon {
+    padding-left: 1.05rem;
+    margin-right: .55rem;
+  }
+  #page_grade .grade .grade_value_good::before {
+    width: .8rem;
+    height: .8rem;
+  }
+  #page_grade .grade .grade_value_normal::before {
+    width: .8rem;
+    height: .8rem;
+  }
+  #page_grade .grade .grade_value_bad::before {
+    width: .75rem;
+    height: .85rem;
+  }
+  #page_grade .grade .grade_comment {
+    line-height: 1.55555555555556;
+  }
+  #page_grade .pager {
+    margin-bottom: 5rem;
+  }
+
+
+  /*----------- 釣魚アップロード/売買情報編集 ------------*/
+  #page_upload {
+    background-color: #f8f8f8;
+  }
+  #page_upload .mp_cont {
+    padding-bottom: 0;
+  }
+  #page_upload .up_form {
+    margin-bottom: 0;
+  }
+  .up_forms input, .up_forms textarea {
+    padding-left: 5px;
+  }
+  textarea {
+    padding-top: 5px;
+  }
+  .up_forms > dt {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .up_forms > dt:first-child {
+    margin-bottom: 5px;
+  }
+  #page_upload .up_form {
+    width: 100%;
+  }
+  #page_upload .up_forms textarea {
+    min-height: 13.5rem;
+  }
+  #page_upload input {
+    height: 40px;
+  }
+  .form_price input {
+    width: 177.5px;
+    margin-right: 10px;
+  }
+  .form_price p {
+    font-size: 13px;
+    line-height: 40px;
+  }
+  .up_forms dd {
+    margin-bottom: 25px;
+  }
+  .up_bottom {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 60px;
+  }
+  .up_bottom > a {
+    font-size: 13px;
+    font-weight: 500;
+    color: #8f8f8f;
+    float: left;
+    margin: 0 7px;
+  }
+  .uped_pic {
+    height: 74px;
+  }
+  .uppi_box {
+    width: 74px;
+    height: 74px;
+    margin-right: 20px;
+  }
+  .uppi_box .fit_image {
+    width: 74px;
+    height: 74px;
+  }
+  #page_upload .link_line {
+    display: flex;
+  }
+  #page_upload .up_btns {
+    width: 100%;
+    max-width: 24.5rem;
+  }
+  #page_upload .up_btns > input {
+    width: 100%;
+  }
+
+  /*----------- 商品一覧 ------------*/
+  #page_items .tab {
+    margin-bottom: 2rem;
+  }
+  #page_items .type_tab {
+    display: flex;
+    align-items: flex-start;
+  }
+  #page_items .type_tab a {
+    font-size: 10px;
+    margin-right: 10px;
+  }
+  #page_items .type_tab a:last-child {
+    margin-right: 0;
+  }
+  #page_items .mp_cont {
+    min-width: 290px;
+    padding-bottom: 60px;
+  }
+  #page_items .item_box {
+    width: 100%;
+  }
+  #page_items .my_fish {
+    width: 100%;
+    padding: 3rem 4.5rem 5rem;
+    margin-bottom: 15px;
+  }
+  #page_items .my_fish {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #page_items .my_fish:nth-of-type(odd){
+    margin-right: 0;
+  }
+  #page_items .it_cont {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #page_items .item_box .fit_image {
+    width: 11rem;
+    height: 9rem;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  #page_items .item_box .it_cont_l{
+    margin-bottom: 2rem;
+  }
+  #page_items table {
+    width: 100%;
+    margin-left: 0;
+  }
+  #page_items .tdd_title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  #page_items td {
+    padding: 0;
+    font-size: 13px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  #page_items .it_l {
+    width: 95px;
+  }
+  #page_items tr > td:first-child {
+    text-align: right;
+  }
+  #page_items table span {
+    width: 11.5px;
+    margin-right: 5px;
+    position: relative;
+    top: -2px;
+  }
+  #page_items .price {
+    width: 11.5px;
+    height: auto;
+  }
+  #page_items .location {
+    width: 8.5px;
+    height: auto;
+  }
+  #page_items .clock {
+    width: 11.5px;
+    height: auto;
+  }
+  .finish_cover {
+    width: 100%;
+    height: 100%;
+  }
+  .finish_cover p {
+    font-size: 18px;
+    line-height: 254px;
+  }
+  #page_items .links .content_button:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  /*----------- 釣魚アップロード確認画面 ------------*/
+  #page_uploadconfirm {
+    background-color: #f8f8f8;
+  }
+  #page_uploadconfirm .mp_cont {
+    padding-bottom: 5.8rem;
+  }
+  #page_uploadconfirm .tab {
+    margin-bottom: 3.2rem;
+  }
+  #page_uploadconfirm .up_wrap {
+    padding: 0;
+  }
+  .up_form > .fit_image {
+    display: none;
+  }
+  #page_uploadconfirm .up_form_slider .fit_image {
+    max-width: none;
+  }
+  .upconf_tt {
+    font-size: 13px;
+  }
+  .up_form > p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  #page_uploadconfirm .up_btns {
+    margin-top: 50px;
+  }
+  #page_uploadconfirm .up_form .up_form_image {
+    display: none;
+  }
+  #page_uploadconfirm .up_form_slider {
+    display: block;
+  }
+  #page_uploadconfirm .up_form .fit_image {
+    width: 100%;
+    height: 53.3333333333333vw;
+  }
+  .up_form_slider {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .up_form_slider .fit_image {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+  }
+  .up_form_slider .fit_image::before {
+    content:"";
+    display: block;
+    padding-top: 100%;
+  }
+  .up_form_slider button {
+    display: none !important;
+  }
+  .up_form_slider .slider_dots li {
+    padding: 1rem .4rem;
+  }
+  .up_form_slider .slider_dots button {
+    display: block !important;
+  }
+
+  /*----------- 釣魚アップロード完了 ------------*/
+  #page_uploadcompleted {
+    background-color: #f8f8f8;
+  }
+  #page_uploadcompleted .mp_cont > p {
+    font-size: 13px;
+    padding: 0;
+  }
+  #page_uploadcompleted .mp_cont > a {
+    width: 100%;
+    max-width: 24.5rem;
+    line-height: 45px;
+    margin: 40px auto 20px auto;
+  }
+  #page_uploadcompleted .tab {
+    margin-bottom: 4.95rem;
+  }
+
+  /*----------- 魚リクエスト ------------*/
+  #page_request .tab {
+    margin-bottom: 4rem;
+  }
+  #page_request {
+    background-color: white;
+  }
+  #page_request .mp_cont > a {
+    width: 245px;
+    line-height: 45px;
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  #page_request .layout > dl  {
+    border: none;
+    margin: 40px 0;
+    min-width: 280px;
+  }
+  #page_request, #page_applicant {
+    counter-reset: number 0;
+  }
+  /* #page_applicant #page_items {
+    margin-top: 2rem;
+  } */
+  .sp_num {
+    width: 100%;
+    display: block !important;
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+  }
+  /*
+  * changes has been made in attribute: color from White to #008cb8
+  * this will change back to white once rendering the javascript in
+  * wisher.blade.php and request_mypage_list.blade.php
+  */
+  .sp_num dt {
+    padding: 5px 0;
+    color: #008cb8;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #008cb8;
+  }
+  .sp_num dt::before {
+    counter-increment: number 1;
+    content: counter(number);
+  }
+  #page_request dl p {
+    font-size: 12px;
+  }
+  .pc_title {
+    display: none;
+  }
+  .sp_title {
+    display: flex !important;
+    width: 30%;
+    background-color: #f7f7f7;
+  }
+  .sp_cont {
+    width: 70%;
+  }
+  .list_cont {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .list_cont dt, .list_cont dd {
+    padding: 15px 7px;
+    font-size: 12px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: justify;
+    justify-content: flex-start;
+    padding-left: 15px !important;
+  }
+  .req_status div {
+    width: 97px;
+    line-height: 22px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .sp_cont, .sp_title {
+    border-left: 1px solid #e1e1e1;
+  }
+  .sp_cont {
+    border-right: 1px solid #e1e1e1;
+  }
+  #page_request .layout > dl > dd {
+    margin-bottom: 20px;
+  }
+  .list_cont a {
+    width: 200px!important;
+    line-height: 40px;
+    margin-right: 0;
+  }
+  .list_cont span {
+    font-size: 17px;
+  }
+  .list_cont:not(.applicant_list) dt:last-of-type {
+    width: 100%;
+    justify-content: center;
+    border: 1px solid #e1e1e1;
+    border-bottom: none;
+    border-top: none;
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .list_cont:not(.applicant_list) dd:last-of-type {
+    width: 100%;
+    justify-content: center;
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    padding-top: 10px;
+  }
+
+  #page_request .request .request_search_input {
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    display: inline-block;
+  }
+  #page_request .request .request_search_fish input {
+    margin-left: 0;
+  }
+  #page_request .request .request_search_area,
+  #page_request .request .request_search_detail,
+    #page_request .request .request_search_day {
+    margin: 1rem 0;
+  }
+  #page_request .request .request_search_area select,
+  #page_request .request .request_search_detail,
+  #page_request .request .request_search_day input {
+    width: 100%;
+  }
+
+  #page_request .request .request_search h3 {
+    font-size: 1.9rem;
+  }
+
+  #page_request .request .request_search .content_button {
+    width: 100%;
+    max-width: 22rem;
+}
+
+  /*----------- 魚リクエスト投稿 ------------*/
+  #page_addrequest .user_info {
+    margin-bottom: 2.845rem;
+  }
+  #page_addrequest .tab {
+    margin-bottom: 4.15rem;
+  }
+  #page_addrequest form {
+    padding: 0;
+    margin-bottom: 7rem;
+    border: none;
+  }
+  #page_addrequest form > p:nth-of-type(odd) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  #page_addrequest form > p img {
+    height: 20px;
+    margin-bottom: 3px;
+    margin-right: 7px;
+  }
+  #page_addrequest form > input[type="text"] {
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: 25px;
+    font-size: 13px;
+  }
+  #page_addrequest form > p:nth-of-type(2) {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    float: none;
+    margin-bottom: 20px;
+  }
+  #page_addrequest form > p:nth-of-type(2) > span {
+    font-size: 20px;
+  }
+  #page_addrequest form a {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+  #page_addrequest select {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+  }
+  #page_addrequest label {
+    width: 100%;
+    height: 40px;
+  }
+  #page_addrequest label::before {
+    height: 40px;
+  }
+  #page_addrequest label::after {
+    position: absolute;
+    top: 14px;
+  }
+  #page_addrequest form > input[type="button"] {
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  #page_addrequest label > select {
+    font-size: 1.4rem;
+  }
+
+  /*----------- 取引メッセージ詳細 ------------*/
+  #page_messagedetail .mp_cont {
+    min-width: 280px;
+    padding-top: 30px;
+  }
+  .mede_fishname {
+    width: 100%;
+    float: none;
+    margin: 10px auto;
+  }
+  .mede_fishname .content_fish_tag {
+    display: block;
+    margin-bottom: .5rem;
+  }
+  #page_messagedetail .mp_cont > .fit_image {
+    width: 100%;
+    height: 77.3333333333333vw;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .mess_table1 {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+  }
+  .mess_table1 th, .mess_table1 td {
+    display: block;
+  }
+  .mess_table1 th {
+    background-color: #008cb8;
+    color: white;
+    width: 100%;
+    padding: 5px 0;
+  }
+  .mess_table1 td {
+    padding: 10px 15px;
+  }
+  .mess_table1 td > p:first-child {
+    margin-bottom: 7px;
+  }
+  .mess_table1 td > a {
+    margin-bottom: 7px;
+  }
+  .mess_eval {
+    margin-bottom: 5px;
+  }
+  .message_cont {
+    padding: 0 10px 30px 10px;
+    margin: 30px 0;
+  }
+  .chat_box {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    overflow: scroll;
+  }
+  .chat_cont {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .chat_partner {
+    width: 70%;
+  }
+  .chpa_img {
+    margin-right: 10px;
+  }
+  .chpa_bll {
+    width: 70%;
+    float: left;
+  }
+  .chat_balloon {
+    padding: 10px 5px 10px 15px;
+  }
+  .chat_balloon p {
+    font-size: 13px;
+    word-break: break-all;
+  }
+  .chat_me {
+    max-width: 70%;
+    float: right;
+  }
+  .chat_me .chat_balloon {
+    width: 100%;
+  }
+  .chat_date {
+    text-align: center;
+    font-size: 14px;
+    color: #afafaf;
+    margin: 25px 0;
+  }
+  .chat_img {
+    padding: 0;
+    max-width: 395px !important;
+    max-height: 395px !important;
+    overflow: hidden;
+  }
+  .message_cont textarea {
+    width: 100%;
+  }
+  .message_cont label {
+    margin-bottom: 25px;
+  }
+  .message_cont label > p > span:nth-of-type(2) {
+    display: none;
+  }
+  .message_cont input[type="button"] {
+    width: 200px;
+    height: 45px;
+    margin: 0 auto;
+  }
+  .mesbtm_buy {
+    padding: 30px 0;
+  }
+  .mesbtm_buy p {
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 25px;
+  }
+  .mesbtm_buy span {
+    font-size: 41px;
+  }
+  .mesbtm_buy a {
+    font-weight: 500;
+    width: 200px;
+    line-height: 45px;
+  }
+  .mesbtm_sell {
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+  .mesbtm_sell > p {
+    font-size: 24px;
+  }
+  .mesbtm_sell > table {
+    width: calc(100% - 2rem);
+  }
+  .mesbtm_sell > table th, .mesbtm_sell > table td {
+    display: block;
+    width: 100%;
+  }
+  #mess_stop {
+    width: 100%;
+    margin-top: 30px;
+  }
+  #stop_dealing_box {
+    padding: 20px 0px;
+  }
+  #stop_dealing_box form {
+    width: 280px;
+    margin: 0 auto;
+  }
+  #mess_stop form > input[type="text"] {
+    width: 235px;
+    height: 40px;
+    padding-left: 5px;
+  }
+  #mess_stop form > input[type="text"]::placeholder {
+    font-size: 12px;
+  }
+  #mess_stop form > input[type="submit"] {
+    width: 45px;
+    height: 40px;
+    font-size: 12px;
+  }
+  #stop_dealing_box > p {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+  .deal_finished {
+    width: 100%;
+  }
+  #rate_box {
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+  }
+  #rate_box > p:first-child {
+    margin-bottom: 25px;
+  }
+  #rate_box > p:nth-of-type(2) {
+    margin-top: 10px;
+  }
+  #rate_box > div:nth-of-type(2) {
+    padding: 0;
+    width: 100px;
+    margin: 0 auto;
+  }
+  #rate_box label {
+    float: none;
+  }
+  #rate_box label > p {
+    width: 125px;
+    margin: 15px 0;
+  }
+  #rate_box span:after {
+    margin-right: 20px;
+  }
+  #rate_box input[type="submit"] {
+    width: 200px;
+    height: 45px;
+  }
+
+  /*----------- 購入希望者一覧 ------------*/
+
+  #page_applicant .layout > dl {
+    border: none;
+  }
+  .appl_btn {
+    width: 100%!important;
+  }
+  dd.applicant_list_item {
+    margin-bottom: 2rem;
+  }
+}

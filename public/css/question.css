@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ よくある質問  #page_question
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- よくある質問 ------------*/
+#page_question .faq {
+  padding-top: 6rem;
+}
+#page_question .faq_line:first-of-type {
+  margin-top: 0;
+}
+#page_question .faq_line:last-of-type {
+  margin-bottom: 8rem;
+}
+#page_question .tab_baloon {
+  margin-bottom: 9.4rem;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- よくある質問 ------------*/
+  #page_question .title {
+    margin-bottom: 0;
+  }
+  #page_question .faq {
+    padding-top: 4.35rem;
+  }
+  #page_question .tab .tab_select {
+    padding-bottom: 2.5rem;
+  }
+}

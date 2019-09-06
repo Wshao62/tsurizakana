@@ -1,0 +1,1129 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ 売魚一覧  #page_fish
+→ 売魚詳細  #page_fishdetail
+→ 購入確認  #page_fishbuy
+→ 決済完了  #page_fishcomplete
+
+ =======================================
+  PC
+======================================= */
+select { height: 2.8rem; }
+
+.title-simple h2 {
+  font-size: 3.3rem;
+  padding: 8rem 0 3.9rem 0;
+  letter-spacing: .24em;
+  display: block;
+  color: #4a4a4a;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1;
+}
+.message {
+  padding-top: .25rem;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.92857142857143;
+  word-break: break-all;
+}
+.message p {
+  color: #2e2e2e;
+}
+.message p + p {
+  padding-top: 1.5rem;
+}
+.fish {
+  margin-top: 3.25rem;
+  margin-bottom: 19rem;
+  font-size: 1.4rem;
+}
+.fish .fish_search {
+  display: flex;
+  margin-bottom: 2.4rem;
+}
+.fish .fish_radio {
+  margin: 0 0 0 auto;
+}
+.fish .fish_radio input {
+  margin-right: .8rem;
+}
+.fish .fish_radio label + label {
+  margin-left: 6rem;
+}
+.fish .fish_table {
+  width: 100%;
+  text-align: center;
+  letter-spacing: .12em;
+  font-size: 1.4rem;
+}
+.fish th,
+.fish td {
+  border-left: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+}
+.fish td {
+  vertical-align: top;
+}
+.fish thead th {
+  padding: 1.15rem 1rem;
+  color: #fff;
+  background-color: #008cb8;
+  font-weight: normal;
+}
+.fish thead th:first-of-type {
+  width: 47.1428571428572%;
+}
+.fish thead th:nth-of-type(2) {
+  width: 26.42857142857143%;
+}
+.fish thead th:nth-of-type(3) {
+  width: 26.42857142857143%;
+}
+.fish tbody tr {
+  border-bottom: 1px solid #dcdcdc;
+}
+.fish tbody th > div,
+.fish tbody td > div {
+  word-break: break-all;
+}
+.fish tbody th + td {
+  padding: 2rem;
+}
+.fish tbody th:not(:first-of-type) {
+  display: none;
+}
+.fish .fish_table_status_fish > div {
+  display: flex;
+}
+.fish .fish_table_status_fish .fish_table_status_name {
+  width: calc(100% - 11rem);
+  padding-left: 2.1rem;
+  text-align: left;
+  font-weight: bold;
+}
+.fish .fish_tabel_tax,
+.fish .fish_tabel_total {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  border-width: 0 1px 1px 1px;
+  word-break: break-all;
+}
+.fish .fish_tabel_tax {
+  padding: 1.4rem 1.8rem;
+  text-align: right;
+}
+.fish .fish_tabel_total {
+  padding: 1.05rem 1.8rem;
+  font-size: 1.5rem;
+  text-align: right;
+}
+.fish .fish_tabel_total span {
+  font-size: 2.7rem;
+  color: #1c2e60;
+  font-weight: bold;
+}
+.fish .fit_image {
+  width: 11rem;
+  height: 11rem;
+}
+.fish .fish_link {
+  margin-top: 5rem;
+  text-align: center;
+}
+.fish .content_button_arrow {
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+  margin-bottom: 0.8rem;
+  color: #fff;
+  background-color: #4d4d4d;
+}
+.fish .fish_link p {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/*----------- 売魚一覧 ------------*/
+#page_fish .search_area {
+  margin-top: 6.3rem;
+  display: flex;
+  justify-content: space-around;
+}
+#page_fish .search_area label {
+  width: 40%;
+}
+#page_fish .search_area input {
+    width: 100%;
+    padding: 1.25rem 2.1rem;
+    border-radius: 8px;
+    font-size: 1.4rem;
+}
+#page_fish .search_submit {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 5rem;
+  background: #4d4d4d;
+}
+#page_fish .list_area .list_area_top {
+  font-size: 1.4rem;
+}
+#page_fish .list_area .list_area_narrow {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 .7rem 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+#page_fish .list_area .list_area_result span {
+  font-size: 1.96rem;
+  font-weight: bold;
+}
+#page_fish .list_area .list_area_sort {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+#page_fish .list_area .list_area_sort_area {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  margin-right: 1.5rem;
+  border-right: 1px solid #dcdcdc;
+}
+#page_fish .list_area .list_area_sort_area label {
+  position: relative;
+}
+#page_fish .list_area .list_area_sort_area label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 2.8rem;
+  background-color: #005e89;
+  pointer-events: none;
+}
+#page_fish .list_area .list_area_sort_area label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  border-style: solid;
+  border-width: .7rem .55rem 0 .55rem;
+  border-color: #eee transparent transparent transparent;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+#page_fish .list_area .list_area_sort_area select {
+  padding: 0 4.7rem 0 1.2rem;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-width: 1px 0 1px 1px;
+}
+#page_fish .list_area .list_area_sort_area:last-of-type {
+  padding-left: 3rem;
+  padding-right: 0;
+  border: 0;
+}
+#page_fish .list_area .list_area_sort_area:last-of-type label {
+  width: 19.8rem;
+}
+#page_fish .list_area .list_area_sort_area:last-of-type select {
+  width: 19.8rem;
+}
+#page_fish .list_area .list_area_sort_area p {
+  padding-right: 1rem;
+}
+#page_fish .list_area .list_area_display {
+  display: flex;
+  padding: 1.01rem 0 5.41rem 0;
+}
+#page_fish .list_area .list_area_display p:last-of-type {
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+#page_fish .pickup {
+  padding-top: 0;
+  padding-bottom: 5.8rem;
+}
+#page_fish .pickup .pickup_inner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+#page_fish .pickup .pickup_card {
+  width: 	23.46938775510204%;
+  margin: 0 2.04081632653066% 2rem 0;
+  align-self: flex-start;
+}
+#page_fish .pickup .pickup_card:hover {
+  box-shadow: none;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#page_fish .pickup .pickup_card:nth-of-type(4n) {
+  margin-right: 0;
+}
+#page_fish .pickup_textarea .content_fish_tag {
+  font-size: 11px;
+  padding: .3rem .7rem;
+}
+@media only screen and (max-width: 1229px) {
+  #page_fish .pickup .pickup_card .fit_image {
+    height: 15rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #page_fish .pickup .pickup_card .fit_image {
+    height: 14.866vw;
+  }
+}
+#page_fish .pager {
+  margin-top: 3rem;
+}
+
+/*----------- 売魚詳細 ------------*/
+#page_fishdetail .fish_detail {
+  margin-top: 8rem;
+  word-break: break-all;
+}
+#page_fishdetail .fish_detail .fish_detail_explain {
+  display: flex;
+}
+#page_fishdetail .fish_detail .fish_detail_slider {
+  width: 45vw;
+  height: 45vw;
+  max-width: 45rem;
+  max-height: 45rem;
+}
+#page_fishdetail .fish_detail .fish_detail_slider .fit_image {
+  width: 45rem;
+  height: 45rem;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_slider .fit_image {
+    width: 45vw;
+    height: 45vw;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_thumb {
+  width: 23.9rem;
+  height: 6rem;
+  margin-top: 2rem;
+}
+#page_fishdetail .fish_detail .fish_detail_thumb .fit_image {
+  width: 6rem;
+  max-width: 6rem;
+  height: 6rem;
+}
+#page_fishdetail .fish_detail .fish_detail_thumb .slick-current {
+  display: none;
+}
+#page_fishdetail .fish_detail .fish_detail_right {
+  width: calc(100% - 45rem);
+  padding-left: 3.9rem;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_right {
+    width: calc(100% - 45vw);
+    padding-left: 2rem;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e2e2e;
+  margin-bottom: 1rem;
+}
+#page_fishdetail .fish_detail .fish_detail_table {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+#page_fishdetail .fish_detail .fish_detail_table tr {
+  border: 1px solid #e5e5e5;
+}
+#page_fishdetail .fish_detail .fish_detail_table th {
+  width: 35%;
+  padding: 1.3rem 2.5rem 1.3rem 3rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_table th {
+    padding: 1.3rem 1rem 1.3rem 1rem;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_table td {
+  width: calc(100% - 35%);
+}
+#page_fishdetail .fish_detail .fish_detail_table td > div {
+  padding: 1.35rem 2.9rem 1.35rem 2.9rem;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_table td > div {
+    padding: 1.35rem 1rem 1.35rem 1rem;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_table td > .fish_detail_profile {
+  padding: 1.405rem 2.9rem 1.51rem 2.9rem;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_table td > .fish_detail_profile {
+    padding: 1.405rem 1rem 1.51rem 1rem;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_profile p {
+  color: #2e2e2e;
+  font-weight: 500;
+}
+#page_fishdetail .fish_detail .fish_detail_profile > p {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+#page_fishdetail .fish_detail .fish_detail_profile > a {
+  position: relative;
+  display: block;
+  padding-left: 1.3rem;
+  margin-top: .905rem;
+  margin-bottom: 1.51rem;
+  color: #2e2e2e;
+  vertical-align: middle;
+}
+#page_fishdetail .fish_detail .fish_detail_profile > a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: .6rem;
+  height: 1rem;
+  background: url(../img/icon/icon_arrow_right_black.png) no-repeat;
+  background-size: cover;
+  transform: translateY(-50%);
+}
+#page_fishdetail .fish_detail .fish_detail_value {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_value {
+    display: block;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_value > p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 2.1rem;
+  padding-right: 2rem;
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .fish_detail .fish_detail_value > p {
+    padding-right: 0;
+  }
+}
+#page_fishdetail .fish_detail .fish_detail_value > p::before {
+  content: '';
+  position: absolute;
+  top: .4rem;
+  left: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#page_fishdetail .fish_detail .fish_detail_value_good::before {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icon/icon_circle.png);
+}
+#page_fishdetail .fish_detail .fish_detail_value_normal::before {
+  width: 1.6rem;
+  height: 1.6rem;
+  background-image: url(../img/icon/icon_triangle.png);
+}
+#page_fishdetail .fish_detail .fish_detail_value_bad::before {
+  width: 1.5rem;
+  height: 1.6rem;
+  background-image: url(../img/icon/icon_closs_black.png);
+}
+#page_fishdetail .fish_detail .fish_detail_price {
+  margin-top: 3.335rem;
+  margin-bottom: .835rem;
+  text-align: center;
+  font-size: 1.9rem;
+  color: #2e2e2e;
+}
+#page_fishdetail .fish_detail .fish_detail_price_value {
+  font-size: 3.7rem;
+  font-weight: bold;
+  color: #1c2e60;
+}
+#page_fishdetail .fish_detail .fish_detail_price_tax {
+  font-size: 1.6rem;
+  color: #a6a6a6;
+}
+#page_fishdetail .fish_detail .fish_detail_text {
+  margin-top: 5.25rem;
+}
+#page_fishdetail .fish_detail .fish_detail_text > p:first-of-type {
+  padding-bottom: .95rem;
+  margin-bottom: 1.3rem;
+  line-height: 1.35;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+}
+#page_fishdetail .fish_detail .fish_detail_text > p:not(:first-of-type) {
+  font-size: 1.4rem;
+  line-height: 1.71428571428571;
+}
+
+/* 詳細ページ　書き込み項目 */
+button#saveComment[disabled]{
+  background: gray;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+#page_fishdetail .fish_detail .user_comment {
+  margin-top: 5.25rem;
+}
+#page_fishdetail .fish_detail .user_comment > p:first-of-type {
+  padding-bottom: .95rem;
+  margin-bottom: 5.25rem;
+  line-height: 1.35;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2e2e2e;
+  border-bottom: 1px solid #eee;
+}
+#page_fishdetail .fish_detail .user_comment {
+  width: 100%;
+  padding-bottom: 70px;
+}
+#page_fishdetail .fish_detail .usrcmmnt_list_container{
+  width: 100%;
+  max-height: 500px;
+  padding-right: 15px;
+  overflow-y: scroll;
+}
+#page_fishdetail .fish_detail .usrcmmnt_list {
+  width: 100%;
+}
+#page_fishdetail .fish_detail .usrcmmnt.flex_box {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+#page_fishdetail .fish_detail .usrcmmnt_pic {
+  width: 60px;
+}
+#page_fishdetail .fish_detail .usrcmmnt_pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+#page_fishdetail .fish_detail .usrcmmnt_area {
+  width: calc(100% - 100px);
+}
+#page_fishdetail .fish_detail .usrcmmnt_name {
+  margin-bottom: 7px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #171717;
+}
+#page_fishdetail .fish_detail .usrcmmnt_box {
+  width: 100%;
+  padding: 19px 28px 24px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+}
+#page_fishdetail .fish_detail .usrcmmnt_text {
+  margin-bottom: 5px;
+  line-height: 2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #39393a;
+}
+#page_fishdetail .fish_detail .usrcmmnt_time {
+  font-size: 13px;
+  color: #bdbdbd;
+}
+#page_fishdetail .fish_detail .usrcmmnt_time img {
+  width: 14px;
+  height: auto;
+  position: relative;
+  bottom: 2px;
+  margin-right: 8px;
+}
+#page_fishdetail .fish_detail .comment_write {
+  width: 100%;
+  margin-top: 27px;
+}
+#page_fishdetail .fish_detail .comment_write textarea {
+  width: 100%;
+  height: 126px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  resize: none;
+  border: 1px solid #dcdcdc;
+  font-size: 15px;
+  font-weight: 500;
+}
+#page_fishdetail .fish_detail .comment_write textarea::placeholder {
+  color: #bdbdbd;
+}
+
+#page_fishdetail .pickup {
+  padding: 0 2.2rem 3rem 2.2rem;
+  margin-top: 7.8rem;
+  margin-bottom: 15.5rem;
+}
+#page_fishdetail .pickup .pickup_recommend {
+  padding-top: 2.65rem;
+  padding-bottom: 1.45rem;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #2e2e2e;
+}
+#page_fishdetail .pickup .pickup_inner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+#page_fishdetail .pickup .pickup_card {
+  width: 	23.397435897435898%;
+  margin: 0 2.13675213675227% 0 0;
+}
+#page_fishdetail .pickup .pickup_card:hover {
+  box-shadow: none;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+#page_fishdetail .pickup .pickup_card:nth-of-type(4n) {
+  margin-right: 0;
+}
+#page_fishdetail .pickup .pickup_card .fit_image {
+  max-width: none;
+}
+@media only screen and (max-width: 1229px) {
+  #page_fishdetail .pickup .pickup_card .fit_image {
+    height: 15rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  #page_fishdetail .pickup .pickup_card .fit_image {
+    height: 14.866vw;
+  }
+}
+
+#page_fishdetail .content_button_arrow {
+  width: calc(100% - 2rem);
+  max-width: 38rem;
+  padding-top: 1.35rem;
+  padding-bottom: 1.35rem;
+  color: #fff;
+  font-size: 1.4rem;
+}
+.others {
+  text-align: center;
+  background-color: #fafafa;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  padding: 60px 0;
+}
+.others p {
+  color: #4a4a4a;
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.others .content_button_arrow {
+  width: 320px !important;
+  background-color: #7d7d7d;
+}
+
+/*----------- 購入確認 ------------*/
+#page_fishbuy .fish {
+  margin-top: 0;
+}
+#page_fishbuy .fish thead th:first-of-type {
+  width: 43%;
+}
+#page_fishbuy .fish thead th:nth-of-type(2) {
+  width: 17%;
+}
+#page_fishbuy .fish thead th:nth-of-type(3) {
+  width: 20%;
+}
+#page_fishbuy .fish thead th:nth-of-type(4) {
+  width: 20%;
+}
+#page_fishbuy select {
+  width: 92px;
+  height: 27px;
+  border-radius: 3px;
+  border: 1px solid #e5e5e5;
+  padding-left: 39px;
+  font-size: 14px;
+  color: #2e2e2e;
+  cursor: pointer;
+}
+#page_fishbuy label {
+  position: relative;
+}
+#page_fishbuy label::before {
+  display: block;
+  content: "";
+  width: 13px;
+  height: 8px;
+  background-image: url("../img/fish/fishbuy_select.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 7px;
+  right: 8px;
+}
+#page_fishbuy .fish .content_button_arrow {
+  background-color: #f2b42b;
+}
+#page_fishbuy .fish .content_button_arrow:nth-of-type(2) {
+  background-color: #4d4d4d;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+  select { height: 2.35rem; }
+
+  .title-simple h2 {
+    font-size: 2.3rem;
+    padding: 4.2rem 0 3.95rem 0;
+  }
+  .message {
+    padding-top: .5rem;
+    font-size: 1.3rem;
+    line-height: 1.84615384615385;
+  }
+  .message p + p {
+    padding-top: 1.85rem;
+  }
+
+  .fish {
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+    font-size: 1.2rem;
+  }
+  .fish .fish_search {
+    display: none;
+  }
+  .fish th,
+  .fish td {
+    border-left: 0;
+    border-right: 0;
+    font-size: 1.2rem;
+  }
+  .fish th {
+    font-weight: normal;
+  }
+  .fish tbody th + td {
+    padding: 1.4rem;
+    text-align: right;
+  }
+  .fish thead {
+    display: none;
+  }
+  .fish tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    border-bottom: 0;
+  }
+  .fish tbody td {
+    display: block;
+  }
+  .fish tbody th > div,
+  .fish tbody td > div {
+    margin: 0;
+  }
+  .fish tbody th > div {
+    padding-top: 1.45rem;
+    padding-bottom: 1.45rem;
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+  }
+  .fish tbody th:not(:first-of-type) {
+    display: flex;
+    align-items: center;
+    width: 9.75rem;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #f7f7f7;
+    text-align: left;
+    line-height: 1.125;
+  }
+  .fish tbody td {
+    width: calc(100% - 9.75rem);
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    text-align: left;
+  }
+  .fish .fish_table_number {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    color: #fff;
+    background-color: #008cb8;
+  }
+  .fish .fish_table_number > div {
+    margin: 0;
+    padding: .5rem 1rem;
+  }
+  .fish tbody th.fish_table_status {
+    align-items: flex-start;
+  }
+  .fish .fish_table_status_fish {
+    padding: 1.5rem;
+  }
+  .fish .fish_table_status_fish .fish_table_status_name {
+    width: calc(100% - 8rem);
+    padding-left: 1.05rem;
+    font-size: 1.3rem;
+  }
+  .fish .fish_table_price + td,
+  .fish .fish_table_subtotal + td {
+    line-height: 1.125;
+  }
+  .fish .fish_tabel_tax {
+    display: none;
+  }
+  .fish .fish_tabel_total {
+    padding: .95rem 1rem;
+    margin-top: 2rem;
+    background-color: #626262;
+    line-height: 1.125;
+  }
+  .fish .fish_tabel_total p,
+  .fish .fish_tabel_total span  {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  .fish .fish_tabel_total span {
+    font-weight: normal;
+  }
+  .fish .fish_link {
+    display: block;
+  }
+  .fish .fit_image {
+    width: 8rem;
+    height: 8rem;
+  }
+  .fish .content_button_arrow {
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+    margin: 0 auto;
+    font-size: 1.3rem;
+  }
+  .fish .content_button_arrow:nth-of-type(2) {
+    margin-top: 1.5rem;
+    margin-left: auto;
+  }
+  .layout_pickup {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /*----------- 売魚一覧 ------------*/
+  #page_fish .search_area {
+    margin-top: 4.55rem;
+    display: block;
+  }
+  #page_fish .list_area .list_area_top {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    background-color: #f7f7f7;
+  }
+  #page_fish .list_area .list_area_narrow {
+    display: block;
+    padding: 1.3rem 0 2rem 0;
+    border-bottom: 0;
+  }
+  #page_fish .list_area .list_area_result {
+    padding-bottom: .9rem;
+    text-align: center;
+  }
+  #page_fish .list_area .list_area_result span {
+    font-size: 1.82rem;
+  }
+  #page_fish .list_area .list_area_sort {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width:374px) {
+    #page_fish .list_area .list_area_sort {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  #page_fish .list_area .list_area_sort_area {
+    padding-right: 0;
+    border: 0;
+    margin-right: 0;
+    margin-bottom: .5rem;
+  }
+  #page_fish .list_area .list_area_sort_area:last-of-type {
+    padding-left: 1rem;
+  }
+  @media screen and (max-width:374px) {
+    #page_fish .list_area .list_area_sort_area:last-of-type {
+      padding-left: 2rem;
+      margin-top: 1rem;
+    }
+  }
+  #page_fish .list_area .list_area_sort_area p {
+    padding-right: .8rem;
+  }
+  #page_fish .list_area .list_area_sort_area select {
+    padding: 0 3.925rem 0 1.025rem;
+  }
+  #page_fish .list_area .list_area_sort_area:last-of-type label,
+  #page_fish .list_area .list_area_sort_area:last-of-type select {
+    width: 13.35rem;
+  }
+  #page_fish .list_area .list_area_sort_area label::before {
+    width: 2.9rem;
+    height: 2.35rem;
+  }
+  #page_fish .list_area .list_area_sort_area label::after {
+    right: .95rem;
+    border-width: .55rem .45rem 0 .45rem;
+  }
+  #page_fish .list_area .list_area_display {
+    display: none;
+  }
+  #page_fish .list_area .list_area_bottom {
+    background-color: #fff;
+  }
+  #page_fish .pickup {
+    padding-top: 4.85rem;
+    padding-bottom: 1.7rem;
+  }
+  #page_fish .pickup .pickup_card {
+    width: 47.9970326409496%;
+    margin: 0 4.00593471810089% 1.4rem 0;
+  }
+  #page_fish .pickup .pickup_card:nth-of-type(2n) {
+    margin: 0 0 1.4rem 0;
+  }
+  #page_fish .pickup .pickup_card .fit_image {
+    height: 27.7792vw;
+  }
+  #page_fish .pickup .pickup_textarea {
+    padding: .9485rem 1.3rem .944885rem 1.3rem;
+  }
+  #page_fish .pickup .pickup_textarea p {
+    font-size: 1.3rem;
+    line-height: 1.46384615384615;
+  }
+  #page_fish .pickup .pickup_title_middle {
+    padding-bottom: .297rem;
+  }
+  #page_fish .pickup .pickup_tax {
+    font-size: 1.04rem;
+  }
+  #page_fish .pickup p.pickup_location {
+    padding-top: .916575rem;
+    font-size: 1rem;
+  }
+  #page_fish .pickup p.pickup_time {
+    padding-top: .51296rem;
+    font-size: 1.1rem;
+  }
+  #page_fish .pickup .pickup_textarea .icon_before_location::before {
+    width: .75rem;
+    height: 1.2rem;
+  }
+  #page_fish .pickup .pickup_textarea .icon_before_clock::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  #page_fish .pager {
+    margin-top: 2.1rem;
+  }
+
+  /*----------- 売魚詳細 ------------*/
+  #page_fishdetail .fish_detail {
+    margin-top: 4.55rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_explain {
+    display: block;
+  }
+  #page_fishdetail .fish_detail .fish_detail_slider {
+    width: 100%;
+    height: 89.8666666666667vw;
+    max-width: none;
+    max-height: none;
+  }
+  #page_fishdetail .fish_detail .fish_detail_slider .fit_image {
+    width: 100%;
+    height: 89.8666666666667vw;
+  }
+  #page_fishdetail .fish_detail .fish_detail_thumb {
+    margin-top: 1rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_title {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  #page_fishdetail .fish_detail .fish_detail_title .content_fish_tag{
+    display: block;
+    margin-bottom: .5rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_right {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_table {
+    font-size: 1.3rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_table th {
+    width: 12rem;
+    padding: .95rem 1rem .95rem 1rem;
+    font-size: 1.3rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_table td {
+    width: calc(100% - 12rem);
+  }
+  #page_fishdetail .fish_detail .fish_detail_table td > div {
+    padding: .95rem 2rem .95rem 2rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_table td > .fish_detail_profile {
+    padding: .95rem 2rem .95rem 2rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_profile > p {
+    font-size: 1.5rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_profile > a {
+    margin-top: .8rem;
+    margin-bottom: 1.2rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_value > p::before {
+    top: .3rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_price {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.7rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_price_value {
+    font-size: 3.3rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_price_tax {
+    font-size: 1.4rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_text {
+    margin-top: 3.185rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_text > p:first-of-type {
+    padding-bottom: .985rem;
+    margin-bottom: 2.525rem;
+    font-size: 1.8rem;
+  }
+  #page_fishdetail .fish_detail .fish_detail_text > p:not(:first-of-type) {
+    font-size: 1.3rem;
+    line-height: 1.73076923076923;
+  }
+
+
+  #page_fishdetail .pickup {
+    padding: 0 1.9rem .7rem 1.9rem;
+    margin-top: 2.525rem;
+    margin-bottom: 4.15rem;
+  }
+  #page_fishdetail .pickup .pickup_recommend {
+    padding-top: 2.05rem;
+    padding-bottom: 1.95rem;
+    font-size: 1.8rem;
+  }
+  #page_fishdetail .pickup .pickup_card {
+    width: 47.9970326409496%;
+    margin: 0 4.00593471810089% 1.4rem 0;
+  }
+  #page_fishdetail .pickup .pickup_card:nth-of-type(2n) {
+    margin: 0 0 1.4rem 0;
+  }
+  #page_fishdetail .pickup .pickup_card .fit_image {
+    height: 27.7792vw;
+  }
+  #page_fishdetail .pickup .pickup_textarea {
+    padding: .9485rem 1.3rem .944885rem 1.3rem;
+  }
+  #page_fishdetail .pickup .pickup_textarea p {
+    font-size: 1.3rem;
+    line-height: 1.46384615384615;
+  }
+  #page_fishdetail .pickup .pickup_title_middle {
+    padding-bottom: .297rem;
+  }
+  #page_fishdetail .pickup .pickup_tax {
+    font-size: 1.04rem;
+  }
+  #page_fishdetail .pickup p.pickup_location {
+    padding-top: .916575rem;
+    font-size: 1rem;
+  }
+  #page_fishdetail .pickup p.pickup_time {
+    padding-top: .51296rem;
+    font-size: 1.1rem;
+  }
+  #page_fishdetail .pickup .pickup_textarea .icon_before_location::before {
+    width: .75rem;
+    height: 1.2rem;
+  }
+  #page_fishdetail .pickup .pickup_textarea .icon_before_clock::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  #page_fishdetail .content_button_arrow {
+    width: calc(100% - 4rem);
+    max-width: 29.7rem;
+    padding-top: 1.15rem;
+    padding-bottom: 1.15rem;
+    font-size: 1.3rem;
+  }
+  .others {
+    margin-top: 40px;
+    padding: 40px 0;
+  }
+  .others p {
+    font-size: 18px;
+  }
+  .others .content_button_arrow {
+    width: 242px !important;
+  }
+
+  /*----------- 購入確認 ------------*/
+  #page_fishbuy h2 {
+    padding-bottom: 20px;
+  }
+}

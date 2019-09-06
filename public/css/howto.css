@@ -1,0 +1,202 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ サービスの始め方  #page_howto
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- サービスの始め方 ------------*/
+#page_howto .faq {
+  padding-top: 7.9rem;
+}
+#page_howto .tab .tab_baloon_button {
+  width: 42rem;
+  padding: 2.15rem 1rem;
+  font-size: 2rem;
+  line-height: 1.35;
+}
+#page_howto .tab .tab_baloon_button + .tab_baloon_button {
+  margin-left: 2.1rem;
+}
+#page_howto .tab .tab_baloon_button.current::before {
+  border-width: 1.6rem 1.4rem 0 1.4rem;
+}
+#page_howto .tab .tab_baloon_title {
+  padding-top: 10.4rem;
+  padding-bottom: 6rem;
+  font-size: 3.4rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: .3em;
+  line-height: 1;
+  color: #2e2e2e;
+}
+#page_howto .box {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border: 5px solid #e5e5e5;
+  background-color: #fff;
+}
+#page_howto .box + .box {
+  position: relative;
+  margin-top: 6.5rem;
+}
+#page_howto .box:last-of-type {
+  margin-bottom: 10.8rem;
+}
+#page_howto .box.box_buyer:last-of-type {
+  margin-bottom: 13.4rem;
+}
+#page_howto .box + .box::before {
+  content: '';
+  position: absolute;
+  top: -7rem;
+  left: 50%;
+  width: .3rem;
+  height: 6.5rem;
+  background-color: #626262;
+  opacity: .5;
+  transform: translateX(-50%);
+}
+#page_howto .box .box_image {
+  width: 27rem;
+  height: 13rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#page_howto .box:first-of-type .box_image {
+  background-image: url(../img/howto/howto_seller1.jpg);
+}
+#page_howto .box:nth-of-type(2) .box_image {
+  background-image: url(../img/howto/howto_seller2.jpg);
+}
+#page_howto .box:nth-of-type(3) .box_image {
+  background-image: url(../img/howto/howto_seller3.jpg);
+}
+#page_howto .box:nth-of-type(4) .box_image {
+  background-image: url(../img/howto/howto_seller4.jpg);
+}
+#page_howto .box:nth-of-type(5) .box_image {
+  background-image: url(../img/howto/howto_seller5.jpg);
+}
+#page_howto .box:nth-of-type(6) .box_image {
+  background-image: url(../img/howto/howto_seller6.jpg);
+}
+#page_howto .box.box_buyer:first-of-type .box_image {
+  background-image: url(../img/howto/howto_buyer1.jpg);
+}
+#page_howto .box.box_buyer:nth-of-type(2) .box_image {
+  background-image: url(../img/howto/howto_buyer2.jpg);
+}
+#page_howto .box.box_buyer:nth-of-type(3) .box_image {
+  background-image: url(../img/howto/howto_buyer3.jpg);
+}
+#page_howto .box.box_buyer:nth-of-type(4) .box_image {
+  background-image: url(../img/howto/howto_buyer4.jpg);
+}
+#page_howto .box.box_buyer:nth-of-type(5) .box_image {
+  background-image: url(../img/howto/howto_buyer5.jpg);
+}
+#page_howto .box .box_text {
+  width: calc(100% - 27rem);
+  padding-left: 2rem;
+  letter-spacing: 0.08em;
+}
+#page_howto .box .box_title {
+  font-size: 1.944rem;
+  font-weight: bold;
+  color: #2e2e2e;
+  line-height: 1.27777777777778;
+}
+#page_howto .box .box_message {
+  padding-top: 1.344rem;
+  font-size: 1.512rem;
+  line-height: 1.64285714285714;
+}
+#page_howto .start {
+  background: linear-gradient(to top, #177eae, #39b0e3);
+}
+#page_howto .start .start_title {
+  padding: 8.8rem 1rem 0 1rem;
+  font-size: 3.564rem;
+}
+#page_howto .start .start_title::before {
+  content: none;
+}
+#page_howto .start .start_inner {
+  padding: 4.1rem 1rem 8.5rem 1rem;
+  background: none;
+}
+
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- サービスの始め方 ------------*/
+  #page_howto .faq {
+    padding-top: 4.35rem;
+  }
+  #page_howto .tab .tab_baloon_title {
+    padding-top: 3.82rem;
+    padding-bottom: 3.82rem;
+    font-size: 1.8rem;
+    letter-spacing: .24em;
+    line-height: 1.2;
+  }
+  #page_howto .box {
+    display: block;
+    padding: 2rem 1.5rem 1.575rem 1.5rem;
+    border: 3px solid #c9c9c9;
+  }
+  #page_howto .box:last-of-type {
+    margin-bottom: 5rem;
+  }
+  #page_howto .box.box_buyer:last-of-type {
+    margin-bottom: 6.2rem;
+  }
+  #page_howto .box + .box {
+    margin-top: 4rem;
+  }
+  #page_howto .box + .box::before {
+    top: -4.3rem;
+    height: 4rem;
+    background-color: #c9c9c9;
+    opacity: 1;
+  }
+  #page_howto .box .box_image {
+    width: 100%;
+    height: 14.5rem;
+  }
+  #page_howto .box .box_text {
+    width: 100%;
+    padding-left: 0;
+  }
+  #page_howto .box .box_title {
+    padding-top: 2rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  #page_howto .box .box_message {
+    padding-top: .875rem;
+    font-size: 1.3rem;
+    line-height: 1.80769230769231;
+    letter-spacing: 0;
+  }
+  #page_howto .start .start_title {
+    padding: 4.55rem 1.9rem 0 1.9rem;
+    font-size: 1.8rem;
+  }
+  #page_howto .start .start_inner {
+    padding: 3.65rem 1.9rem 4.6rem 1.9rem;
+  }
+
+}

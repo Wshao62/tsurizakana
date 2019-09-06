@@ -1,0 +1,814 @@
+/* PC、SP共通CSS */
+.error {
+  font-size: 80%;
+  color: brown!important;
+}
+
+/* =======================================
+    買主、売主共通CSS
+======================================= */
+/* 表示・非表示設定 */
+.sp {
+  display: none;
+}
+
+
+/*各ブロック*/
+body {
+  width: 100%;
+  min-width: 1200px;
+}
+main {
+  margin-top: 90px;
+  position: relative;
+}
+.section{
+  padding: 6em 0;
+}
+.container {
+  width: 1080px;
+  margin: 0 auto;
+}
+
+
+/*text*/
+h1, h2, h3, h4, h5, h6, body, html, p, li, dt, dd, pre, form, fieldset, textarea, input {
+  font-family: "Avenir Next", "Noto Sans JP", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: #2E2E2E;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+.txt_w {
+  color: #fff;
+}
+
+
+/*title*/
+.ttl_main {
+  font-size: 38px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.ttl_en {
+  font-size: 22px;
+  letter-spacing: 2px;
+  display: block;
+}
+
+
+/*link*/
+a {
+  color: #4A4A4A;
+}
+a:link {
+  color: #4A4A4A;
+}
+a:active {
+  color: #4A4A4A;
+}
+a:hover {
+  color: #4A4A4A;
+}
+a:visited {
+  color: #4A4A4A;
+}
+
+
+/* ----------- header ------------ */
+header {
+  width: 100%;
+  min-width: 1200px;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+}
+.header_logo {
+  float: left;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.header_logo > a > img {
+  width: 230px;
+  height: auto;
+}
+.header_menu {
+  float: right;
+}
+.header_menu_lists {
+  overflow: hidden;
+}
+.header_menu_lists > li {
+  float: left;
+  margin-top: 36px;
+}
+.header_menu_list {
+  margin: 0 20px;
+}
+.header_menu_lists > li.header_registration {
+  margin: 23px 15px 0;
+}
+.header_registration a {
+  color: white !important;
+  font-weight: 500;
+  padding: 10px 30px;
+  border-radius: 24.5px;
+  letter-spacing: 1px;
+  display: block;
+}
+
+
+/* ----------- footer ------------ */
+footer {
+  background-color: #000A2B;
+  text-align: center;
+  padding: 3em 0;
+}
+footer > img {
+  width: 290px;
+}
+footer > p {
+  color: #B0B0B0;
+  letter-spacing: 2px;
+  margin-top: 10px;
+}
+
+
+/* ----------- main ------------ */
+/* TOPへ戻る、SNSアイコン */
+.icons {
+  width: 48px;
+  position: fixed;
+  bottom:30px;
+  right: 30px;
+  z-index: 1000;
+}
+.icons a {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.icons a:last-child {
+  margin-bottom: 0;
+}
+.btn_pagetop{
+  margin-bottom: 10px;
+}
+.btn_pagetop_sp{
+  display: none;
+}
+.icons img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* コピー */
+.copy {
+  overflow: hidden;
+  text-align: center;
+  height: 900px;
+}
+video {
+  width: 100%;
+  min-width: 1600px;
+  z-index: -1;
+}
+.copy > p {
+  color: white;
+  text-shadow: 0 1px 2px #161616;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+.main_copy {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: 3px;
+  top: 210px;
+}
+.main_copy span {
+  font-size: 67px;
+}
+.sub_copy {
+  font-size: 31px;
+  line-height: 60px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  padding-top: 20px;
+  top: 410px;
+}
+.scrollDown_btn {
+  padding-top: 60px;
+}
+.scrollDown_btn > span {
+  position: absolute;
+  top: 600px;
+  left: 50%;
+  width: 30px;
+  height: 50px;
+  margin-left: -15px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+.scrollDown_btn > span::before {
+  position: absolute;
+  top: 10px;
+  left: 40%;
+  content: '';
+  width: 10px;
+  height: 10px;
+  margin-left: -3px;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sdb 2s infinite;
+  animation: sdb 2s infinite;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb {
+ 0% {
+ -webkit-transform: translate(0, 0);
+ opacity: 0;
+}
+ 40% {
+ opacity: 1;
+}
+ 80% {
+ -webkit-transform: translate(0, 20px);
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+@keyframes sdb {
+ 0% {
+ transform: translate(0, 0);
+ opacity: 0;
+}
+ 40% {
+ opacity: 1;
+}
+ 80% {
+ transform: translate(0, 20px);
+ opacity: 0;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+
+/* 釣魚商店について */
+.about_service {
+  width: 100%;
+  background-color: white;
+  padding-top: 0;
+}
+.about_service > .container {
+  color: white;
+  text-align: center;
+  position: relative;
+  top: -200px;
+  margin-bottom: -200px;
+  padding: 4em 0;
+}
+.about_service p {
+  line-height: 2;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 45px;
+}
+.about_service > .container > img {
+  width: 330px;
+  max-width: 330px;
+}
+/* スライダー */
+#slider {
+  padding: 0;
+}
+/* スライドが等速で動き続けるようにする */
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear!important;
+  -o-transition-timing-function: linear!important;
+  transition-timing-function: linear!important;
+}
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+.swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+
+/* メリット */
+#merits {
+  background: url("../img/common/merit_bg_pc.jpg")no-repeat ;
+  background-size: cover;
+  position: relative;
+}
+#merits .ttl_main{
+  margin-bottom: 1.5em;
+}
+.marit {
+  width: 320px;
+  height: 302px;
+  text-align: center;
+  margin: 0 20px 60px 20px;
+  float: left;
+  position: relative;
+}
+.marit:nth-child(4),.marit:nth-child(5),.marit:nth-child(6){
+  margin-bottom: 0;
+}
+.merit_number {
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: 700;
+  position: relative;
+  top: -30px;
+  margin-bottom: -35px;
+}
+.marit > h3 {
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 60px;
+  color: white;
+  letter-spacing: 3px;
+}
+.marit img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+.merit_description {
+  color: white;
+}
+#merits > img {
+  width: 355px;
+}
+.marit_left_img {
+  position: absolute;
+  top: -1px;
+  left: 0;
+}
+.marit_right_img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+
+/* サービス */
+#services {
+  padding-top: 0;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+.services_title {
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+.services_title > img {
+  width: 100%;
+  min-height: 240px;
+}
+.service_number {
+  font-size: 14px;
+  color: white;
+  line-height: 30px;
+  letter-spacing: 1px;
+  width: 105px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.services_title_text {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.service {
+  position: relative;
+}
+.s_img_container > .service_img {
+  width: 490px;
+  height: auto;
+  margin-bottom: 130px;
+}
+.service_contents {
+  width: 540px;
+  padding-top: 140px;
+}
+.service_contents > h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2E2E2E;
+  margin-bottom: 15px;
+}
+.service_description {
+  color: #727272;
+}
+.service_01 > .s_img_container, .service_03 > .s_img_container {
+  float: left;
+}
+.service_01 > .service_contents, .service_03 > .service_contents {
+  float: right;
+}
+.service_02 > .s_img_container {
+  float: right;
+}
+.service_bg {
+  width: 515px;
+  height: auto;
+  z-index: -10;
+}
+.service_01 > .service_bg {
+  position: absolute;
+  top: 150px;
+  left: -250px;
+}
+.service_02 > .service_bg {
+  position: absolute;
+  top: 180px;
+  right: -250px;
+}
+.service_03 > .service_bg {
+  position: absolute;
+  top: 190px;
+  left: -250px;
+}
+
+
+/* こんな使い方ができる */
+#how_to{
+  padding: 0;
+}
+.how_to_title {
+  height: 240px;
+  text-align: center;
+  padding-top: 75px;
+  box-sizing: border-box;
+}
+.how_to_number {
+  font-size: 80px;
+  line-height: 1;
+  font-weight: bold;
+  letter-spacing: -3px;
+  margin-bottom: 10px;
+}
+.how_to_contents {
+  position: relative;
+}
+.how_to_discription1 {
+  width: 550px;
+  position: absolute;
+  top: 12%;
+  right: 52.5%;
+}
+.how_to_discription2 {
+  width: 550px;
+  position: absolute;
+  bottom: 10%;
+  left: 53%;
+}
+@media screen and (max-width: 1300px) {
+  .how_to_number {
+    font-size: 75px;
+    margin-bottom: 6px;
+  }
+  .how_to_discription2 {
+     bottom: 9%;
+  }
+}
+.how_to_contents > img {
+  width: 100%;
+  min-width: 1200px;
+  display: block;
+}
+.how_to_contents > img.sp {
+  display: none;
+}
+.how_to_discription > .how_to_text_container > h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2E2E2E;
+  letter-spacing: 3px;
+}
+.how_to_text {
+  color: #5B5B5B;
+  margin-bottom: 15px;
+}
+
+
+/* 事前登録 */
+#registration {
+  text-align: center;
+  background-size: cover;
+  background-position: bottom;
+}
+#registration .ttl_en {
+  color: white;
+  opacity: 0.8;
+}
+.registration_contents > p {
+  color: white;
+  letter-spacing: 2px;
+  margin: 30px 0;
+}
+.registration_form_container {
+  width: 838px;
+  background-color: white;
+  margin: 0 auto;
+  padding: 2.5em 0;
+}
+.registration_form_container > p {
+  color: #727272;
+  padding-bottom: 25px;
+}
+.registration_form {
+  width: 574px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.registration_form > input[type="text"] {
+  width: 463px;
+  height: 45px;
+  border: 1px solid #AAA;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  padding-left: 10px;
+  float: left;
+  box-sizing: border-box;
+}
+.registration_form > input[type="submit"] {
+  width: 100px;
+  height: 45px;
+  color: white;
+  font-size: 15px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  float: left;
+}
+
+
+/* お問い合わせ */
+#contact {
+  background-color: #F1F0EF;
+}
+#contact .ttl_en {
+  color: #B5B4B2;
+}
+#contact > .container {
+  background-color: white;
+  padding: 5em 0;
+}
+.contact_success {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 5em 0;
+  color: #727272;
+}
+
+form {
+  width: 840px;
+  margin: 0 auto;
+}
+.form > label > input, textarea {
+  border: 1px solid #D2D2D2;
+  padding-left: 10px;
+}
+.form_name > label > input, .form_mail > label > input {
+  width: 500px;
+  height: 45px;
+}
+.form_phone > label > input {
+  width: 100px;
+  height: 45px;
+  float: left;
+}
+.form_phone > p {
+  padding: 0 15px;
+  line-height: 45px;
+  float: left;
+}
+textarea {
+  width: 500px;
+  min-height: 180px;
+  padding-top: 10px;
+}
+.forms dt {
+  width: 300px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 45px;
+  color: #282828;
+  float: left;
+}
+.forms dt > span {
+  display: inline-block;
+  text-align: center;
+  font-size: 80%;
+  color: white;
+  line-height: 26px;
+  width: 50px;
+  background-color: #A65558;
+  float: right;
+  margin-top: 10px;
+}
+.forms dd {
+  margin-bottom: 40px;
+  padding-left: 340px;
+}
+.privacy {
+  width: 840px;
+  height: 232px;
+  border: 1px solid #DCDCDC;
+  overflow-y: scroll;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+.privacy::-webkit-scrollbar {
+ width: 14px;
+ margin-right: 20px;
+}
+.privacy::-webkit-scrollbar-thumb {
+ height: 90px;
+ background-color: #B5B5B5;
+ border-radius: 6px;
+}
+.privacy > h3 {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+}
+.privacy > h4, .privacy > p {
+  font-size: 15px;
+  line-height: 28px;
+}
+.privacy > h4 {
+  font-weight: 500;
+  margin: 20px 0;
+}
+.privacy > p {
+  font-weight: 400;
+}
+.submit_container {
+  width: 185px;
+  margin: 0 auto;
+}
+.submit {
+  width: 185px;
+  height: 60px;
+  font-size: 16px;
+  color: white;
+  border-radius: 30px;
+  margin-top: 3em;
+  cursor: pointer;
+}
+
+
+/* =======================================
+    買主CSS
+======================================= */
+/* 事前登録はこちら */
+#buyer .header_registration a {
+  background-color: #BE4F10;
+}
+
+
+/* 釣魚商店について */
+#buyer .about_service > .container {
+  background-color: #DDB34D;
+}
+
+
+/* メリット */
+#buyer #merits .ttl_main {
+  color: #001B62;
+}
+#buyer #merits .ttl_en {
+  color: #354F88;
+  opacity: 0.6;
+}
+#buyer .marit {
+  background-color: #005084;
+}
+#buyer .merit_number {
+  color: #C6D7E1;
+}
+
+
+/* サービス */
+#buyer #services .ttl_en {
+  color: #B9922F;
+}
+#buyer .service_number {
+  background-color: #AD8725;
+}
+
+
+/* こんな使い方ができる */
+#buyer .how_to_title {
+  background-color: #005084;
+}
+#buyer #how_to .ttl_en {
+  color: #64A3E3;
+}
+#buyer .how_to_number {
+  color: #276297;
+}
+
+
+/* 事前登録 */
+#buyer #registration {
+  background-image: url("../img/img_buyer/registration_bg_pc.jpg");
+}
+#buyer .registration_form > input[type="submit"] {
+  background-color: #BE4F10;
+}
+
+
+/* お問い合わせ */
+#buyer .submit {
+  background-color: #BE4F10;
+}
+
+
+/* =======================================
+    売主CSS
+======================================= */
+/* 事前登録はこちら */
+#seller .header_registration a {
+  background-color: #B28030;
+}
+
+
+/* 釣魚商店について */
+#seller .about_service > .container {
+  background-color: #152E59;
+}
+
+
+/* メリット */
+#seller #merits .ttl_main {
+  color: #293610;
+}
+#seller #merits .ttl_en {
+  color: #97A578;
+}
+#seller .marit {
+  background-color: #97A578;
+}
+#seller .merit_number {
+  color: #293610;
+}
+
+
+/* サービス */
+#seller #services .ttl_en {
+  color: #788293;
+}
+#seller .service_number {
+  background-color: #152E59;
+}
+
+
+/* こんな使い方ができる */
+#seller .how_to_title {
+  background-color: #293610;
+}
+#seller #how_to .ttl_en {
+  color: #919E71;
+}
+#seller .how_to_number {
+  color: #B1BF90;
+}
+
+
+/* 事前登録 */
+#seller #registration {
+  background-image: url("../img/img_seller/registration_bg_pc.jpg");
+}
+#seller .registration_form > input[type="submit"] {
+  background-color: #B28030;
+}
+
+
+/* お問い合わせ */
+#seller .submit {
+  background-color: #B28030;
+}

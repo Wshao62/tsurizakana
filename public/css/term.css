@@ -1,0 +1,111 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ 個人情報保護方針  #page_privacy
+→ 利用規約  #page_kiyaku
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- 個人情報保護方針 ------------*/
+#page_privacy .title {
+  margin-bottom: 7.161rem;
+}
+
+#page_privacy .content p {
+  font-size: 1.4rem;
+}
+
+#page_privacy .content p:last-of-type {
+  margin-bottom: 12rem;
+}
+
+#page_privacy .content .title_middle {
+  font-size: 1.54rem;
+  color: #2e2e2e;
+  margin-bottom: -.49rem;
+}
+
+#page_privacy .content p+p {
+  margin-top: 2.22rem;
+}
+
+/*----------- 利用規約 ------------*/
+#page_kiyaku .title {
+  margin-bottom: 7.161rem;
+}
+
+#page_kiyaku .content p {
+  font-size: 1.4rem;
+}
+
+#page_kiyaku .content p:last-of-type {
+  margin-bottom: 12rem;
+}
+
+#page_kiyaku .content .title_middle {
+  font-size: 1.54rem;
+  color: #2e2e2e;
+  margin-bottom: -2.22rem;
+}
+
+#page_kiyaku .content p+p {
+  margin-top: 2.22rem;
+}
+
+/*----------- 利用規約 ------------*/
+#page_tokusho .content .title_middle {
+  font-size: 1.54rem;
+  color: #2e2e2e;
+}
+
+#page_tokusho .content dl {
+  margin-bottom: 12rem;
+}
+
+#page_tokusho .content dt:first-child {
+  margin-top: 2rem;
+}
+
+#page_tokusho .content dd {
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- 個人情報保護方針 ------------*/
+  #page_privacy .title {
+    margin-bottom: 4.076155rem;
+  }
+
+  #page_privacy .content p {
+    font-size: 1.3rem;
+    line-height: 1.61538461538462;
+    color: #2e2e2e;
+  }
+
+  #page_privacy .content p:last-of-type {
+    margin-bottom: 10.65rem;
+  }
+
+  #page_privacy .content .title_middle {
+    margin-bottom: -.473845rem;
+  }
+
+  #page_privacy .content p+p {
+    margin-top: 2.15rem;
+  }
+
+  /*----------- 利用規約 ------------*/
+  #page_kiyaku {}
+}

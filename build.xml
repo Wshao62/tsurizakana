@@ -1,0 +1,59 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<project name="tsurizakana_web" default="build">
+    <!-- Properties -->
+    <property name="basedir" value="${phing.dir}" />
+    <property name="logdir" value="${basedir}/build/logs" />
+    <property name="phpcslog" value="${logdir}/phpcs_report.xml" />
+
+    <target name="build"
+        depends="clean, composer, phpcs" />
+        <!-- depends="clean, composer, phpcs, phpunit" /> -->
+
+    <!-- clean -->
+    <target name="clean" depends="clean-composer" description="Cleanup build and composer artifacts" />
+
+    <target name="clean-composer" description="Cleanup composer artifacts">
+        <delete dir="${basedir}/vendor" />
+        <delete file="${basedir}/composer.lock" />
+        <delete file="${phpcslog}" />
+    </target>
+    <!--// clean -->
+
+
+    <!-- composer install -->
+    <target name="composer.check">
+        <condition property="composer.exist">
+            <available file="${basedir}/vendor" type="dir" />
+        </condition>
+    </target>
+
+    <target name="composer" depends="composer-install,composer-update" description="Install or update dependencies" />
+    <target name="composer-install" depends="composer.check" unless="composer.exist" description="Installing dependencies">
+        <exec executable="/usr/local/bin/composer">
+            <arg value="install" />
+        </exec>
+    </target>
+
+    <target name="composer-update" depends="composer.check" if="composer.exist" description="Updating dependencies">
+        <exec executable="/usr/local/bin/composer">
+            <arg value="update" />
+        </exec>
+    </target>
+    <!--// composer install -->
+
+    <target name="phpcs">
+        <phpcodesniffer standard="${basedir}/build/phpcs.xml"
+                        file=".">
+            <formatter type="checkstyle" outfile="${phpcslog}"/>
+        </phpcodesniffer>
+    </target>
+
+    <target name="phpunit">
+        <exec executable="/usr/local/bin/phpunit" passthru="true" logoutput="true">
+            <arg line="--configuration ${basedir}/phpunit.xml"/>
+            <arg line="--testdox"/>
+            <arg line="--coverage-html build/logs/caverage"/>
+            <arg line="--colors tests" />
+        </exec>
+    </target>
+</project>
