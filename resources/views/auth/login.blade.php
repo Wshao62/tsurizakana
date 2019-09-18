@@ -29,6 +29,7 @@
         @endif
         <input id="email" type="email" name="email" value="{{ old('email') }}"placeholder="メールアドレス" required autofocus>
         <input id="password" type="password" name="password" placeholder="パスワード" required>
+        <input type="hidden" name="remember" value="1">
         @if ($is_app) <input type="hidden" name="remember" value="1"> @endif
         <button class="content_button btn_g">ログイン</button>
         </form>

@@ -13,6 +13,7 @@ use App\Http\Requests\Register\TempRegistPost;
 use App\Http\Requests\Register\RegistProfileStep1Post;
 use App\Http\Requests\Register\RegistProfileStep2Post;
 use App\Http\Requests\Register\RegistProfilePost;
+use Illuminate\Support\Facades\Log;
 use Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -190,7 +191,7 @@ class RegisterController extends Controller
         }
 
         //ログインさせる
-        \Auth::login($user);
+        \Auth::login($user, true);
 
         Session::forget('registering_user');
         Session::forget('registering_profile_1');

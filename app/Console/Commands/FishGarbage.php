@@ -31,7 +31,7 @@ class FishGarbage extends Command
 
         // Get rid of any that have expired
         $trash = Fish::whereStatus(Fish::STATUS_PUBLISH)
-                ->where('created_at', '<', Carbon::createFromTime(14,00,00))
+                ->where('created_at', '<', Carbon::createFromTime(18,00,00))
                 ->update([
                     'status' => Fish::STATUS_EXPIRED
                 ]);

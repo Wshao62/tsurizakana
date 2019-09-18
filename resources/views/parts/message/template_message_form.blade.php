@@ -15,7 +15,7 @@
                     <p>{!! nl2br(e($msg['message'])) !!}</p>
                 </div>
                 @endif
-                <p class="chat_time">{{ date('h:i',strtotime($msg['created_at']['date'])) }}</p>
+                <p class="chat_time">{{ date('H:i',strtotime($msg['created_at']['date'])) }}</p>
             </div>
             @else
             <div class="chat_partner">
