@@ -21,3 +21,5 @@ composer.lock
 laravel-echo-server.json
 laravel-echo-server.lock
 package-lock.json
+/public/js/app.js
+/public/mix-manifest.json
