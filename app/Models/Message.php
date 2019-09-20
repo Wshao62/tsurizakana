@@ -35,7 +35,7 @@ class Message extends Model
         'is_seen'
     ];
 
-    
+
     const UNREAD = 0;
     const READ = 1;
     const SENDMAIL = 2;
@@ -94,13 +94,13 @@ class Message extends Model
             $threads[]               = $collection;
         }
         $threads = collect($threads);
-        $threads = $threads->sortBy(function ($ins, $key) { 
+        $threads = $threads->sortByDesc(function ($ins, $key) {
             $ins = (array) $ins;
             return $ins['created_at'];
         });
         return json_decode($threads, true);
     }
-    /** 
+    /**
      * Make messages seen for a conversation.
      *
      * @param  int  $fish_id
@@ -112,11 +112,11 @@ class Message extends Model
         Message::whereFishId($fish_id)->update([
             'is_seen' => self::READ
         ]);
-        
+
         return response()->json(['success' => true], 200);
     }
 
-    /** 
+    /**
      * Mark as read all message
      *
      * @return boolean
@@ -126,12 +126,12 @@ class Message extends Model
         Message::whereReceiverId($user_id)->update([
             'is_seen' => self::READ
         ]);
-        
+
         return response()->json(['success' => true], 200);
     }
 
 
-    /** 
+    /**
      * Get last {$take} conversations with all users for a user.
      *
      * @param  int  $fish_id
@@ -147,7 +147,7 @@ class Message extends Model
             ->get();
         return $conversations;
     }
-    
+
     /**
      * Get with all users in the messages.
      *
@@ -186,15 +186,15 @@ class Message extends Model
                 $paths = Photo::makePath(\Auth::user()->id, $_photo->getClientOriginalExtension());
                 $img_paths[] = $paths['server_path'];
                 FileHelper::storeResizeImg($_photo->path(), $paths['server_path'], 300, null);
-                
+
                 $attributes['img_url'] = $paths['public_path'];
-            } 
+            }
 
             $attributes['fish_id'] = $attributes['fish_id'];
             $attributes['user_id'] = \Auth::user()->id;
             $attributes['receiver_id'] = $attributes['receiver_id'];
             $attributes['message'] = preg_replace('/\A[\x00\s]++|[\x00\s]++\z/u', '', htmlspecialchars($attributes['message']));
-        
+
             $msg = self::create($attributes);
 
             \DB::commit();

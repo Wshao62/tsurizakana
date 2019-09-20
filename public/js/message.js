@@ -22,7 +22,7 @@
             sendPartner(response.user, response.photo, response.message);
             makeSeen();
         }
-        scrollMessagesDown();
+        // scrollMessagesDown();
     });
 
     /**
@@ -79,12 +79,12 @@
             }
         });
 
-        scrollMessagesDown();
+        // scrollMessagesDown();
 
         /**
          * Send message to backend and handle responses.
          */
-        $(document).on('click', '.send_msg', function () { 
+        $(document).on('click', '.send_msg', function () {
             if($message.val().replace(/^[\s|　]+|[\s|　]+$/g,'') || $photo.val()) {
                 $.ajax({
                     url: "/mypage/message/send",
@@ -151,7 +151,7 @@
             var prevHeight = $messenger.prop('scrollHeight');
             $messenger.html(res.view);
             var newHeight = $messenger.prop('scrollHeight');
-            scrollMessagesDown(newHeight - prevHeight); // stop at the current height.
+            // scrollMessagesDown(newHeight - prevHeight); // stop at the current height.
             if (res.messagesCount < $take) { // load no more messages.
                 $take = 0;
             }
