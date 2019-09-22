@@ -48,14 +48,16 @@
             @endif
             <label>
                 <span>公開住所</span>
-                <input type="text" name="public_address" value="{{ old('public_address', $old_data['public_address']) }}" class="input_length_long" placeholder="（例）神奈川県平塚市夕陽ケ丘１番">
+                <input type="text" name="public_address" value="{{ old('public_address', $old_data['public_address']) }}" class="input_length_long"
+                       placeholder="（例）神奈川県平塚市夕陽ケ丘">
             </label>
             @if ($errors->has('public_address'))
                 <p class="alert">{{ $errors->first('public_address') }}</p>
             @endif
             <label>
                 <span>非公開住所</span>
-                <input type="text" name="private_address" value="{{ old('private_address', $old_data['private_address']) }}" class="input_length_long" placeholder="（例）１６号 第１三富ビル３０２号">
+                <input type="text" name="private_address" value="{{ old('private_address', $old_data['private_address']) }}" class="input_length_long"
+                       placeholder="（例）１番 １６号 第１三富ビル３０２号">
             </label>
             @if ($errors->has('private_address'))
                 <p class="alert">{{ $errors->first('private_address') }}</p>
@@ -97,10 +99,12 @@
                 </div>
             </label>
             <label>
-                <input type="text" name="shop_address1" value="{{ old('shop_address1', $old_data['shop_address1']) }}" class="input_length_long" placeholder="（例）神奈川県平塚市夕陽ケ丘１番">
+                <input type="text" name="shop_address1" value="{{ old('shop_address1', $old_data['shop_address1']) }}" class="input_length_long"
+                       placeholder="（例）神奈川県平塚市夕陽ケ丘">
             </label>
             <label>
-                <input type="text" name="shop_address2" value="{{ old('shop_address2', $old_data['shop_address2']) }}" class="input_length_long" placeholder="（例）１６号 第１三富ビル３０２号">
+                <input type="text" name="shop_address2" value="{{ old('shop_address2', $old_data['shop_address2']) }}" class="input_length_long"
+                       placeholder="（例）１番 １６号 第１三富ビル３０２号">
             </label>
             @if ($errors->has('shop_zipcode'))
                 <p class="alert">{{ $errors->first('shop_zipcode') }}</p>
