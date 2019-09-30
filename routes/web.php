@@ -154,6 +154,10 @@ Route::group(['middleware' => 'auth:user'], function () {
         // Receipt
         Route::get('receipt', 'ReceiptController@lists');
         Route::get('receipt/pdf/{date}', 'ReceiptController@getPDF')->name('receipt.pdf');
+
+        // 売上管理
+        Route::resource('sales', 'SaleController', ['except' => ['show']]);
+
     });
 
     Route::group(['prefix' => 'fish'], function () {
