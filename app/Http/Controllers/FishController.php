@@ -363,6 +363,10 @@ class FishController extends Controller
                     ->withInput()
                     ->with(['error' => 'システムエラーが発生しました。しばらく待ってから再度お試しください。それでも失敗する場合はお問い合わせください。']);
         }
+
+        // キャンセルされた商品情報を複製して、自動で再出品する
+        $fish->copy($fish);
+
         return redirect('/mypage/fish')->with(['status' => '取引を中止に成功いたしました。その他問題がありましたら、別途運営へお問い合わせをお願いいたします。']);
     }
 

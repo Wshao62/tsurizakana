@@ -183,6 +183,17 @@ class Fish extends Model
     }
 
     /**
+     * 取引中止ステータスか
+     *
+     * @return bool
+     */
+    public function isReject()
+    {
+        return !!($this->status === self::STATUS_REJECT);
+    }
+
+
+    /**
      * 取引中であるか。
      * 判断はbuyer_idがあるか、statusが決済待ちから取引中止までであるかで判断
      *
@@ -253,7 +264,7 @@ class Fish extends Model
     {
         $status_name = $this->getStatus();
         if ($this->status > self::STATUS_PUBLISH
-        && $this->status <= self::STATUS_REJECT) {
+        && $this->status < self::STATUS_REJECT) {
             $status_name = '売却済み';
         }
         return $status_name;
@@ -694,6 +705,9 @@ class Fish extends Model
             $query->published();
         }
 
+        // 取引中止のものは表示しない
+        $query->where('status', '<>', self::STATUS_REJECT);
+
         //並び替え
         if (!empty($data['order'])) {
             switch ($data['order']) {
@@ -951,6 +965,42 @@ class Fish extends Model
             }
 
             return $reject;
+        } catch (\Exception $e) {
+            \DB::rollback();
+            \Log::error(get_class().':reject(): '.$e->getMessage());
+
+            return false;
+        }
+    }
+
+    /**
+     * fish_idから商品を複製する
+     *
+     * @param Fish $fish
+     * @return bool
+     */
+    public function copy($fish) {
+        \DB::beginTransaction();
+        try {
+            $fish_id = $fish->id;
+
+            // fish
+            $target_fish = Fish::find($fish_id);
+            $new_fish = $target_fish->replicate();
+            $new_fish->status = self::STATUS_PUBLISH;
+            $new_fish->buyer_id = null;
+            $new_fish->save();
+
+            // fish photos
+            $target_photos = Photo::where('fish_id', $fish_id)->get();
+            foreach ($target_photos as $photo) {
+                $new_photo = $photo->replicate();
+                $new_photo->fish_id = $new_fish->id;
+                $new_photo->save();
+            }
+
+            \DB::commit();
+
         } catch (\Exception $e) {
             \DB::rollback();
             \Log::error(get_class().':reject(): '.$e->getMessage());
