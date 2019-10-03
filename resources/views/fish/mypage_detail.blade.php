@@ -44,9 +44,19 @@
             <p>{{ $partner->name }}</p>
             <a href="{{ url('/user', $partner->id) }}"><img src="{{ url('/') }}/img/mypage/message_arrow.png">このユーザーのプロフィールを見る</a>
             <div class="clear"></div>
-            <p class="mess_eval"><span><img src="{{ url('/') }}/img/mypage/message_good.png"></span>良い：{{ number_format($seller_rates['good']) }}</p>
-            <p class="mess_eval"><span><img src="{{ url('/') }}/img/mypage/message_medium.png"></span>普通：{{ number_format($seller_rates['normal']) }}</p>
-            <p class="mess_eval"><span><img src="{{ url('/') }}/img/mypage/message_bad.png"></span>悪い：{{ number_format($seller_rates['bad']) }}</p>
+            <p class="mess_eval">
+                <span><img src="{{ url('/') }}/img/mypage/message_good.png"></span>
+                良い：@if ($fish->isBuyer()) {{ number_format($seller_rates['good']) }} @else {{ number_format($buyer_rates['good']) }} @endif
+            </p>
+            <p class="mess_eval">
+                <span><img src="{{ url('/') }}/img/mypage/message_medium.png"></span>
+                普通：@if ($fish->isBuyer()) {{ number_format($seller_rates['normal']) }} @else {{ number_format($buyer_rates['normal']) }} @endif
+
+            </p>
+            <p class="mess_eval">
+                <span><img src="{{ url('/') }}/img/mypage/message_bad.png"></span>
+                悪い：@if ($fish->isBuyer()) {{ number_format($seller_rates['bad']) }} @else {{ number_format($buyer_rates['bad']) }} @endif
+            </p>
             <div class="clear"></div>
             </td>
         </tr>

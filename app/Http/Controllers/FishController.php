@@ -224,6 +224,7 @@ class FishController extends Controller
             'fish' => $fish,
             'seller' => $fish->seller,
             'seller_rates' => $fish->seller->getRateCounts(),
+            'buyer_rates' => $fish->buyer->getRateCounts(),
             'photo' => $fish->photos,
             'comments' => $fish->comments,
             'other_fish' => Fish::whereStatus(Fish::STATUS_PUBLISH)->where('id', '<>', $fish->id)->latest()->with('onePhoto')->limit(4)->get(),
@@ -309,6 +310,7 @@ class FishController extends Controller
             'fish' => $fish,
             'partner' => $user,
             'message' => $msg,
+            'buyer_rates' => $fish->buyer->getRateCounts(),
             'seller_rates' => $fish->seller->getRateCounts(),
             'messagesCount' => count($message)
         ]);
