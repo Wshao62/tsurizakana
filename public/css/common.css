@@ -337,6 +337,269 @@
   font-weight: bold;
 }
 
+@media screen and (max-width: 1190px) {
+  .header {
+    width: 100%;
+    min-width: auto;
+    box-shadow: 0px 0px 1px rgba(22,12,12,.2);
+  }
+  .header .header_alert {
+    position: absolute;
+    top: 50%;
+    right: 6.5rem;
+    width: 3.7rem;
+    height: 3.85rem;
+    padding: 1rem;
+    transform: translateY(-50%);
+  }
+  .header .header_open {
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1.35rem;
+    width: 5.05rem;
+    height: 4.6rem;
+    padding: 1rem;
+    transform: translateY(-50%);
+  }
+  .header .header_band {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    z-index: 1;
+  }
+  .header .header_navi {
+    position: fixed;
+    display: none;
+    width: 78.13333333333333%;
+    height: 100vh;
+    font-size: 1.3rem;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    text-align: left;
+    overflow: scroll;
+    z-index: 10;
+  }
+  .header .header_navi_inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .header .header_navi.open {
+    animation-name: openSlide;
+    animation-duration: .3s;
+  }
+  .header .header_navi_title {
+    display: block;
+    padding: .9rem 1.5rem;
+    font-weight: bold;
+    background-color: #eee;
+  }
+  .header .header_navi_select {
+    display: block;
+  }
+  .header .header_menu li {
+    padding: 0;
+  }
+  .header .header_menu .header_navi_select .icon_before {
+    display: block;
+  }
+  .header .header_navi_select li:nth-of-type(5) {
+    margin: 0;
+  }
+  .header .header_navi_select li + li {
+    border-top: 1px solid #ddd;
+  }
+  .header .header_navi_select a,
+  .header .header_navi_select button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 1.4rem 1rem 1.4rem 0;
+    background-color: #fff;
+  }
+  .header .header_navi_select .icon_before {
+    display: block;
+    width: 5.85rem;
+    height: 1.75rem;
+    margin-right: 0;
+  }
+  .header .header_navi_select .icon_before_pencil::before {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .header .header_navi_select .icon_before_gear::before {
+    width: 1.8rem;
+    height: 1.75rem;
+  }
+  .header .header_navi_select .icon_before_message::before {
+    width: 1.8rem;
+    height: 1.55rem;
+  }
+  .header .header_navi_select .icon_before_unlock::before {
+    width: 1.4rem;
+    height: 1.7rem;
+  }
+  .header .header_navi_select .icon_before_rod::before {
+    width: 2.4rem;
+    height: 2.2rem;
+  }
+  .header .header_navi_select .icon_before_fish::before {
+    width: 2.2rem;
+    height: 1.55rem;
+  }
+  .header .header_navi_select .icon_before_phone::before {
+    width: 1.5rem;
+    height: 2.15rem;
+  }
+  .header .header_navi_select .icon_before_info::before {
+    width: 1.8rem;
+    height: 1.85rem;
+  }
+  .header .header_navi_select .icon_before_bucket::before {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  .header .header_navi_select .icon_before_office::before {
+    width: 1.8rem;
+    height: 1.45rem;
+  }
+  .header .header_navi_select .icon_before_rule::before {
+    width: 1.8rem;
+    height: 1.45rem;
+  }
+  .header .header_navi_select .icon_before_document::before {
+    width: 1.2rem;
+    height: 1.6rem;
+  }
+  .header .header_navi_select .icon_before_note::before {
+    width: 1.4rem;
+    height: 1.75rem;
+  }
+  .header .header_navi_select .icon_before_mail::before {
+    width: 1.75rem;
+    height: 1.15rem;
+  }
+  .header .header_close {
+    content: '';
+    position: absolute;
+    top: 2.45rem;
+    right: calc(78.13333333333333% + 2.1rem);
+    width: 1.55rem;
+    height: 1.6rem;
+  }
+  .header .header_profile {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 10.65rem;
+    padding: 1.85rem 1rem 1.55rem 2.45rem;
+    background: url(../img/bg_profile.jpg) no-repeat;
+    background-size: cover;
+    order: 0;
+  }
+  .header .header_profile_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16.85rem;
+    height: 3.5rem;
+    background: url(../img/logo_white.png) no-repeat;
+    background-size: cover;
+    transform: translate(-50%,-50%);
+  }
+  .header .header_profile_detail {
+    display: flex;
+    align-items: center;
+  }
+  .header .header_profile_image {
+    width: 7.25rem;
+    height: 7.25rem;
+    margin: 0;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .header .header_profile_name {
+    display: block;
+    width: calc(100% - 7.25rem);
+    max-height: 6.7rem;
+    font-size: 1.4rem;
+    color: #fff;
+    padding-left: 1.75rem;
+  }
+  .header .header_menu {
+    display: block;
+    width: 100%;
+    padding-bottom: 4rem;
+    order: 2;
+  }
+  .header .header_menu ul {
+    display: block;
+  }
+  .header .header_menu li:last-of-type {
+    margin-right: 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .header .header_account {
+    position: static;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    order: 1;
+  }
+  .header .header_account::before {
+    content: none;
+  }
+  .header .header_account::after {
+    content: none;
+  }
+  .header .header_account_button {
+    position: relative;
+    width: 100%;
+    max-width: 24.5rem;
+    padding: 1.1rem 2.45rem;
+    margin: 2rem auto 0;
+    color: white;
+  }
+  .header .header_account_button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 1.75rem;
+    width: .55rem;
+    height: .9rem;
+    background: url(../img/icon/icon_arrow_right.png) no-repeat;
+    background-size: cover;
+    transform: translateY(-50%);
+  }
+  .header .header_account_button:nth-of-type(2) {
+    margin: 2rem auto 2.05rem;
+    background-color: #4d4d4d;
+  }
+  .search_keyword::placeholder {
+    content: 'aaa';
+  }
+  .header_dropdown.hide_sp {
+    display: none !important;
+  }
+  .header_account_button.hide_pc {
+    display: block !important;
+  }
+  .header_navi_select li.hide_sp {
+    display: none !important;
+  }
+  .header_navi_select li.hide_pc {
+    display: block !important;
+  }
+}
+
 /*----------- main ------------*/
 main {
   padding-top: 8.9rem;

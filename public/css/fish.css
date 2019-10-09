@@ -366,7 +366,7 @@ select { height: 2.8rem; }
   }
 }
 #page_fishdetail .fish_detail .fish_detail_table td {
-  width: calc(100% - 35%);
+  width: auto;
 }
 #page_fishdetail .fish_detail .fish_detail_table td > div {
   padding: 1.35rem 2.9rem 1.35rem 2.9rem;
