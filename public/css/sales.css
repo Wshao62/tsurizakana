@@ -1,0 +1,571 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  売上管理カテゴリー共通 CSS
+
+→ 売上金  #page_sales
+→ 売上履歴  #page_salesHistory
+→ 振込内容  #page_transfers
+→ 振込先銀行口座  #page_bank
+→ 入力情報確認  #page_transferConfirm
+→ 登録完了  #page_transferComplete
+→ 申請履歴  #page_transferApplications
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- 共通部分 ------------*/
+
+/* 共通コンテナ */
+#page_sales .mp_cont,
+#page_salesHistory .mp_cont,
+#page_transfers .mp_cont,
+#page_bank .mp_cont,
+#page_transferConfirm .mp_cont,
+#page_transferComplete .mp_cont,
+#page_transferApplications .mp_cont {
+  min-width: 1000px;
+}
+.sales_cont {
+  padding-top: 100px;
+}
+
+/* タブ */
+.sales_tabs {
+  display: flex;
+  width: 100%;
+  margin-bottom: 90px;
+  border-bottom: 3px solid #005e89;
+}
+.sales_tabs a {
+  display: block;
+  width: 140px;
+  border-radius: 8px;
+  margin-right: 30px;
+  line-height: 60px;
+  text-align: center;
+  border: 1px solid #005e89;
+}
+.sales_tabs a:last-of-type {
+  margin-right: 0;
+}
+.sales_tabs a.current {
+  background-color: #005e89;
+  color: #fff;
+}
+
+/*----------- 売上金 ------------*/
+.sales_table {
+  width: 100%;
+  border: 1px solid #e5e5e5;
+}
+.sales_table tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+.sales_table th,
+.sales_table td {
+  padding: 40px 50px;
+  font-weight: 500;
+}
+.sales_table th {
+  width: 310px;
+  background-color: #f7f7f7;
+  text-align: left;
+  font-size: 17px;
+}
+.sales_table td {
+  text-align: right;
+  font-size: 20px;
+}
+
+/*----------- 売上履歴 ------------*/
+.saleslists_cont {
+  width: 100%;
+}
+.saleslists_cont p {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.saleslists_table {
+  margin-bottom: 50px;
+}
+.saleslists_table,
+.saleslists_table thead,
+.saleslists_table tbody,
+.saleslists_table tr {
+  width: 100%;
+}
+.saleslists_table thead {
+  background-color: #005e89;
+}
+.saleslists_table thead tr {
+  border: 1px solid #005e89;
+}
+.saleslists_table thead th {
+  padding: 10px;
+  border-right: 1px solid #eeeeee;
+  color: #fff;
+}
+.saleslists_table thead th:last-of-type {
+  border-right: none;
+}
+.saleslists_table tr {
+  border: 1px solid #eeeeee;
+}
+.saleslists_table tbody th {
+  display: none;
+}
+.saleslists_table tbody tr td {
+  padding: 20px;
+  border-right: 1px solid #eeeeee;
+}
+.saleslists_table tbody tr td:last-of-type {
+  border-right: none;
+}
+.cell_productName {
+  width: 350px;
+}
+td.cell_productName {
+  position: relative;
+  padding-left: 85px !important;
+}
+.cell_saleDate,
+.cell_salePrice {
+  width: 180px;
+}
+td.cell_productName .fit_image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 65px;
+}
+
+/*----------- 振込内容 ------------*/
+
+/* 申請フロー */
+
+.application_cont {
+  width: 100%;
+}
+.application_flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 80px;
+  padding: 10px 0;
+  border-top: 1px solid #b7b7b7;
+  border-bottom: 1px solid #b7b7b7;
+}
+.application_flow p {
+  line-height: 40px;
+}
+.application_flow span {
+  display: inline-block;
+  margin: 0 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
+.application_flow p.current {
+  border-radius: 20px;
+  background-color: #005e89;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.application_table,
+.application_table tr {
+  width: 100%;
+}
+.application_table {
+  border: 1px solid #e5e5e5;
+}
+.application_table tr {
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #f7f7f7;
+}
+.application_table tr.applicatioTable_child {
+  background-color: #fff;
+}
+.application_table th,
+.application_table td {
+  padding: 20px;
+  vertical-align: top;
+  font-size: 18px;
+}
+.application_table tr.applicatioTable_child th {
+  padding-left: 40px;
+}
+.application_table th {
+  text-align: left;
+  font-weight: 500;
+}
+.application_table td {
+  width: 200px;
+  text-align: right;
+}
+.application_table th span {
+  font-size: 12px;
+}
+.input_transferPrice {
+  width: 120px;
+  padding: 0 5px;
+}
+.calculated_price {
+  color: #ff5b5b;
+}
+
+.application_btn {
+  margin-top: 80px;
+}
+.application_btn button,
+.application_btn a {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+  color: #fff;
+}
+.applctn_btn_blue {
+  background-color: #005e89;
+}
+.applctn_btn_gray {
+  background-color: #6b6b6b;
+}
+
+/*----------- 振込先銀行口座 ------------*/
+.bank_table,
+.bank_table tr {
+  width: 100%;
+}
+.bank_table {
+  border: 1px solid #e5e5e5;
+}
+.bank_table tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+.bank_table th,
+.bank_table td {
+  padding: 10px 20px;
+}
+.bank_table th {
+  width: 60%;
+  background-color: #f7f7f7;
+  text-align: left;
+}
+.bank_table td {
+  text-align: right;
+}
+.bank_table input,
+.bank_table select {
+  height: 40px;
+}
+.bank_table input {
+  width: 100%;
+  padding: 0 10px;
+  border-color: #afafaf;
+}
+.input_branchCode {
+  width: 150px !important;
+}
+.accountType_label {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  border: 1px solid #afafaf;
+}
+.bank_table select {
+  width: 100%;
+  padding: 0 25px 0 10px;
+  background-color: transparent
+}
+.accountType_label::before {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 9px;
+  background-image: url(../img/icon/icon_arrow_down.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/*----------- 入力情報確認 ------------*/
+.confirm_table {
+  width: 100%;
+  margin-bottom: 50px;
+  border: 1px solid #c1c1c1;
+}
+.confirm_table thead {
+  background-color: #e2e2e2;
+}
+.confirm_table tr {
+  border-bottom: 1px solid #c1c1c1;
+}
+.confirm_table th,
+.confirm_table td {
+  padding: 30px 50px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.confirm_table th {
+  text-align: left;
+}
+.confirm_table tbody th {
+  padding-left: 80px;
+}
+.confirm_table td {
+  text-align: right;
+}
+#page_transferConfirm .application_btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#page_transferConfirm .application_btn button {
+  margin: 0 20px;
+}
+
+/*----------- 登録完了 ------------*/
+.transfer_comptext {
+  text-align: center;
+  line-height: 2.2;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*----------- 申請履歴（売上履歴流用） ------------*/
+.cell_applicationDate {
+  width: 200px;
+}
+.cell_transferTo {
+  width: 260px;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- 共通部分 ------------*/
+
+  /* 共通コンテナ */
+  #page_sales .mp_cont,
+  #page_salesHistory .mp_cont,
+  #page_transfers .mp_cont,
+  #page_bank .mp_cont,
+  #page_transferConfirm .mp_cont,
+  #page_transferComplete .mp_cont,
+  #page_transferApplications .mp_cont {
+    min-width: 290px;
+  }
+  .sales_cont {
+    padding-top: 50px;
+  }
+
+  /* タブ */
+  .sales_tabs {
+    margin-bottom: 50px;
+    border-bottom: 2px solid #005e89;
+  }
+  .sales_tabs a {
+    width: 70px;
+    margin-right: 15px;
+    line-height: 45px;
+    font-size: 12px;
+  }
+  @media screen and (max-width:370px) {
+    .sales_tabs a {
+      margin-right: 5px;
+    }
+  }
+
+  /*----------- 売上金 ------------*/
+  .sales_table tr {
+    border-bottom: 1px solid #eeeeee;
+  }
+  .sales_table th,
+  .sales_table td {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .sales_table th {
+    width: auto;
+    font-size: 15px;
+  }
+  .sales_table td {
+    font-size: 17px;
+  }
+
+  /*----------- 売上履歴 ------------*/
+  .saleslists_cont p {
+    margin-bottom: 20px;
+  }
+  .saleslists_table {
+    margin-bottom: 0px;
+　}
+  .saleslists_table thead {
+    display: none;
+  }
+  .saleslists_table tbody tr {
+    display: block;
+    margin-bottom: 50px;
+    border: 1px solid #5e5e5e;
+  }
+  .saleslists_table tbody th,
+  .saleslists_table tbody td {
+    display: block;
+    border-bottom: 1px solid #5e5e5e;
+  }
+  .saleslists_table tbody th {
+    padding: 10px;
+    background-color: #007cb2;
+    color: #fff;
+  }
+  .saleslists_table tbody tr td {
+    border-right: none;
+    background-color: #eeeeee;
+  }
+  .saleslists_table tbody tr td:last-of-type {
+    border-bottom: none;
+  }
+  .cell_productName {
+    width: auto;
+  }
+  .cell_saleDate,
+  .cell_salePrice {
+    width: auto;
+  }
+
+  /*----------- 振込内容 ------------*/
+
+  /* 申請フロー */
+
+  .application_flow {
+    margin-bottom: 40px;
+  }
+  .application_flow p {
+    font-size: 12px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .application_flow span {
+    margin: 0 10px;
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .application_flow p.current {
+    padding: 5px 10px;
+  }
+  @media screen and (max-width:370px) {
+    .application_flow p {
+      font-size: 11px;
+    }
+    .application_flow span {
+      margin: 0 5px;
+      font-size: 12px;
+    }
+  }
+
+  .application_table th,
+  .application_table td {
+    display: block;
+    width: auto !important;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: left;
+    font-size: 16px;
+  }
+  .application_table th {
+    padding-top: 13px;
+    padding-bottom: 0;
+  }
+  .application_table td {
+    padding-top: 0;
+    padding-bottom: 13px;
+  }
+  .application_table tr.applicatioTable_child th,
+  .application_table tr.applicatioTable_child td {
+    padding-left: 30px;
+  }
+  .application_table th span {
+    font-size: 11px;
+  }
+  .input_transferPrice {
+    margin-top: 10px;
+  }
+
+  .application_btn {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .application_btn button,
+  .application_btn a {
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+  }
+
+  /*----------- 振込先銀行口座 ------------*/
+  .bank_table th,
+  .bank_table td {
+    display: block;
+    width: auto;
+    text-align: left;
+  }
+  .bank_table td {
+    padding: 15px 20px;
+  }
+  .bank_table input,
+  .bank_table select {
+    height: 38px;
+  }
+  .accountType_label::before {
+    width: 13px;
+    height: 8px;
+  }
+
+  /*----------- 入力情報確認 ------------*/
+  .confirm_table {
+    margin-bottom: 40px;
+  }
+  .confirm_table th,
+  .confirm_table td {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+  .confirm_table tbody th {
+    padding-left: 10px;
+  }
+  #page_transferConfirm .application_btn button {
+    margin: 0 20px 25px;
+  }
+
+  /*----------- 登録完了 ------------*/
+  .transfer_comptext {
+    font-size: 15px;
+  }
+  @media screen and (max-width:370px) {
+    .transfer_comptext {
+      font-size: 13px;
+    }
+  }
+
+  /*----------- 申請履歴（売上履歴流用） ------------*/
+  .cell_applicationDate,
+  .cell_transferTo {
+    width: auto;
+  }
+
+}

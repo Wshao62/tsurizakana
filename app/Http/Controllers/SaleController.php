@@ -30,7 +30,56 @@ class SaleController extends Controller
      */
     public function index()
     {
-        return view('sale.list');
+        return view('sale.index');
     }
+
+    /**
+     * 売上履歴画面を表示
+     */
+    public function history()
+    {
+        return view('sale.history');
+    }
+
+    /**
+     * 振込申請画面を表示
+     */
+    public function application()
+    {
+        return view('sale.application.index');
+    }
+
+    /**
+     * 振込先銀行口座画面を表示
+     */
+    public function bank()
+    {
+        return view('sale.application.bank');
+    }
+
+    /**
+     * 振込申請確認画面を表示
+     */
+    public function confirm()
+    {
+        return view('sale.application.confirm');
+    }
+
+    /**
+     * 振込申請完了画面を表示
+     */
+    public function complete()
+    {
+        return view('sale.application.complete');
+    }
+
+    /**
+     * 振込申請履歴画面を表示
+     */
+    public function applicationHistory()
+    {
+        return view('sale.application.history');
+    }
+
 
 }

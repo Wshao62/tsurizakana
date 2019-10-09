@@ -157,7 +157,12 @@ Route::group(['middleware' => 'auth:user'], function () {
 
         // 売上管理
         Route::resource('sales', 'SaleController', ['except' => ['show']]);
-
+        Route::get('sales/history', 'SaleController@history');
+        Route::get('sales/application', 'SaleController@application');
+        Route::get('sales/application/bank', 'SaleController@bank');
+        Route::get('sales/application/confirm', 'SaleController@confirm');
+        Route::get('sales/application/complete', 'SaleController@complete');
+        Route::get('sales/application/history', 'SaleController@applicationHistory');
     });
 
     Route::group(['prefix' => 'fish'], function () {
