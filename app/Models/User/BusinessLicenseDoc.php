@@ -2,6 +2,7 @@
 
 namespace App\Models\User;
 
+use App\Notifications\BusinessLicenseJudgedNotification;
 use App\Notifications\BusinessLicenseRecievedNotify;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Admin;
@@ -114,7 +115,7 @@ class BusinessLicenseDoc extends Model
                 }
                 self::where('user_id', '=', $user->id)->where('id', '!=', $this->id)->delete();
             }
-            $user->notify(new IdentificationJudgedNotification($attributes['reject_reason']));
+            $user->notify(new BusinessLicenseJudgedNotification($attributes['reject_reason']));
 
             \DB::commit();
             $is_done = true;
