@@ -54,6 +54,16 @@
                                     </p>
                                 </div>
                             @endif
+
+                            @if ($userInfo->isWaiting4BusinessIdentification())
+                                <div class="col-md-10 mt-5">
+                                    <p class="alert alert-warning">
+                                        営業許可証書類が届いています。
+                                        <a href="{{ url('/admin/user/'.$userInfo['id'].'/business-license') }}"><button type="button" class="btn btn-warning mt-4 w-100">確認する</button></a>
+                                    </p>
+                                </div>
+                            @endif
+
                             @if ($userInfo->isIdentified())
                             <div class="col-md-10 mt-5 mb-2">
                                 <div class="btn-group w-100">
@@ -81,6 +91,35 @@
                                     @endif
                                 </div>
                             </div>
+                            @endif
+
+                            @if ($userInfo->isBusinessIdentified())
+                                <div class="col-md-10 mt-5 mb-2">
+                                    <div class="btn-group w-100">
+                                        <button type="button" class="btn btn-default w-100" data-toggle="modal" data-target="#modal3">営業許可証書類1</button>
+                                        <div id="modal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <img src="{{ $userInfo->businessLicense->getUrl(1) }}" class="img-responsive w-100">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @if (!empty($userInfo->businessLicense->file_path2))
+                                            <button type="button" class="btn btn-default border-left w-100" data-toggle="modal" data-target="#modal4">営業許可証書類2</button>
+                                            <div id="modal4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-lg">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <img src="{{ $userInfo->businessLicense->getUrl(2) }}" class="img-responsive w-100">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
                             @endif
 
                             <div class="col-md-10 mt-5">

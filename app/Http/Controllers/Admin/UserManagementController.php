@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\BusinessLicenseImageGet;
+use App\Http\Requests\Admin\JudgBusinessLicensePost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -121,6 +123,40 @@ class UserManagementController extends Controller
     public function getImage(IdentificationImageGet $req, int $user_id, string $slug, string $ext)
     {
         $path = storage_path(config('const.identification_path').$user_id. '/'. $slug . '.'. $ext);
+        if (\File::exists($path)) {
+            $image = \File::get($path);
+            return response()->make($image, 200, ['content-type' => 'image/jpg']);
+        } else {
+            return response()->make('', 404);
+        }
+    }
+
+    public function showBusinessLicense(User $user)
+    {
+        if (!$user->isWaiting4BusinessIdentification()) {
+            abort(404);
+        }
+        return view('admin.user.business_license', [
+            'user' => $user,
+            'business_license' => $user->businessLicense,
+        ]);
+    }
+
+    public function judgBusinessLicense(JudgBusinessLicensePost $request, User $user)
+    {
+        $data = $request->validated();
+        $rtn = $user->businessLicense->judgeAndNotify($user, $data);
+        if (!$rtn) {
+            return redirect()->back()->withInput()->with(['error' => 'システムエラーです。再度お試しください。']);
+        }
+
+        Session::put('status', '営業許可書類確認は正常にステータス「"'.$data['judge'].'"」で処理されました。');
+        return redirect('/admin/user/'.$user->id.'/edit');
+    }
+
+    public function getBusinessLicenseImage(BusinessLicenseImageGet $req, int $user_id, string $slug, string $ext)
+    {
+        $path = storage_path(config('const.business_license_path').$user_id. '/'. $slug . '.'. $ext);
         if (\File::exists($path)) {
             $image = \File::get($path);
             return response()->make($image, 200, ['content-type' => 'image/jpg']);

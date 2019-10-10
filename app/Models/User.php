@@ -46,6 +46,7 @@ class User extends Authenticatable
         'mobile_tel',
         'tel',
         'identificated_at',
+        'business_identificated_at',
         'bank_name',
         'bank_branch_code',
         'bank_type',
@@ -132,6 +133,16 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\User\IdentificationDoc', 'user_id', 'id')->latest();
     }
 
+    public function businessLicenses()
+    {
+        return $this->hasMany('App\Models\User\BusinessLicenseDoc', 'user_id', 'id');
+    }
+
+    public function businessLicense()
+    {
+        return $this->hasOne('App\Models\User\BusinessLicenseDoc', 'user_id', 'id')->latest();
+    }
+
     public function shop()
     {
         return $this->hasOne('App\Models\User\Shop', 'user_id', 'id');
@@ -182,6 +193,27 @@ class User extends Authenticatable
     {
         $latested_check = $this->identification;
         return !!(!$this->isIdentified() && !empty($latested_check) && empty($latested_check->reject_reason));
+    }
+
+    /**
+     * 営業許可証確認済みか
+     *
+     * @return bool
+     */
+    public function isBusinessIdentified()
+    {
+        return !!(!empty($this->business_identificated_at));
+    }
+
+    /**
+     * 営業許可証確認待ちの状態であるか
+     *
+     * @return bool
+     */
+    public function isWaiting4BusinessIdentification()
+    {
+        $latested_check = $this->businessLicense;
+        return !!(!$this->isBusinessIdentified() && !empty($latested_check) && empty($latested_check->reject_reason));
     }
 
     public function notificationList()

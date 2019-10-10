@@ -97,6 +97,10 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::get('/identification', 'Auth\IdentificationController@index');
     Route::post('/identification', 'Auth\IdentificationController@send2Admin');
 
+    // 営業許可証確認
+    Route::get('/business-license', 'Auth\BusinessLicenseController@index');
+    Route::post('/business-license', 'Auth\BusinessLicenseController@send2Admin');
+
     Route::group(['prefix' => 'mypage'], function () {
         //新しいメールアドレスの変更
         Route::get('verify/email/{token}', 'Auth\ProfileController@verifyNewEmail');

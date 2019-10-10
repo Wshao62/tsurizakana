@@ -868,18 +868,26 @@ small {
   background-color: #576974;
 }
 
-/*----------- 本人確認ボックス ------------*/
+/*----------- 本人確認・営業許可証確認ボックス ------------*/
 .identification_box {
   background: #079ed03f;
   border: 1px solid #079dd0;
   padding: 2rem;
   color: #333;
+  text-align: center;
 }
 .identification_box .content_button {
-  display: block;
+  display: inline-block;
   width: 300px;
   margin: 1rem auto 0;
   padding: 1rem;
+}
+.identification_box .content_button.business {
+  display: inline-block;
+  width: 300px;
+  margin: 1rem auto 0;
+  padding: 1rem;
+
 }
 @media screen and (max-width:768px) {
   .identification_box .content_button {

@@ -35,6 +35,7 @@ return [
 
     //本人確認
     'identification_path' => 'app/identification/',
+    'business_license_path' => 'app/business_license/',
 
     //アプリからのユーザエージェント
     'app_ua' => 'fG9qb8xP',

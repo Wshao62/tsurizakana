@@ -22,6 +22,9 @@ Route::group(['middleware' => 'auth:admin'], function () {
     Route::get('user/{user}/identification', 'Admin\UserManagementController@showIdentification');
     Route::post('user/{user}/identification', 'Admin\UserManagementController@judgIdentification');
     Route::get('user/{user_id}/identification/{slag}.{ext}', 'Admin\UserManagementController@getImage');
+    Route::get('user/{user}/business-license', 'Admin\UserManagementController@showBusinessLicense');
+    Route::post('user/{user}/business-license', 'Admin\UserManagementController@judgBusinessLicense');
+    Route::get('user/{user_id}/business-license/{slag}.{ext}', 'Admin\UserManagementController@getBusinessLicenseImage');
 
     Route::get('fish', 'Admin\FishManagementController@lists');
     Route::get('fish/list', 'Admin\FishManagementController@getFishData');
