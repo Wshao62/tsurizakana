@@ -50,7 +50,7 @@
         element = element + '<p class="chat_time">' + timeParse(response.created_at) + '</p></div></div>';
         element = element + '<div class="clear"></div></div>';
 
-        $messenger.append(element);
+        $messenger.prepend(element);
     }
 
     /**
