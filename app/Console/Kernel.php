@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('temp:clean')->hourly();
-        $schedule->command('fish:garbage')->dailyAt('14:00');
+        $schedule->command('fish:garbage')->dailyAt('18:00');
         $schedule->command('notify:mail')->hourly();
     }
 
