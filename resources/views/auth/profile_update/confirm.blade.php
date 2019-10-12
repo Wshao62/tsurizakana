@@ -38,7 +38,7 @@
                 ※クレジットカード情報を登録していた場合、情報はリセットされます。
                 @endif
             </p>
-            <div class="edit_form_split">届け先住所</div>
+            <div class="edit_form_split">現住所</div>
             <label>
             <span>郵便番号</span>
             <p>{{ $data['zipcode'] }}</p>
@@ -59,13 +59,42 @@
             <p>{{ $data['mobile_tel'] }}</p>
             <div class="edit_form_split">電話番号</div>
             <p>{{ $data['tel'] }}</p>
+
+            <br>
+            <hr>
+
+            <div class="edit_form_split">釣行エリア</div>
+            <p>{{ $data['fishing_area'] }}</p>
+
+            <div class="edit_form_split">得意な釣魚</div>
+            <p>{{ $data['good_fishing_fish'] }}</p>
+
+            <div class="edit_form_split">釣り歴</div>
+            <p>{{ $data['fishing_history'] }}</p>
+
+            <div class="edit_form_split">釣りに行く曜日</div>
+            <p>{{ !empty($data['day_of_week_fishing']) ? implode(',', $data['day_of_week_fishing']) : '' }}</p>
+
             <div class="edit_form_split">自己紹介</div>
             <p>{!! nl2br(htmlspecialchars($data['introduction'])) !!}</p>
 
+            <br>
             <hr>
 
             <div class="edit_form_split">お店の名前</div>
             <p>{{ $data['shop_name'] }}</p>
+
+            <!-- TODO photo -->
+            <div>画像ファイル</div>
+            @if (!empty($data['shop_photo']))
+                @foreach ($data['shop_photo'] as $photo)
+                    <img src="{{ $photo }}" class="preview" width="200px">
+                @endforeach
+            @endif
+
+            <div class="edit_form_split">店舗種別</div>
+            <p>{{ $data['shop_type'] }}</p>
+
             <div class="edit_form_split">お店の住所</div>
             <label>
             <span>郵便番号</span>
@@ -84,6 +113,10 @@
             <p>{{ $data['shop_address2'] }}</p>
             </label>
 
+            <div class="edit_form_split">店舗HP</div>
+            <p>{{ $data['shop_home_page_url'] }}</p>
+
+            <br>
             <hr>
 
             <div class="edit_form_split">口座情報</div>

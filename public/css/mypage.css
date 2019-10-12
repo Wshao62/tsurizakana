@@ -436,6 +436,8 @@ a.link_profile {
 }
 #page_profileedit .edit_form input {
   height: 4.5rem;
+}
+#page_profileedit .edit_form input:not(.no-padding) {
   padding: 0 1.9rem;
 }
 #page_profileedit .edit_form select {
@@ -449,6 +451,13 @@ a.link_profile {
   display: flex;
   align-items: center;
   margin-top: 1.6rem;
+}
+#page_profileedit .edit_form .chk_group {
+  display: inline-flex;
+}
+#page_profileedit .edit_form .chk_group label {
+  margin-top: 0;
+  margin-left: 10px;
 }
 #page_profileedit .edit_form label:first-child{
   margin-top: 0;

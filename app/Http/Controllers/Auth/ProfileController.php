@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
+use App\Http\Requests\UploadShopImagePost;
 use App\Models\UserPhoto;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EditProfilePost;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Validator;
 
+use App\Models\UserShopPhoto;
 use Session;
 
 class ProfileController extends Controller
@@ -39,6 +37,8 @@ class ProfileController extends Controller
             $data['shop_prefecture'] = "";
             $data['shop_address1'] = "";
             $data['shop_address2'] = "";
+            $data['shop_home_page_url'] = "";
+            $data['shop_shop_type'] = "";
         }
 
         if (Session::exists('updating_profile')) {
@@ -52,8 +52,18 @@ class ProfileController extends Controller
         */
         UserPhoto::cleanTempPath($user->id);
 
+        $photo_file_names =  ['', '', '',];
+        $photo_ids =  ['', '', '',];
+        if (!empty($user->shop)) {
+            $photos = $user->shop->photos;
+            $photo_file_names = $photos->pluck('file_name')->toArray() + ['', '', '',];
+            $photo_ids = $photos->pluck('id')->toArray() + ['', '', '',];
+        }
+
         return view('auth.update', [
             'user' => $data,
+            'photo_file_names' => $photo_file_names,
+            'photo_ids' => $photo_ids,
         ]);
     }
 
@@ -81,6 +91,7 @@ class ProfileController extends Controller
             $data['cover_photo'] = UserPhoto::createTempPath("cover_photo", $request, $user->id);
         }
 
+        $data['shop_photo'] = $request->get('photo');
 
         Session::put('updating_profile', $data);
         Session::save();
@@ -139,5 +150,24 @@ class ProfileController extends Controller
 
         return redirect($url)
             ->with(['status' => 'メールアドレスの変更が完了しました。']);
+    }
+
+    /**
+     * 画像をアップロード
+     *
+     * @param  UploadShopImagePost $request
+     *
+     * @return json
+     */
+    public function uploadShopImage(UploadShopImagePost $request)
+    {
+        $photo = $request->file('photo');
+
+        $url = UserShopPhoto::uploadTmpImage($photo);
+        if ($url === false) {
+            return response()->json(['message' => 'システムエラーです、再度お試しください。'], 500);
+        }
+
+        return response()->json(['url' => $url]);
     }
 }

@@ -53,6 +53,10 @@ class User extends Authenticatable
         'bank_number',
         'bank_user_name',
         'introduction',
+        'fishing_area',
+        'good_fishing_fish',
+        'fishing_history',
+        'day_of_week_fishing',
     ];
 
     /**
@@ -338,22 +342,16 @@ class User extends Authenticatable
     {
         \DB::beginTransaction();
         try {
-            $this->zipcode = $attributes['zipcode'];
-            $this->prefecture = $attributes['prefecture'];
-            $this->public_address = $attributes['public_address'];
-            $this->private_address = $attributes['private_address'];
-            $this->mobile_tel = $attributes['mobile_tel'];
-            $this->tel = $attributes['tel'];
-            $this->introduction = $attributes['introduction'];
-            $this->bank_name = $attributes['bank_name'];
-            $this->bank_branch_code = $attributes['bank_branch_code'];
-            $this->bank_type = $attributes['bank_type'];
-            $this->bank_number = $attributes['bank_number'];
-            $this->bank_user_name = $attributes['bank_user_name'];
-            $this->save();
+
+            if (!empty($attributes['day_of_week_fishing'])) {
+                $attributes['day_of_week_fishing'] = implode(',', $attributes['day_of_week_fishing']);
+            } else {
+                $attributes['day_of_week_fishing'] = null;
+            }
+            $this->fill($attributes)->save();
 
             $shop = $this->shop ?: new Shop();
-            if (!empty($shop->useer_id) && empty($attributes['shop_name'])) {
+            if (empty($attributes['shop_name'])) {
                 $shop->delete();
             } elseif (!empty($attributes['shop_name'])) {
                 $shop->user_id = $this->id;
@@ -363,7 +361,64 @@ class User extends Authenticatable
                 $shop->address1 = $attributes['shop_address1'];
                 $shop->address2 = $attributes['shop_address2'];
                 $shop->full_address = $attributes['shop_prefecture'].$attributes['shop_address1'].$attributes['shop_address2'];
+                $shop->shop_type = $attributes['shop_type'];
+                $shop->home_page_url = $attributes['shop_home_page_url'];
                 $shop->save();
+
+                // shop photo
+                $photos = $shop->photos;
+                $keep_photo_ids = [];
+
+                if (!empty($attributes['photo_id'])) {
+                    $img_paths = [];
+                    $delete_paths = [];
+
+                    foreach ($attributes['shop_photo'] as $order => $photo) {
+                        if (!empty($photo)) {
+                            if (!empty($attributes['photo_id'][$order])) {
+                                $user_photo = UserShopPhoto::find($attributes['photo_id'][$order]);
+                                $user_photo->update([
+                                    'order' => $order + 1
+                                ]);
+                                $keep_photo_ids[] = $attributes['photo_id'][$order];
+                            } else {
+                                $_path = UserShopPhoto::moveTempImage($photo);
+                                $img_paths[] = $_path;
+                                UserShopPhoto::create([
+                                    'user_shop_id' => $shop->id,
+                                    'file_name' => $_path['public_path'],
+                                    'order' => $order + 1,
+                                ]);
+                            }
+                        }
+                    }
+                } else {
+                    $img_paths =[];
+                    foreach ($attributes['shop_photo'] as $order => $photo) {
+                        if (!empty($photo)) {
+                            $_path = UserShopPhoto::moveTempImage($photo);
+                            $img_paths[] = $_path;
+                            UserShopPhoto::create([
+                                'user_shop_id' => $shop->id,
+                                'file_name' => $_path['public_path'],
+                                'order' => $order + 1,
+                            ]);
+                        }
+                    }
+                }
+
+                if (!empty($photos)) {
+                    //登録済み写真の削除
+                    $delete_ids = [];
+                    foreach ($photos as $photo) {
+                        if (!in_array($photo->id, $keep_photo_ids)) {
+                            $delete_paths[] = FileHelper::getServerPath($photo->file_name);
+                            $delete_ids[] = $photo->id;
+                        }
+
+                    }
+                    UserShopPhoto::destroy($delete_ids);
+                }
             }
 
             $rtn = $this;
@@ -405,6 +460,12 @@ class User extends Authenticatable
 
             \DB::commit();
             \File::delete($deletefile);
+            //tmp画像は削除
+            \File::delete(\File::glob(UserShopPhoto::getTempDir4User().'*'));
+            //削除選択した画像も削除
+            if (!empty($delete_paths)) {
+                \File::delete($delete_paths);
+            }
 
             if (!empty($verify_email)) {
                 $this->notify(new VerifyNewEmailNotification($verify_email['token']));
@@ -417,6 +478,13 @@ class User extends Authenticatable
             }
             if (!empty($paths_profile)) {
                 \File::delete($paths_profile);
+            }
+            if (!empty($img_paths)) {
+                $delete_file = [];
+                foreach ($img_paths as $_path) {
+                    $delete_file[] = $_path['target_path'];
+                }
+                \File::delete($delete_file);
             }
             \Log::error(get_class().':updater(): '.$e->getMessage());
             \DB::rollback();
@@ -531,6 +599,14 @@ class User extends Authenticatable
             'bank_type' => ['nullable', 'numeric', Rule::in(self::BANK_TYPES), 'required_with:bank_name,bank_branch_code, bank_number,bank_user_name'],
             'bank_number' => ['nullable', 'numeric', 'digits_between:4,7', 'required_with:bank_name,bank_branch_code,bank_type,bank_user_name'],
             'bank_user_name' => ['nullable', 'string', 'bank_user_name', 'max:30', 'required_with:bank_name,bank_branch_code,bank_type,bank_number'],
+            'fishing_area' => ['nullable', 'string', 'max:100'],
+            'good_fishing_fish' => ['nullable', 'string', 'max:100'],
+            'fishing_history' => ['nullable', 'string', 'max:100'],
+            'day_of_week_fishing' => ['nullable'],
+            'shop_type' => ['nullable', 'string', 'max:100'],
+            'shop_home_page_url' => ['nullable', 'string', 'max:100'],
+            'photo' => ['nullable'],
+            'photo_id' => ['nullable'],
         ];
 
         switch ($step) {
@@ -593,6 +669,8 @@ class User extends Authenticatable
             'shop_prefecture' => '',
             'shop_address1' => '',
             'shop_address2' => '',
+            'shop_type' => '',
+            'shop_home_page_url' => '',
         ];
     }
 

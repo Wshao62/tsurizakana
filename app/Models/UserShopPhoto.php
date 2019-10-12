@@ -1,24 +1,29 @@
 <?php
 
-namespace App\Models\Fish;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traits\Register;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 use App\Models\Traits\Updater;
-use \App\Helpers\FileHelper;
+use App\Models\Traits\Register;
+use App\Models\Fish\Category;
+use Illuminate\Validation\Rule;
+use Intervention\Image\ImageManagerStatic as Image;
+use App\Helpers\FileHelper;
+use Illuminate\Support\Facades\File;
+use App\Models\User;
 
-class Photo extends Model
+class UserShopPhoto extends Model
 {
     use Register;
     use Updater;
 
     protected $fillable = [
-        'fish_id',
+        'user_shop_id',
         'file_name',
         'order',
     ];
-
-    protected $table = 'fish_photos';
 
     const UPDATED_AT = null;
 
@@ -51,22 +56,21 @@ class Photo extends Model
 
     public static function getTempDir4User()
     {
-        return storage_path(config('const.fish_img_temp_path_server'). \Auth::id(). '/');
+        return storage_path(config('const.user_shop_img_temp_path_server'). \Auth::id(). '/');
     }
 
 
     /**
      * temporary画像を世紀ディレクトリに移動
      *
-     * @param  string $url
-     * @param  int $fish_id
-     *
+     * @param $url
      * @return array
+     * @throws \Exception
      */
-    public static function moveTempImage($url, $fish_id)
+    public static function moveTempImage($url)
     {
         $source_path = FileHelper::getServerPath($url);
-        $target_dir = storage_path(config('const.fish_img_path_server'). \Auth::id(). '/'. $fish_id. '/');
+        $target_dir = storage_path(config('const.user_shop_img_path_server'). \Auth::id(). '/');
         FileHelper::addDirectory($target_dir, 0777);
 
         $ext = substr($source_path, strrpos($source_path, '.') + 1);

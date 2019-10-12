@@ -22,6 +22,8 @@ class Shop extends Model
         'address1',
         'address2',
         'full_address',
+        'shop_type',
+        'home_page_url',
     ];
 
     protected $table = 'user_shops';
@@ -29,6 +31,20 @@ class Shop extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
+
+    public function photos()
+    {
+        return $this->hasMany('App\Models\UserShopPhoto', 'user_shop_id', 'id')->orderBy('order', 'asc');
+    }
+
+    public function onePhoto()
+    {
+        return $this->hasOne('App\Models\UserShopPhoto', 'user_shop_id', 'id')
+            ->whereOrder(1)
+            ->withDefault(
+                ['file_name' => '']
+            );
     }
 
     public static function search($data)

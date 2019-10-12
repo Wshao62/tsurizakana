@@ -147,6 +147,7 @@ Route::group(['middleware' => 'auth:user'], function () {
         Route::post('profile/confirm', 'Auth\ProfileController@updateProfileConfirm');
         Route::post('profile/update', 'Auth\ProfileController@updateProfile');
         Route::get('profile/complete', 'Auth\ProfileController@updateProfileComplete');
+        Route::post('profile/shop_image/upload', 'Auth\ProfileController@uploadShopImage');
 
         // Message
         Route::get('message/more', 'MessageController@moreMessage');

@@ -42,4 +42,8 @@ return [
 
     //手数料
     'service_charge' => .07,
+
+    //店舗画像ファイルパス
+    'user_shop_img_temp_path_server' => 'app/public/img/tmp/user_shop/',
+    'user_shop_img_path_server' => 'app/public/img/user_shop/',
 ];
