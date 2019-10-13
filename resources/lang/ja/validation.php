@@ -179,6 +179,11 @@ return [
         'rate' => '評価',
         'rate_message' => 'コメント',
         'reason' => '理由',
+        'amount' => '数量',
+        'size_cm' => 'サイズ(cm)',
+        'size_kg' => 'サイズ(kg)',
+        'how_to_tighten' => '締め方',
+        'delivery_method' => '配達方法',
 
         //Fish Request
         'category_name' => '魚の名前',

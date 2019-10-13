@@ -71,8 +71,12 @@
                     </div>
                     </td>
                 </tr>
-                <tr><th>釣れた場所</th><td><div>{{ $fish['location'] }}</div></td></tr>
-                <tr><th>届け可能地域</th><td><div>{{ $fish['destination'] }}</div></td></tr>
+                <tr><th>数量</th><td><div>{{ $fish['amount'] }} 匹</div></td></tr>
+                <tr><th>サイズ</th><td><div>{{ $fish['size_cm'] }} cm / {{ $fish['size_kg'] }} kg</div></td></tr>
+                <tr><th>締め方</th><td><div>{{ $fish['how_to_tighten'] }}</div></td></tr>
+                <tr><th>釣れた場所</th><td><div>{{ $fish['prefecture'] }} / {{ $fish['location'] }}</div></td></tr>
+                <tr><th>お届け可能地域</th><td><div>{{ $fish['destination'] }}</div></td></tr>
+                <tr><th>配達方法</th><td><div>{{ $fish['delivery_method'] }}</div></td></tr>
                 <tr><th>登録時間</th><td><div class="font_avenirnext">{{ $fish->getFormatedCreatedAt('H:i:s') }}</div></td></tr>
                 <tr><th>配送元地域</th><td><div>東京都</div></td></tr>
                 </table>

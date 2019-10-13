@@ -40,6 +40,12 @@ class Fish extends Model
         'price',
         'description',
         'status',
+        'prefecture',
+        'amount',
+        'size_cm',
+        'size_kg',
+        'delivery_method',
+        'how_to_tighten',
     ];
 
     protected $searchable = [
@@ -1098,6 +1104,12 @@ class Fish extends Model
             'description' => ['required', 'string', 'max:1000'],
             'photo' => ['required', 'array', 'between:1,3'],
             'photo.*' => ['filled', 'url', 'active_storage_url'],
+            'prefecture' => ['required'],
+            'amount' => ['required', 'integer'],
+            'size_cm' => ['required', 'integer'],
+            'size_kg' => ['required', 'integer'],
+            'delivery_method' => ['required'],
+            'how_to_tighten' => ['required', 'max:200'],
         ];
 
         if (!empty($fish_id)) {
@@ -1129,6 +1141,12 @@ class Fish extends Model
             'price' => '',
             'description' => '',
             'photo' => ['', '', '',],
+            'prefecture' => '',
+            'amount' => '',
+            'size_cm' => '',
+            'size_kg' => '',
+            'delivery_method' => '',
+            'how_to_tighten' => '',
         ];
     }
 

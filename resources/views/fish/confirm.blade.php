@@ -24,14 +24,25 @@
         </div>
         <div class="upconf_tt">商品名<span class="up_ess">必須</span></div>
         <p>{{ $fish_data['fish_category_name'] }}</p>
-        <div class="upconf_tt">魚が釣れた場所<span class="up_ess">必須</span></div>
-        <p>{{ $fish_data['location'] }}</p>
-        <div class="upconf_tt">金額<span class="up_ess">必須</span></div>
-        <p>{{ $fish_data['price'] }}</p>
+        <div class="upconf_tt">数量<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['amount'] }} 匹</p>
+        <div class="upconf_tt">サイズ<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['size_cm'] }} cm / {{ $fish_data['size_kg'] }} kg</p>
+        <div class="upconf_tt">締め方<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['how_to_tighten'] }}</p>
         <div class="upconf_tt">商品詳細<span class="up_ess">必須</span></div>
         <p>
             {!! nl2br(htmlspecialchars($fish_data['description'])) !!}
         </p>
+        <div class="upconf_tt">魚が釣れた場所<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['prefecture'] }} / {{ $fish_data['location'] }}</p>
+        <div class="upconf_tt">お届け可能地域<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['destination'] }}</p>
+        <div class="upconf_tt">配達方法<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['delivery_method'] }}</p>
+        <div class="upconf_tt">金額<span class="up_ess">必須</span></div>
+        <p>{{ $fish_data['price'] }} 円</p>
+
 
         <form class="up_btns" method="POST" action="{{ url('/mypage/fish/complete') }}">
             <input class="content_button" name="" type="submit" value="出品する">

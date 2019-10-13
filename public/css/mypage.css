@@ -440,7 +440,7 @@ a.link_profile {
 #page_profileedit .edit_form input:not(.no-padding) {
   padding: 0 1.9rem;
 }
-#page_profileedit .edit_form select {
+#page_profileedit .edit_form select, #page_upload select {
   width: 24rem;
   height: 4.5rem;
   padding: 0 7.9rem 0 1.9rem;
@@ -502,16 +502,16 @@ a.link_profile {
 #page_profileedit .edit_form div + label {
   margin-top: 2.8rem;
 }
-#page_profileedit .edit_form .edit_form_select {
+#page_profileedit .edit_form .edit_form_select, #page_upload .form_select {
   position: relative;
   transition: opacity .2s ease-in-out;
   border-radius: 0 .6rem .6rem 0;
 }
-#page_profileedit .edit_form .edit_form_select:hover {
+#page_profileedit .edit_form .edit_form_select:hover, #page_upload .form_select:hover {
   opacity: .8;
   transition: opacity .2s ease-in-out;
 }
-#page_profileedit .edit_form .edit_form_select::before {
+#page_profileedit .edit_form .edit_form_select::before, #page_upload .form_select::before {
   content: '';
   position: absolute;
   top: 0;
@@ -525,11 +525,11 @@ a.link_profile {
   pointer-events: none;
   transition: opacity .2s ease-in-out;
 }
-#page_profileedit .edit_form .edit_form_select:hover::before {
+#page_profileedit .edit_form .edit_form_select:hover::before, #page_upload .form_select:hover::before {
   opacity: .8;
   transition: opacity .2s ease-in-out;
 }
-#page_profileedit .edit_form .edit_form_select::after {
+#page_profileedit .edit_form .edit_form_select::after, #page_upload .form_select::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -543,7 +543,7 @@ a.link_profile {
   pointer-events: none;
   transform: translateY(-50%);
 }
-#page_profileedit .edit_form .input_length_short {
+#page_profileedit .edit_form .input_length_short , #page_upload .input_length_short {
   width: 24rem;
 }
 #page_profileedit .edit_form .input_length_full {
@@ -1527,6 +1527,21 @@ textarea {
 #page_upload .link_line {
   display: none;
 }
+#page_upload .inline_flex {
+  width: 100%;
+  display: inline-flex;
+}
+#page_upload .inline_flex div {
+  margin-right: 10px;
+}
+#page_upload .inline_flex label {
+  width: 50%;
+}
+
+#page_upload .inline_flex.text span {
+  margin: 10px;
+}
+
 
 /*----------- 商品一覧 ------------*/
 #page_items {
@@ -2966,7 +2981,7 @@ textarea {
   #page_profileedit .edit_form .edit_form_split:first-of-type {
     margin-top: 0;
   }
-  #page_profileedit .edit_form .input_length_short {
+  #page_profileedit .edit_form .input_length_short, #page_upload .input_length_short {
     width: 13rem;
   }
   #page_profileedit .edit_form .edit_form_select.input_length_short {
