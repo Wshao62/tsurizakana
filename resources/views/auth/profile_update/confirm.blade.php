@@ -29,7 +29,7 @@
     @endif
     <form class="edit_form" action="{{ url('/mypage/profile/update') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <span class="edit_form_inner">
+        <span class="edit_form_inner up_form">
             <div class="edit_form_split">メールアドレス</div>
             <p>
                 {{ $data['email'] }}<br>
@@ -84,13 +84,19 @@
             <div class="edit_form_split">お店の名前</div>
             <p>{{ $data['shop_name'] }}</p>
 
-            <!-- TODO photo -->
             <div>画像ファイル</div>
-            @if (!empty($data['shop_photo']))
-                @foreach ($data['shop_photo'] as $photo)
-                    <img src="{{ $photo }}" class="preview" width="200px">
+            <ul class="up_form_slider sp">
+                @foreach ($data['shop_photo'] as $_p)
+                     <li><div class="fit_image"><img src="{{ $_p }}"></div></li>
+                 @endforeach
+            </ul>
+            <div class="up_form_image">
+                @foreach ($data['shop_photo'] as $_p)
+                    <div class="fit_image">
+                    <img src="{{ $_p }}">
+                </div>
                 @endforeach
-            @endif
+            </div>
 
             <div class="edit_form_split">店舗種別</div>
             <p>{{ $data['shop_type'] }}</p>

@@ -906,6 +906,53 @@ a.link_profile {
   font-size: 1.4rem;
   color: #b1b1b1;
 }
+#page_profileconfirm .up_form {
+  width: 100%;
+}
+
+#page_profileconfirm .up_form_slider {
+  display: none;
+}
+#page_profileconfirm .up_wrap {
+  padding: 4rem;
+}
+#page_profileconfirm .up_form {
+  width: 100%;
+}
+#page_profileconfirm .up_form .up_form_image {
+  display: flex;
+  margin-bottom: 5rem;
+}
+#page_profileconfirm .up_form .fit_image {
+  width: 31.8518518518519%;
+  height: 18rem;
+  margin-right: 2.22222222222222%;
+}
+@media only screen and (max-width: 1000px) {
+  #page_profileconfirm .up_form .fit_image {
+    height: 18vw;
+  }
+}
+#page_profileconfirm .up_form .fit_image:last-of-type {
+  margin-right: 0;
+}
+.up_form > .fit_image:nth-of-type(2) {
+  margin: 0 21px;
+}
+.upconf_tt {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2e2e2e;
+  margin-bottom: 7px;
+}
+.up_form > p {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+#page_profileconfirm .up_btns {
+  margin-top: 70px;
+}
 
 /*----------- ブログ管理 ------------*/
 #page_blog .tab {
@@ -3136,6 +3183,58 @@ textarea {
     width: 6rem;
     padding: .75rem 0;
     font-size: 1.2rem;
+  }
+  .up_form > .fit_image {
+    display: none;
+  }
+  #page_profileconfirm .up_form_slider .fit_image {
+    max-width: none;
+  }
+  .upconf_tt {
+    font-size: 13px;
+  }
+  .up_form > p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  #page_profileconfirm .up_btns {
+    margin-top: 50px;
+  }
+  #page_profileconfirm .up_form .up_form_image {
+    display: none;
+  }
+  #page_profileconfirm .up_form_slider {
+    display: block;
+  }
+  #page_profileconfirm .up_form .fit_image {
+    width: 100%;
+    height: 53.3333333333333vw;
+  }
+  .up_form_slider {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  .up_form_slider .fit_image {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+  }
+  .up_form_slider .fit_image::before {
+    content:"";
+    display: block;
+    padding-top: 100%;
+  }
+  .up_form_slider button {
+    display: none !important;
+  }
+  .up_form_slider .slider_dots li {
+    padding: 1rem .4rem;
+  }
+  .up_form_slider .slider_dots button {
+    display: block !important;
   }
 
   /*----------- ブログ管理 ------------*/
