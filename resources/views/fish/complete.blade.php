@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '釣魚アップロード 完了')
+@section('title', '釣魚アップロード 完了')
 @section('page_id', 'page_uploadcompleted')
 @section('css', 'mypage.css')
 @section('not_need_head_img', true)
