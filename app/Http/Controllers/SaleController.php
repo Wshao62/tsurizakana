@@ -33,8 +33,8 @@ class SaleController extends Controller
      */
     public function history()
     {
-        $orders = $this->order->closed()->paginate(12);
-        $count = $this->order->closed()->count();
+        $orders = $this->order->closed()->sellerOwn()->paginate(12);
+        $count = $this->order->closed()->sellerOwn()->count();
         return view('sale.history', compact('orders', 'count'));
     }
 

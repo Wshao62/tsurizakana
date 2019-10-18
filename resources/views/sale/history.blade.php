@@ -36,7 +36,7 @@
                             <span>{{ $order->fish->fish_category_name }}</span>
                         </td>
                         <th>販売先</th>
-                        <td class="cell_saleTo">{{ $order->fish->buyer->name }}</td>
+                        <td class="cell_saleTo">{{ $order->fish->buyer ? $order->fish->buyer->name : null }}</td>
                         <th>販売日</th>
                         <td class="cell_saleDate">{{ $order->created_at->format('Y/m/d') }}</td>
                         <th>販売代金</th>

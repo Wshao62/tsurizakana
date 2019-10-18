@@ -186,4 +186,11 @@ class Order extends Model
             $query->where('fish.status', Fish::STATUS_CLOSED);
         });
     }
+
+    public function scopeSellerOwn($query)
+    {
+        return $query->whereHas('fish', function($query) {
+            $query->where('fish.seller_id', Auth::user()->id);
+        });
+    }
 }
