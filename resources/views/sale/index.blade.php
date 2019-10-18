@@ -17,11 +17,11 @@
         <table class="sales_table">
             <tr>
                 <th>現在の売上金残高</th>
-                <td>10,000円</td>
+                <td>{{ number_format($sale_remain) }}円</td>
             </tr>
             <tr>
                 <th>累計売上高</th>
-                <td>50,000円</td>
+                <td>{{ number_format($sale_total) }}円</td>
             </tr>
         </table><!-- END sales_table -->
     </div><!-- END sales_cont -->

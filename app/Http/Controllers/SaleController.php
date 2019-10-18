@@ -2,43 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\Fish\AddPost;
-use App\Http\Requests\Fish\EditPost;
-use App\Http\Requests\Fish\UploadImagePost;
-use App\Http\Requests\Fish\SearchGet;
-use App\Http\Requests\Fish\RatePost;
-use App\Http\Requests\Fish\RejectPost;
-use App\Models\User;
-use App\Models\Fish;
-use App\Models\Fish\Category;
-use App\Models\Fish\Comment;
-use App\Models\Fish\Photo;
-use App\Models\Message;
-use App\Models\UserRating;
-use Intervention\Image\ImageManagerStatic as Image;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
 use Session;
-use Illuminate\Support\Facades\Validator;
-use App\Http\Requests\CategorySearchPost;
-use Carbon\Carbon;
+use Zend\Diactoros\Request;
 
 class SaleController extends Controller
 {
+    private $order;
+
+    public function __construct(Order $order)
+    {
+        $this->order = $order;
+    }
 
     /**
      * 売上管理画面を表示
      */
     public function index()
     {
-        return view('sale.index');
+        $sale_remain = $this->order->getSaleRemain();
+        $sale_total = $this->order->getSaleTotal();
+        return view('sale.index', compact('sale_remain', 'sale_total'));
     }
 
     /**
      * 売上履歴画面を表示
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function history()
     {
-        return view('sale.history');
+        $orders = $this->order->closed()->paginate(12);
+        $count = $this->order->closed()->count();
+        return view('sale.history', compact('orders', 'count'));
     }
 
     /**

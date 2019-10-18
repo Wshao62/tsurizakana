@@ -4,10 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Fish;
 use App\Models\Traits\Register;
 use App\Models\Traits\Updater;
-use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class Order extends Model
@@ -22,6 +21,7 @@ class Order extends Model
         'item_id',
         'price',
         'stripe_charge_id',
+        'is_able_transfer',
         'billed_at',
     ];
 
@@ -139,6 +139,30 @@ class Order extends Model
         return ['query' => $query, 'filterd_cnt' => $filterd_cnt];
     }
 
+    /*
+     * 累計売上高を取得
+     */
+    public function getSaleTotal() {
+        $res = 0;
+        $orders = $this->query()->whereHas('fish', function ($query) {
+            $query->where('seller_id', Auth::user()->id);
+        })->get();
+        foreach ($orders as $order) {
+            $res += $order->price;
+        }
+
+        return $res;
+    }
+
+    /*
+     * 現在の売上金残高を取得
+     */
+    public function getSaleRemain() {
+        $res = $this->getSaleTotal();
+
+        // TODO: 累計売上高 - 振込申請済み金額
+        return $res;
+    }
 
 
     /**
@@ -154,5 +178,12 @@ class Order extends Model
         ];
 
         return $val;
+    }
+
+    public function scopeClosed($query)
+    {
+        return $query->whereHas('fish', function($query) {
+            $query->where('fish.status', Fish::STATUS_CLOSED);
+        });
     }
 }
