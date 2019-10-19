@@ -154,12 +154,27 @@ class Order extends Model
         return $res;
     }
 
-    /*
+    /**
      * 現在の売上金残高を取得
+     *
+     * @return int
      */
     public function getSaleRemain() {
         // 累計売上高 - 振込申請済み金額
         $res = $this->getSaleTotal() - TransferRequest::getTotal();
+        return $res;
+    }
+
+    /**
+     * 振込申請可能状態になっている売上の合計を取得
+     * @return int
+     */
+    public static function getAbleTransferTotal() {
+        $res = 0;
+        $orders = self::query()->where('is_able_transfer', 1)->get();
+        foreach ($orders as $order) {
+            $res += $order->price;
+        }
         return $res;
     }
 

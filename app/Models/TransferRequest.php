@@ -50,4 +50,15 @@ class TransferRequest extends Model
         return $query->where('user_id', Auth::user()->id);
     }
 
+    /**
+     * 振込申請可能額を取得
+     *
+     * @return int
+     */
+    public function getAbleTransfer() {
+        // 振込申請可能フラグがtrueの売上の合計 - 既振込申請額
+        $res = Order::getAbleTransferTotal() - self::getTotal();
+        return $res;
+    }
+
 }

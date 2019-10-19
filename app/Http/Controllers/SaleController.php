@@ -52,7 +52,8 @@ class SaleController extends Controller
     public function application()
     {
         $sale_remain = $this->order->getSaleRemain();
-        return view('sale.application.index', compact('sale_remain'));
+        $able_transfer = $this->transferRequest->getAbleTransfer();
+        return view('sale.application.index', compact('sale_remain', 'able_transfer'));
     }
 
     /**

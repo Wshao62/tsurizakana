@@ -40,6 +40,10 @@
                         <td>{{ number_format($sale_remain) }}円</td>
                     </tr>
                     <tr>
+                        <th>振込申請可能額</th>
+                        <td>{{ number_format($able_transfer) }}円</td>
+                    </tr>
+                    <tr>
                         <th>
                             振込申請額<br>
                             <span>※申請金額は現在の売上金の範囲内で入力してください。また、申請金額は1,000円以上から可能です。</span>
@@ -80,8 +84,13 @@
         $(function() {
             $('[name=price]').change (function() {
                 if ($(this).val() !== '') {
-                    if ("{{ $sale_remain }}" < $(this).val()) {
-                        alert('現在の売上金を上回っています。');
+                    if ("{{ $able_transfer }}" < $(this).val()) {
+                        alert('振込申請可能額を上回っています。');
+                        $(this).val('');
+                        return;
+                    }
+                    if ($(this).val() < 1000) {
+                        alert('申請金額は1,000円以上から可能です。');
                         $(this).val('');
                         return;
                     }
