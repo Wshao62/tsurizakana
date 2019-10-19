@@ -591,8 +591,8 @@ class User extends Authenticatable
         ];
 
         $profile_edit = [
-            'cover_photo' => ['nullable','image', 'max:5000'],
-            'profile_photo' => ['nullable','image', 'max:5000'],
+            'cover_photo' => ['nullable','image', 'max:10240'],
+            'profile_photo' => ['nullable','image', 'max:10240'],
             'introduction' => ['nullable', 'string', 'max:1000' ],
             'bank_name' => ['can_delete_bank:'.$userID, 'max:15', 'required_with:bank_branch_code,bank_branch_code,bank_type,bank_number,bank_user_name'],
             'bank_branch_code' => ['nullable', 'numeric', 'digits:3', 'required_with:bank_name,bank_type,bank_number,bank_user_name'],

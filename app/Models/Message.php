@@ -216,7 +216,7 @@ class Message extends Model
     {
         $val = [
             'message' => ['nullable', 'string', 'max:1000'],
-            'photo' => ['nullable','image', 'max:5000'],
+            'photo' => ['nullable','image', 'max:10240'],
             'photo.*.tmp_path' => ['nullable', 'string'],
             'photo.*.mime' => ['nullable', Rule::in(['image/jpeg', 'image/png', 'image/gif'])],
         ];

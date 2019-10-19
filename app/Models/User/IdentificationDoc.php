@@ -152,8 +152,8 @@ class IdentificationDoc extends Model
     {
         return [
             'type' => ['required', 'integer', Rule::in(self::TYPES)],
-            'file_path1' => ['required', 'image', 'max:5000'],
-            'file_path2' => ['nullable', 'image', 'max:5000'],
+            'file_path1' => ['required', 'image', 'max:10240'],
+            'file_path2' => ['nullable', 'image', 'max:10240'],
         ];
     }
 

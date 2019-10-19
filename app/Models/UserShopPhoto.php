@@ -91,7 +91,7 @@ class UserShopPhoto extends Model
     public static function validate()
     {
         return [
-            'photo' => ['image', 'max:5000'],
+            'photo' => ['image', 'max:10240'],
         ];
     }
 }

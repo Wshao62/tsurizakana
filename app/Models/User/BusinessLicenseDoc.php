@@ -137,8 +137,8 @@ class BusinessLicenseDoc extends Model
     public static function validate()
     {
         return [
-            'file_path1' => ['required', 'image', 'max:5000'],
-            'file_path2' => ['nullable', 'image', 'max:5000'],
+            'file_path1' => ['required', 'image', 'max:10240'],
+            'file_path2' => ['nullable', 'image', 'max:10240'],
         ];
     }
 

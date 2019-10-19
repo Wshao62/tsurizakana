@@ -26,7 +26,7 @@ class UploadShopImagePost extends FormRequest
     public function rules()
     {
         return [
-            'photo' => ['image', 'max:5000'],
+            'photo' => ['image', 'max:10240'],
         ];
     }
 

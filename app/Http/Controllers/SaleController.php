@@ -137,6 +137,8 @@ class SaleController extends Controller
         $transfer_form['status'] = \App\Models\TransferRequest::STATUS_REQUEST;
         $this->transferRequest->fill($transfer_form)->save();
 
+        // TODO: メール送信
+
         return redirect('/mypage/sales/application/get-complete');
     }
 
