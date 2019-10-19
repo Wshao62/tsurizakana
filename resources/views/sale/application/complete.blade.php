@@ -29,7 +29,7 @@
                 入金は4営業日以内を予定しております。
             </p>
             <div class="application_btn">
-                <a href="#" class="applctn_btn_blue">マイページへ</a>
+                <a href="{{ url('/mypage/sales/application') }}" class="applctn_btn_blue">マイページへ</a>
             </div><!-- END application_btn -->
         </div><!-- END application_cont -->
     </div><!-- END sales_cont -->

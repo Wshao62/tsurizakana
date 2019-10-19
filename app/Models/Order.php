@@ -158,12 +158,10 @@ class Order extends Model
      * 現在の売上金残高を取得
      */
     public function getSaleRemain() {
-        $res = $this->getSaleTotal();
-
-        // TODO: 累計売上高 - 振込申請済み金額
+        // 累計売上高 - 振込申請済み金額
+        $res = $this->getSaleTotal() - TransferRequest::getTotal();
         return $res;
     }
-
 
     /**
      * バリデーションを実施

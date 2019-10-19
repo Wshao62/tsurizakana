@@ -24,11 +24,20 @@
                 <span>></span>
                 <p>登録完了</p>
             </div><!-- END application_flow -->
-            <form>
+            <div>
+                @if ($errors->has('price'))
+                    <p class="error">
+                        {{ $errors->first('price') }}
+                    </p>
+                @endif
+            </div>
+            <form action="{{ url('/mypage/sales/application/bank') }}" method="post">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ \Illuminate\Support\Facades\Auth::user()->id }}">
                 <table class="application_table">
                     <tr>
                         <th>現在の売上金</th>
-                        <td>10,000円</td>
+                        <td>{{ number_format($sale_remain) }}円</td>
                     </tr>
                     <tr>
                         <th>
@@ -36,21 +45,25 @@
                             <span>※申請金額は現在の売上金の範囲内で入力してください。また、申請金額は1,000円以上から可能です。</span>
                         </th>
                         <td>
-                            <input class="input_transferPrice" type="text">
+                            <input class="input_transferPrice" type="text" name="price" value="{{ old('price') }}">
                             <span>円</span>
                         </td>
                     </tr>
                     <tr class="applicatioTable_child">
                         <th>振込手数料</th>
                         <td>300円</td>
+                        <input type="hidden" name="fee" value="300">
                     </tr>
                     <tr class="applicatioTable_child">
                         <th>実際の振込額</th>
-                        <td><span class="calculated_price">9,700</span>円</td>
+                        <td>
+                            <span class="calculated_price"></span>円
+                            <input type="hidden" name="transfer_price" value="">
+                        </td>
                     </tr>
                     <tr>
                         <th>申請後の売上残高</th>
-                        <td>0円</td>
+                        <td><span class="remain_after"></span>円</td>
                     </tr>
                 </table><!-- END application_table -->
                 <div class="application_btn">
@@ -64,6 +77,37 @@
 
 @section('before_end')
     <script>
+        $(function() {
+            $('[name=price]').change (function() {
+                if ($(this).val() !== '') {
+                    if ("{{ $sale_remain }}" < $(this).val()) {
+                        alert('現在の売上金を上回っています。');
+                        $(this).val('');
+                        return;
+                    }
+                    $('.calculated_price').text(($(this).val() - 300).toLocaleString());
+                    $('[name=transfer_price]').val(($(this).val() - 300));
+                    $('.remain_after').text(({{ $sale_remain }} - $(this).val()).toLocaleString());
+                } else {
+                    $('.calculated_price').text('');
+                    $('[name=transfer_price]').val('');
+                    $('.remain_after').text('');
+                }
+            });
+
+            const price = $('[name=price]').val();
+            if (price !== '') {
+                $('.calculated_price').text(($('[name=price]').val() - 300).toLocaleString());
+                $('[name=transfer_price]').val((($('[name=price]').val() - 300)));
+                $('.remain_after').text(({{ $sale_remain }} - $('[name=price]').val()).toLocaleString());
+            }
+        })
     </script>
     <link rel="stylesheet" href="{{ url('css') }}/sales.css">
+    <style>
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
 @endsection

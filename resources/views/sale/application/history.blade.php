@@ -15,7 +15,7 @@
             <a href="{{ url('mypage/sales/application-history') }}" class="current">申請履歴</a>
         </div><!-- END sales_tabs -->
         <div class="saleslists_cont">
-            <p>（全00件中）1〜12件表示</p>
+            <p>（全{{ $count }}件中）{{ $transfer_requests->firstItem() }}〜{{ $transfer_requests->lastItem() }}件表示</p>
             <table class="saleslists_table">
                 <thead>
                 <tr>
@@ -28,257 +28,30 @@
                 </tr>
                 </thead><!-- END thead -->
                 <tbody>
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
-                <tr>
-                    <th>ステータス</th>
-                    <td class="cell_status">申請中</td>
-                    <th>申請日時</th>
-                    <td class="cell_applicationDate">2019/09/23 10:00</td>
-                    <th>振込申請金額</th>
-                    <td class="cell_applicationPrice">10,000</td>
-                    <th>振込手数料</th>
-                    <td class="cell_fee">300円</td>
-                    <th>振込金額</th>
-                    <td class="cell_transferPrice">9,700円</td>
-                    <th>振込先</th>
-                    <td class="cell_transferTo">
-                        さかな銀行<br>
-                        111 普通口座 1234567<br>
-                        サカナ タロウ
-                    </td>
-                </tr><!-- END tr -->
+                @foreach ($transfer_requests as $transfer_request)
+                    <tr>
+                        <th>ステータス</th>
+                        <td class="cell_status">{{ \App\Models\TransferRequest::STATUS_NAMES[$transfer_request->status] }}</td>
+                        <th>申請日時</th>
+                        <td class="cell_applicationDate">{{ $transfer_request->requested_at }}</td>
+                        <th>振込申請金額</th>
+                        <td class="cell_applicationPrice">{{ number_format($transfer_request->price) }}</td>
+                        <th>振込手数料</th>
+                        <td class="cell_fee">{{ number_format($transfer_request->fee) }}円</td>
+                        <th>振込金額</th>
+                        <td class="cell_transferPrice">{{ number_format($transfer_request->transfer_price) }}円</td>
+                        <th>振込先</th>
+                        <td class="cell_transferTo">
+                            {{ $transfer_request->user->bank_name }}<br>
+                            {{ $transfer_request->user->bank_branch_code }} {{ \App\Models\User::BANK_TYPE_NAME[$transfer_request->user->bank_type] }} {{ $transfer_request->user->bank_number }}<br>
+                            {{ $transfer_request->user->bank_user_name }}
+                        </td>
+                    </tr><!-- END tr -->
+                @endforeach
                 </tbody><!-- END tbody -->
             </table><!-- END saleslists_table -->
             <div class="pager font_avenirnext">
-                <p class="current"><span>1</span></p>
-                <p><a href="#"><span>2</span></a></p>
-                <p><a href="#"><span>3</span></a></p>
-                <p><a href="#"><span>4</span></a></p>
-                <p><a href="#"><span>5</span></a></p>
-                <p><a href="#"><span>6</span></a></p>
-                <p><a href="#"><span>7</span></a></p>
-                <p><a href="#"><span>8</span></a></p>
-                <p><a href="#"><span>9</span></a></p>
-                <p><a href="#"><span>10</span></a></p>
-                <p><a href="#"><span>11</span></a></p>
-                <p><a href="#"><span>12</span></a></p>
-                <p><a href="#"><span>13</span></a></p>
-                <p><a href="#"><span>14</span></a></p>
-                <p><a href="#"><span>15</span></a></p>
-                <p><a href="#"><span>16</span></a></p>
-                <p><a href="#"><span>17</span></a></p>
-                <p><a href="#"><span>18</span></a></p>
-                <p><a href="#"><span>19</span></a></p>
-                <p><a href="#"><span>20</span></a></p>
-                <p><a href="#"><span>21</span></a></p>
-                <p><a href="#"><span>22</span></a></p>
-                <p><a href="#"><span>23</span></a></p>
-                <p><a href="#"><span>24</span></a></p>
-                <p><a href="#"><span>25</span></a></p>
-                <p><a href="#"><span>26</span></a></p>
-                <p><a href="#"><span>27</span></a></p>
-                <p><a href="#"><span>28</span></a></p>
-                <p><a href="#"><span>29</span></a></p>
-                <p><a href="#"><span>30</span></a></p>
-                <p><a href="#"><span>31</span></a></p>
-                <p><a href="#"><span>32</span></a></p>
+                {{ $transfer_requests->links('vendor.pagination.sale') }}
             </div><!-- END pager -->
         </div><!-- END saleslists_cont -->
     </div><!-- END sales_cont -->

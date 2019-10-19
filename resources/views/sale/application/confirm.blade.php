@@ -24,7 +24,8 @@
                 <span>></span>
                 <p>登録完了</p>
             </div><!-- END application_flow -->
-            <form>
+            <form action="{{ url('/mypage/sales/application/complete') }}" method="post">
+                @csrf
                 <table class="confirm_table">
                     <thead>
                     <tr>
@@ -34,23 +35,23 @@
                     <tbody>
                     <tr>
                         <th>現在の売上金</th>
-                        <td>10,000円</td>
+                        <td>{{ number_format($sale_remain) }}円</td>
                     </tr>
                     <tr>
                         <th>振込申請金額</th>
-                        <td>10,000円</td>
+                        <td>{{ number_format($transfer_form['price']) }}円</td>
                     </tr>
                     <tr>
                         <th>振込手数料</th>
-                        <td>300円</td>
+                        <td>{{ number_format($transfer_form['fee']) }}円</td>
                     </tr>
                     <tr>
                         <th>実際の振込額</th>
-                        <td>9,700円</td>
+                        <td>{{ number_format($transfer_form['transfer_price']) }}円</td>
                     </tr>
                     <tr>
                         <th>申請後の売上残高</th>
-                        <td>0円</td>
+                        <td>{{ number_format($sale_remain - $transfer_form['price']) }}円</td>
                     </tr>
                     </tbody>
                 </table><!-- END confirm_table -->
@@ -63,28 +64,28 @@
                     <tbody>
                     <tr>
                         <th>銀行名</th>
-                        <td>サカナ銀行</td>
+                        <td>{{ $bank_form['bank_name'] }}</td>
                     </tr>
                     <tr>
                         <th>支店コード</th>
-                        <td>123</td>
+                        <td>{{ $bank_form['bank_branch_code'] }}</td>
                     </tr>
                     <tr>
                         <th>口座種別</th>
-                        <td>普通口座</td>
+                        <td>{{ \App\Models\User::BANK_TYPE_NAME[$bank_form['bank_type']] }}</td>
                     </tr>
                     <tr>
                         <th>口座番号</th>
-                        <td>1234567</td>
+                        <td>{{ $bank_form['bank_number'] }}</td>
                     </tr>
                     <tr>
                         <th>口座名義（カナ）</th>
-                        <td>ウサギ</td>
+                        <td>{{ $bank_form['bank_user_name'] }}</td>
                     </tr>
                     </tbody>
                 </table><!-- END confirm_table -->
                 <div class="application_btn">
-                    <button class="applctn_btn_gray">修正する</button>
+                    <button class="applctn_btn_gray return_btn">修正する</button>
                     <button class="applctn_btn_blue">申請する</button>
                 </div><!-- END application_btn -->
             </form><!-- END form -->
@@ -95,6 +96,12 @@
 
 @section('before_end')
     <script>
+        $(function() {
+            $('.return_btn').click (function(e) {
+                e.preventDefault();
+                document.location.href = "{{ url('/mypage/sales/application/get-bank') }}";
+            })
+        })
     </script>
     <link rel="stylesheet" href="{{ url('css') }}/sales.css">
 @endsection
