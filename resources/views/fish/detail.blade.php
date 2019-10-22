@@ -78,7 +78,7 @@
                 <tr><th>お届け可能地域</th><td><div>{{ $fish['destination'] }}</div></td></tr>
                 <tr><th>配達方法</th><td><div>{{ $fish['delivery_method'] }}</div></td></tr>
                 <tr><th>登録時間</th><td><div class="font_avenirnext">{{ $fish->getFormatedCreatedAt('H:i:s') }}</div></td></tr>
-                <tr><th>配送元地域</th><td><div>東京都</div></td></tr>
+                <tr><th>配送元地域</th><td><div>{{ $fish['prefecture'] }}</div></td></tr>
                 </table>
                 <p class="fish_detail_price">価格：<span class="fish_detail_price_value">¥{{ number_format($fish['price']) }}</span><span class="fish_detail_price_tax">（税込）</span></p>
                 @if ($fish->isPublish())
