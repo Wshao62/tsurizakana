@@ -83,7 +83,7 @@ class ReceiptController extends Controller
 
         // Finally, you can stream the file using stream function
         $filename = Carbon::parse($dated)->format('Y年m月d日').'領収証.pdf';
-        return $pdf->stream($filename);
+        return $pdf->download($filename);
     }
 
 }
