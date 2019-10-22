@@ -43,7 +43,7 @@ class ReceiptController extends Controller
      * @return PDF stream.
      */
     public function getPDF(Request $request){
-        $expDate  = explode("年", $request->date); 
+        $expDate  = explode("年", $request->date);
         $getMonth = preg_replace('/[^0-9]/','',$expDate[1]);
         $getDate  = $expDate[0].'-'.$getMonth;
 
@@ -83,7 +83,7 @@ class ReceiptController extends Controller
 
         // Finally, you can stream the file using stream function
         $filename = Carbon::parse($dated)->format('Y年m月d日').'領収証.pdf';
-        return $pdf->download($filename);
+        return $pdf->stream($filename);
     }
 
 }
