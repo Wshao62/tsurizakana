@@ -1119,6 +1119,10 @@ class Fish extends Model
             } else {
                 unset($val['photo']);
                 unset($val['photo.*']);
+                unset($val['delivery_method']);
+                unset($val['how_to_tighten']);
+                unset($val['amount']);
+                unset($val['prefecture']);
             }
         }
 

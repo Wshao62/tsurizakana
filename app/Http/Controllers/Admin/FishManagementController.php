@@ -65,10 +65,6 @@ class FishManagementController extends Controller
 
     public function fishDelete(Fish $fish){
 
-        if($fish->status !== 1){
-            abort(403);
-        }
-
         $rtn = $fish->adminDelete($fish['id']);
 
         if ($rtn == false) {
@@ -93,7 +89,6 @@ class FishManagementController extends Controller
         }
 
         if ($validator->fails() || !$isValid) {
-
             if(!$isValid){
                 $validator->getMessageBag()->add('seller_id', '購入者と異なるユーザーを選択してください。');
                 $validator->getMessageBag()->add('buyer_id', '販売者と異なるユーザーを選択してください。');

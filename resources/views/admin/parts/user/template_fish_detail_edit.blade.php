@@ -123,14 +123,9 @@
     });
 
     var actionThis = function(element,status) {
-                if(status != 1) return;
-
                 var id = $(element).attr('id');
 
-                var strhostname_ = window.location.hostname;
-                var strprotocol = window.location.protocol;
-
-                var Route = strprotocol + "//" + strhostname_ + "/admin/fish/" + id + "/delete";
+                var Route = "/admin/fish/" + id + "/delete";
                 var confirm_mssg = confirm('削除しますか?');
 
                 if(confirm_mssg) {

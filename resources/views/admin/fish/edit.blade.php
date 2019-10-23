@@ -39,12 +39,12 @@
                     <ul class="w-100 row">
                         <li class="offset-1 col-5">
                             <div class="edit w-100">
-                                <button class="btn btn-success w-100 {{ $fishInfo['status'] == 1 ? "active" : "disabled"}}" type="submit" onclick="return confirm('更新しますか？')" {{ $fishInfo['status'] == 1 ? "" : "disabled"}}>更新</button>
+                                <button class="btn btn-success w-100 active" type="submit" onclick="return confirm('更新しますか？')">更新</button>
                             </div>
                         </li>
                         <li class="offset-md-3 col-3">
                             <div class="del w-100">
-                                <a class="btn btn-danger w-100 {{ $fishInfo['status'] == 1 ? "active" : "disabled"}}"  href='javascript:;' id="{{$fishInfo['id']}}" onclick='actionThis(this, {{$fishInfo["status"]}})' data-toggle="tooltip">削除</a>
+                                <a class="btn btn-danger w-100 active"  href='javascript:;' id="{{$fishInfo['id']}}" onclick='actionThis(this, {{$fishInfo["status"]}})' data-toggle="tooltip">削除</a>
                             </div>
                         </li>
                     </ul>
