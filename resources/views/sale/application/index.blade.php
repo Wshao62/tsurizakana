@@ -41,7 +41,10 @@
                     </tr>
                     <tr>
                         <th>振込申請可能額</th>
-                        <td>{{ number_format($able_transfer) }}円</td>
+                        <td>
+                            {{ number_format($able_transfer) }}円
+                            <input type="hidden" id="able_transfer" value="{{ $able_transfer }}">
+                        </td>
                     </tr>
                     <tr>
                         <th>
@@ -84,15 +87,15 @@
         $(function() {
             $('[name=price]').change (function() {
                 if ($(this).val() !== '') {
-                    if ("{{ $able_transfer }}" < $(this).val()) {
+                    if (Number($('#able_transfer').val()) < $(this).val()) {
                         alert('振込申請可能額を上回っています。');
                         $(this).val('');
-                        return;
+                        return false;
                     }
                     if ($(this).val() < 1000) {
                         alert('申請金額は1,000円以上から可能です。');
                         $(this).val('');
-                        return;
+                        return false;
                     }
                     $('.calculated_price').text(($(this).val() - 300).toLocaleString());
                     $('[name=transfer_price]').val(($(this).val() - 300));

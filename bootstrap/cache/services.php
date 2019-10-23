@@ -42,6 +42,7 @@
     38 => 'App\\Providers\\ValidatorServiceProvider',
     39 => 'Intervention\\Image\\ImageServiceProvider',
     40 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    41 => 'Barryvdh\\Snappy\\ServiceProvider',
   ),
   'eager' => 
   array (
@@ -70,6 +71,7 @@
     22 => 'App\\Providers\\ValidatorServiceProvider',
     23 => 'Intervention\\Image\\ImageServiceProvider',
     24 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    25 => 'Barryvdh\\Snappy\\ServiceProvider',
   ),
   'deferred' => 
   array (

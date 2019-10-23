@@ -8,6 +8,8 @@ use App\Models\Fish\Category;
 use App\Models\Order;
 use App\Models\TransferRequest as TransferRequestModel;
 use App\Models\User;
+use App\Notifications\TransferRequestedNotificationToAdmin;
+use App\Notifications\TransferRequestedNotificationToUser;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -137,7 +139,9 @@ class SaleController extends Controller
         $transfer_form['status'] = \App\Models\TransferRequest::STATUS_REQUEST;
         $this->transferRequest->fill($transfer_form)->save();
 
-        // TODO: メール送信
+        $user->notify(new TransferRequestedNotificationToUser($this->transferRequest));
+        $tmp_user = new User(['email' => 'support@tsurizakana-shoten.com']);
+        $tmp_user->notify(new TransferRequestedNotificationToAdmin($this->transferRequest));
 
         return redirect('/mypage/sales/application/get-complete');
     }
