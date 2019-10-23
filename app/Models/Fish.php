@@ -922,7 +922,7 @@ class Fish extends Model
                 'source_user_id' => \Auth::id(),
                 'rate' => $rate_data['rate'],
                 'fish_id' => $this->id,
-                'message' => $rate_data['rate_message'],
+                'comment' => $rate_data['comment'],
                 'target_user_id' => $partner->id,
             ];
             $rate = UserRating::register($data);

@@ -144,7 +144,7 @@
         <label><input name="rate" type="radio" value="{{ \App\Models\UserRating::BAD }}"@if (old('rate') == \App\Models\UserRating::BAD) checked @endif><span></span><p><img src="{{ url('/') }}/img/mypage/message_bad.png">悪い</p><div class="clear"></div></label>
         <div class="clear"></div>
     </div>
-    <textarea name="rate_message">{{ old('rate_message') }}</textarea>
+    <textarea name="comment">{{ old('comment') }}</textarea>
     <p>取引メッセージの内容は、必要に応じて事務局で確認しています。</p>
     <input class="content_button" type="submit" value="コメントを書く">
     </form>

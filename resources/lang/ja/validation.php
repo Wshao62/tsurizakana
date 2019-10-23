@@ -177,7 +177,7 @@ return [
         'price' => '価格',
         'description' => '詳細',
         'rate' => '評価',
-        'rate_message' => 'コメント',
+        'comment' => 'コメント',
         'reason' => '理由',
         'amount' => '数量',
         'size_cm' => 'サイズ(cm)',

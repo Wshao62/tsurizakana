@@ -82,7 +82,7 @@ class UserRating extends Model
     {
         return [
             'rate' => ['required', 'integer', Rule::in([self::GOOD, self::NORMAL, self::BAD])],
-            'rate_message' => ['nullable', 'string', 'max:1000'],
+            'comment' => ['nullable', 'string', 'max:1000'],
         ];
     }
 }
