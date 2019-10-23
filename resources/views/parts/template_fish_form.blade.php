@@ -118,7 +118,7 @@
                     @endif
                 </div>
             </dd>
-            <dt>サイズ<span class="up_ess">必須</span></dt>
+            <dt>サイズ</dt>
             <dd>
                 <div class="form_item">
                     <label class="inline_flex text">

@@ -1106,8 +1106,8 @@ class Fish extends Model
             'photo.*' => ['filled', 'url', 'active_storage_url'],
             'prefecture' => ['required'],
             'amount' => ['required', 'integer'],
-            'size_cm' => ['required', 'integer'],
-            'size_kg' => ['required', 'integer'],
+            'size_cm' => ['nullable', 'numeric'],
+            'size_kg' => ['nullable','numeric'],
             'delivery_method' => ['required'],
             'how_to_tighten' => ['required', 'max:200'],
         ];

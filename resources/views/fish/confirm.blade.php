@@ -26,8 +26,11 @@
         <p>{{ $fish_data['fish_category_name'] }}</p>
         <div class="upconf_tt">数量<span class="up_ess">必須</span></div>
         <p>{{ $fish_data['amount'] }} 匹</p>
-        <div class="upconf_tt">サイズ<span class="up_ess">必須</span></div>
-        <p>{{ $fish_data['size_cm'] }} cm / {{ $fish_data['size_kg'] }} kg</p>
+        <div class="upconf_tt">サイズ</div>
+        <p>
+            @if (!empty($fish_data['size_cm'])){{ $fish_data['size_cm'] }} cm @endif
+                @if (!empty($fish_data['size_kg'])) / {{ $fish_data['size_kg'] }} kg @endif
+        </p>
         <div class="upconf_tt">締め方<span class="up_ess">必須</span></div>
         <p>{{ $fish_data['how_to_tighten'] }}</p>
         <div class="upconf_tt">商品詳細<span class="up_ess">必須</span></div>
