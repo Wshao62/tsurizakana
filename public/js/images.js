@@ -186,11 +186,11 @@ function ValidateFile(file) {
             message: '写真には画像ファイルを指定してください。'
         };
     }
-    else if (file.size >= 5242880) {
+    else if (file.size >= 10240000) {
 
         return {
             result: false,
-            message: '写真には5000 KB以下のファイルを指定してください。'
+            message: '写真には10000 KB以下のファイルを指定してください。'
         };
     }
 
