@@ -17,6 +17,7 @@ class Kernel extends ConsoleKernel
         Commands\TempDirectory::class,
         Commands\FishGarbage::class,
         Commands\EmailNotification::class,
+        Commands\ChangeOrderIsAbleTransfer::class,
     ];
 
     /**
@@ -30,6 +31,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('temp:clean')->hourly();
         $schedule->command('fish:garbage')->dailyAt('18:00');
         $schedule->command('notify:mail')->hourly();
+        $schedule->command('order:changeIsAbleTransfer')->weekly()->mondays()->at('00:00');
     }
 
     /**
