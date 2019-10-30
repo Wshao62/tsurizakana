@@ -171,7 +171,9 @@ class Order extends Model
      */
     public static function getAbleTransferTotal() {
         $res = 0;
-        $orders = self::query()->where('is_able_transfer', 1)->get();
+        $orders = self::query()->whereHas('fish', function ($query) {
+            $query->where('seller_id', Auth::user()->id);
+        })->where('is_able_transfer', 1)->get();
         foreach ($orders as $order) {
             $res += $order->price;
         }
