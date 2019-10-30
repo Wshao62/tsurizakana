@@ -259,7 +259,7 @@
                             @endfor
                             <div class="clear hide"></div>
                         </div>
-                        <p>※最大アップロードサイズは5MBまでです。</p>
+                        <p>※最大アップロードサイズは10MBまでです。</p>
                     </div>
                 </dd>
             </dl>
@@ -398,7 +398,7 @@
                                 <input class="preview_image" accept="image/*" type="file" id="preview_image_profile" value="" name="profile_photo"/>
                             </label>
                             <span>
-                                ※最大アップロードサイズは5MBまでです。<br>
+                                ※最大アップロードサイズは10MBまでです。<br>
                                 ※プロフィールの編集を終えるまで変更は完了しません。
                             </span>
                         </div>

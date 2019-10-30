@@ -86,7 +86,7 @@
                         @endfor
                         <div class="clear hide"></div>
                     </div>
-                    <p>※最大アップロードサイズは5MBまでです。</p>
+                    <p>※最大アップロードサイズは10MBまでです。</p>
                 </div>
             </dd>
             <dl class="up_forms">
