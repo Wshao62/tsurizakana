@@ -43,7 +43,7 @@
         <div class="contact_form_split require">
             <p class="contact_form_split_title">お名前</p>
             <div class="contact_form_split_content contact_form_split_content_name">
-                <input type="text" name="name" value="{{ old('name', $name) }}" id="contact_form_family" class="wide" placeholder="（例）佐藤 太郎">
+                <input type="text" name="name" value="{{ old('name', $name) }}" id="contact_form_family" class="wide" placeholder="（例）釣魚 太郎">
                 @if ($errors->has('name'))
                     <p class="alert">
                         {{ $errors->first('name') }}
@@ -54,7 +54,7 @@
         <div class="contact_form_split">
             <p class="contact_form_split_title">会社名/組織名</p>
             <div class="contact_form_split_content">
-                <input type="text" name="form_company" value="{{ old('form_company', $form_company) }}" class="wide" placeholder="株式会社釣坂商店">
+                <input type="text" name="form_company" value="{{ old('form_company', $form_company) }}" class="wide" placeholder="株式会社自給他足">
                 @if ($errors->has('form_company'))
                     <p class="alert">
                         {{ $errors->first('form_company') }}
@@ -117,7 +117,7 @@
             <div class="contact_form_box_inner">
                 <span class="contact_form_split_title">住所2</span>
                 <span class="contact_form_split_content">
-                    <input type="text" name="addr2" value="{{ old('addr2', $addr2) }}" class="wide" placeholder="(例）１６号 第１三富ビル３０２号">
+                    <input type="text" name="addr2" value="{{ old('addr2', $addr2) }}" class="wide" placeholder="(例）１６号 第１三富ビル３F">
                     @if ($errors->has('addr2'))
                         <p class="alert">
                             {{ $errors->first('addr2') }}
