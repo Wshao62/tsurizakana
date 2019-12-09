@@ -1,0 +1,789 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+→　飲食店会員開拓希望について  #page_pioneer
+→　飲食店会員開拓希望について確認  #page_pioneerconfirm
+→　飲食店会員開拓希望について完了  #page_pioneercomplete
+
+ =======================================
+  PC
+======================================= */
+main {
+  background-color: #f8f8f8;
+}
+input, select {
+  font-size: 1.4rem;
+  border: 1px solid #d2d2d2;
+  padding: 1rem 1.8rem;
+}
+input[type="radio"] {
+  display: none;
+}
+select {
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem 4.7rem 1rem 1.8rem;
+}
+select:hover {
+  cursor: pointer;
+}
+textarea {
+  display: block;
+  height: 13rem;
+  resize: none;
+  border: 1px solid #d2d2d2;
+}
+.flow {
+  display: flex;
+  justify-content: center;
+  margin-top: 9.1rem;
+  border-top: 1px solid #535353;
+  border-bottom: 1px solid #535353;
+}
+.flow p {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33.3333333333333%;
+  height: 5.8rem;
+  padding: 0 3.4rem 0 2.5rem;
+  font-size: 1.4rem;
+  line-height: 1.64285714285714;
+  text-align: center;
+}
+.flow p::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: .9rem;
+  height: 1.5rem;
+  background: url(../img/regist/arrow.png) no-repeat;
+  background-size: cover;
+  transform: translateY(-50%);
+}
+.flow p:nth-of-type(2) {
+  padding: 0 3.4rem 0 2.2rem;
+}
+.flow p:last-of-type {
+  padding: 0 2.2rem;
+}
+.flow p:last-of-type::after {
+  content: none;
+}
+.flow span {
+  display: block;
+  width: auto;
+  max-width: 21.6rem;
+  max-height: 100%;
+  padding: 1.35rem 1rem;
+}
+.flow .current span {
+  width: 100%;
+  color: #fff;
+  background-color: #4a4a4a;
+  border-radius: 2.5rem;
+}
+.layout_pioneer {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+.pioneer .pioneer_info {
+  text-align: center;
+  color: #1b1b1b;
+  line-height: 1.59785714285714;
+  font-size: 1.4rem;
+}
+.pioneer .pioneer_form {
+  background-color: #fff;
+  box-shadow: 0 0 4rem 0 rgba(123,213,123,0.1);
+  word-break: break-all;
+}
+.pioneer .pioneer_form label {
+  display: flex;
+  align-items: center;
+}
+.pioneer .pioneer_form label p {
+  display: block;
+}
+.pioneer .pioneer_form_split {
+  display: flex;
+  align-items: center;
+}
+.pioneer .pioneer_form_split.require > .pioneer_form_split_title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pioneer .pioneer_form_split.require > .pioneer_form_split_title::after {
+  content: '必須';
+  display: block;
+  width: 4.3rem;
+  padding: .15rem 0;
+  margin-left: 1.2rem;
+  color: #fff;
+  background-color: #b15056;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: .3rem;
+}
+.pioneer .pioneer_form_split_title {
+  width: 25.8rem;
+  color: #2e2e2e;
+}
+.pioneer .pioneer_form_split_content {
+  width: calc(100% - 25.8rem);
+  color: #2e2e2e;
+}
+.pioneer .pioneer_form_split_content_name > div {
+  display: flex;
+  width: calc(100% - 4.2rem);
+}
+.pioneer .pioneer_form_split_content_name > div p {
+  display: flex;
+}
+.pioneer .pioneer_form_split_content_name label {
+  padding-right: 1.3rem;
+  margin-top: 0;
+}
+.pioneer .pioneer_form_split_content_name p:last-of-type label {
+  padding-left: 3.9rem;
+}
+.pioneer .pioneer_form_split_content.pioneer_form_split_content_info {
+  display: flex;
+  align-items: center;
+}
+.pioneer .pioneer_form_box {
+  border-bottom: 1px dotted #000;
+}
+.pioneer .pioneer_form_box .pioneer_form_box_inner {
+  display: flex;
+  align-items: center;
+  margin: 1.95rem 0;
+  color: #2e2e2e;
+}
+.pioneer .pioneer_form_box .pioneer_form_box_inner:first-of-type {
+  margin: 2.475rem 0 1.95rem 0;
+}
+.pioneer .pioneer_form_box .pioneer_form_box_inner:last-of-type {
+  margin: 1.95rem 0 2.475rem 0;
+}
+.pioneer .pioneer_form_box span {
+  display: block;
+}
+.pioneer .pioneer_form select {
+  transition: opacity .2s ease-in-out;
+}
+.pioneer .pioneer_form select:hover {
+  opacity: .8;
+  transition: opacity .2s ease-in-out;
+}
+.pioneer .pioneer_radio {
+  display: flex;
+  font-size: 1.4rem;
+}
+.pioneer .pioneer_form .pioneer_radio_label {
+  margin-top: 0;
+  white-space: nowrap;
+}
+.pioneer .pioneer_form .pioneer_radio_label:hover {
+  cursor: pointer;
+}
+.pioneer .pioneer_radio_label:not(:first-of-type) {
+  margin-left: 6.382978723404255%;
+}
+.pioneer .pioneer_radio_label span {
+  position: relative;
+  padding-left: 2.4rem;
+}
+.pioneer .pioneer_radio_label span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #aaa;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.pioneer .pioneer_radio_label input[type="radio"]:checked + span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: .4rem;
+  width: .9rem;
+  height: .9rem;
+  border-radius: 50%;
+  background-color: #535353;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.pioneer .pioneer_select {
+  position: relative;
+  width: 16.5rem;
+}
+.pioneer .pioneer_select::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.8rem;
+  width: 1.1rem;
+  height: .7rem;
+  background: url(../img/icon/icon_arrow_down.png) no-repeat;
+  background-size: contain;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+.pioneer .pioneer_privacy {
+  padding-bottom: 3.6rem;
+  margin-top: 3rem;
+  color: #282828;
+  background-color: #f7f7f7;
+}
+.pioneer .pioneer_privacy_title {
+  padding: 1.6rem 2.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: inherit;
+  border-bottom: 1px solid #cdcdcd;
+}
+.pioneer .pioneer_privacy_box {
+  height: 19rem;
+  margin: 0 2.5rem;
+  padding-right: 2.7rem;
+  overflow-y: scroll;
+}
+.pioneer .pioneer_privacy_box p {
+  color: inherit;
+}
+.pioneer .pioneer_privacy_box_title {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-top: 3.475rem;
+  margin-bottom: 1.475rem;
+  font-weight: bold;
+}
+.pioneer .pioneer_privacy_box_title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: .6rem;
+  height: 1.4rem;
+  background-color: #036bab;
+  border-radius: .2rem;
+  transform: translateY(-50%);
+}
+.pioneer .pioneer_privacy_box_title:first-of-type {
+  margin-top: 1.475rem;
+}
+.pioneer .pioneer_privacy_box_text {
+  margin-top: -.35rem;
+  margin-bottom: -.35rem;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+.pioneer .pioneer_privacy_box_text_small {
+  margin-top: -.45rem;
+  margin-bottom: -.45rem;
+  font-size: 1.2rem;
+  line-height: 1.75;
+  letter-spacing: .12em;
+}
+.pioneer .pioneer_privacy_check {
+  margin: 0 2.5rem 0 2.5rem;
+  line-height: 1.5;
+  background-color: #fff;
+}
+.pioneer .pioneer_privacy_check label {
+  justify-content: center;
+  padding: 1.95rem 0;
+  margin-top: 1.7rem;
+}
+.pioneer .pioneer_privacy_check label:hover {
+  cursor: pointer;
+}
+.pioneer .pioneer_privacy_check input[type=checkbox] {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+.pioneer .pioneer_privacy_check input[type=checkbox]:hover {
+  cursor: pointer;
+}
+.pioneer .pioneer_privacy_check span {
+  padding-left: .9rem;
+}
+.pioneer_button {
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+}
+.input_length_full {
+  width: 100%;
+}
+.alert {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: .58rem 0 0 0;
+}
+.info {
+  display: block;
+  padding-left: 1.4rem;
+  font-size: 1rem;
+  color: #323232;
+}
+
+/*----------- 飲食店会員開拓希望について ------------*/
+#page_pioneer .layout_pioneer {
+  max-width: 82.8rem;
+}
+#page_pioneer .pioneer {
+  padding-bottom: 10.1rem;
+}
+#page_pioneer .pioneer .pioneer_info {
+  margin-top: 3.4815rem;
+  margin-bottom: 3.5815rem;
+}
+#page_pioneer .pioneer .pioneer_form {
+  padding: 6.1rem 4rem 6rem 4rem;
+}
+#page_pioneer .pioneer .pioneer_form_split {
+  padding: 3rem 0;
+  border-bottom: 1px dotted #000;
+}
+#page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner {
+  margin: 1.6rem 0;
+}
+#page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner:first-of-type {
+  margin: 3rem 0 1.6rem 0;
+}
+#page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner:last-of-type {
+  margin: 1.6rem 0 3rem 0
+}
+#page_pioneer .content_button_arrow {
+  display: block;
+  width: 23rem;
+  font-size: 1.4rem;
+  padding: 1.35rem 1rem;
+  margin-top: 6rem;
+  text-align: center;
+  color: #fff;
+}
+#page_pioneer .content_button_arrow:disabled {
+  background-color: #aaa;
+}
+#page_pioneer .wide {
+  width: calc(100% - 4.2rem);
+}
+#page_pioneer .narrow {
+  width: 16.5rem;
+}
+#page_pioneer .pioneer .pioneer_form_phone .narrow {
+  width: 12rem;
+}
+#page_pioneer .pioneer .pioneer_form_phone span {
+  margin: 0 1rem;
+}
+#page_pioneer .middle {
+  width: 19.2rem;
+}
+.pioneer_tag{
+color: #FFC778;
+font-size:1.5px;
+font-weight: bold;
+border: solid 2px skyblue;}
+
+/*----------- 飲食店会員開拓希望について確認 ------------*/
+#page_pioneerconfirm .layout_pioneer {
+  max-width: 82.8rem;
+}
+#page_pioneerconfirm .pioneer {
+  margin-top: 4rem;
+  padding-bottom: 10.1rem;
+}
+#page_pioneerconfirm .pioneer .pioneer_form {
+  padding: 2.875rem 4rem 5.8rem 4rem;
+}
+#page_pioneerconfirm .pioneer .pioneer_form_split {
+  padding: 2.5rem 0;
+  border-bottom: 1px dotted #000;
+}
+#page_pioneerconfirm .pioneer .pioneer_form_split_title {
+  font-weight: bold
+}
+#page_pioneerconfirm .content_button {
+  display: block;
+  width: 23rem;
+  font-size: 1.4rem;
+  padding: 1.35rem 1rem;
+  text-align: center;
+  color: #fff;
+}
+#page_pioneerconfirm a.content_button {
+  margin-right: 4rem;
+  background-color: #aaa;
+}
+
+/*-----------飲食店会員開拓希望について完了  ------------*/
+#page_pioneercomplete .layout_pioneer {
+  max-width: 82.8rem;
+}
+#page_pioneercomplete .pioneer {
+  margin-top: 4rem;
+  padding-bottom: 10.1rem;
+}
+#page_pioneercomplete .pioneer .pioneer_form {
+  padding: 0 3rem 8.1rem 3rem;
+}
+#page_pioneercomplete .pioneer .pioneer_form h3 {
+  padding-top: 6.1rem;
+  padding-bottom: 7.35rem;
+  font-size: 3.2rem;
+  text-align: center;
+  color: #4a4a4a;
+  font-weight: bold;
+  letter-spacing: .24em;
+  line-height: 1;
+}
+#page_pioneercomplete .pioneer .pioneer_form p {
+  line-height: 1.92857142857143;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #4a4a4a;
+}
+#page_pioneercomplete .pioneer_form p + p {
+  padding-top: 2.7rem;
+}
+#page_pioneercomplete .content_button {
+  display: block;
+  width: 32rem;
+  padding: 1.25rem 1rem;
+  margin: 6.35rem auto 0 auto;
+  color: #fff;
+  background-color: #8a8a8a;
+  text-align: center;
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+  input, select {
+    padding: .75rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  select {
+    padding: .75rem 3.6rem .75rem 1.25rem;
+  }
+  .layout_pioneer {
+    padding-left: 1.9rem;
+    padding-right: 1.9rem;
+  }
+  .flow {
+    margin-top: 4rem;
+    display: block;
+    transition: unset;
+  }
+  .flow a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .flow a:hover {
+    transition: unset;
+    opacity: 1;
+  }
+  .flow p {
+    width: 100%;
+    height: auto;
+    padding: 0 2rem;
+    margin-bottom: 2.15rem;
+  }
+  .flow p::after {
+    top: auto;
+    bottom: -1.575rem;
+    left: calc(50% - .275rem);
+    width: .55rem;
+    height: .9rem;
+    transform: rotate(90deg);
+  }
+  .flow p:first-of-type {
+    margin-top: .8rem
+  }
+  .flow p.current:first-of-type {
+    margin-top: 1.5rem;
+  }
+  .flow p:nth-of-type(2) {
+    padding: 0 2rem;
+  }
+  .flow p:last-of-type {
+    margin-bottom: .8rem;
+  }
+  .flow p.current:last-of-type {
+    margin-bottom: 1.5rem;
+  }
+  .flow span {
+    padding: .65rem 1.6rem;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  .flow .current span {
+    width: auto;
+  }
+  .pioneer .pioneer_info {
+    font-size: 1.3rem;
+  }
+  .pioneer .pioneer_radio {
+    display: block;
+    font-size: 1.3rem;
+  }
+  .pioneer .pioneer_radio_label:not(:first-of-type) {
+    margin-left: 0;
+    margin-top: .2rem;
+  }
+  .pioneer .pioneer_radio_label span::before {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  .pioneer .pioneer_radio_label input[type="radio"]:checked + span::after {
+    left: .3rem;
+    width: .68rem;
+    height: .68rem;
+  }
+  .pioneer .pioneer_select {
+    width: 11rem;
+  }
+  .pioneer .pioneer_select::before {
+    right: 1.25rem;
+  }
+  .pioneer .pioneer_form_split {
+    display: block;
+    font-size: 1.3rem;
+  }
+  .pioneer .pioneer_form_split_title {
+    width: 100%;
+    color: #2e2e2e;
+  }
+  .pioneer .pioneer_form_split_content {
+    width: 100%;
+    font-weight: normal;
+    color: #4d4d4d;
+  }
+  .pioneer .pioneer_form_split_content.pioneer_form_split_content_info {
+    display: block;
+  }
+  .pioneer .pioneer_form_split_content_name label {
+    margin-top: 0;
+  }
+  .pioneer .pioneer_form_split_content_name label:last-of-type {
+    padding-left: 0;
+  }
+  .pioneer .pioneer_form_split_content_name p:last-of-type label {
+    padding-left: 0;
+  }
+  .pioneer .pioneer_form_split_content_name > div {
+    width: 100%;
+    display: block;
+  }
+  .pioneer .pioneer_form_split_content_name > div p:last-of-type {
+    margin-top: 1.45rem;
+  }
+  .pioneer .pioneer_form_split.require > .pioneer_form_split_title {
+    display: flex;
+  }
+  .pioneer .pioneer_form_split.require > .pioneer_form_split_title::after {
+    width: 3.2rem;
+    font-size: 1rem;
+  }
+  .pioneer .pioneer_form_box .pioneer_form_box_inner {
+    margin: .945rem 0;
+  }
+  .pioneer .pioneer_form_box .pioneer_form_box_inner:first-of-type {
+    margin: 1.4rem 0 .945rem 0;
+  }
+  .pioneer .pioneer_form_box .pioneer_form_box_inner:last-of-type {
+    margin: .945rem 0 1.4rem 0;
+  }
+  .pioneer .pioneer_privacy {
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+  }
+  .pioneer .pioneer_privacy_title {
+    padding: 1.2rem 1rem;
+    font-size: 1.6rem;
+  }
+  .pioneer .pioneer_privacy_box {
+    margin: 0 1rem;
+    padding-right: 1rem;
+  }
+  .pioneer .pioneer_privacy_box_title {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  .pioneer .pioneer_privacy_box_title:first-of-type {
+    margin-top: 1rem;
+  }
+  .pioneer .pioneer_privacy_box_text {
+    font-size: 1.3rem;
+  }
+  .pioneer .pioneer_privacy_box_text_small {
+    font-size: 1.2rem;
+  }
+  .pioneer .pioneer_privacy_check {
+    margin: 0 1rem;
+  }
+  .pioneer .pioneer_privacy_check label {
+    padding: 1.7rem 1rem;
+  }
+  .pioneer_button {
+    display: block;
+    padding-top: 4rem;
+  }
+  .alert {
+    font-size: 1.2rem;
+  }
+  .info {
+    padding-left: 0;
+  }
+  a.point {
+    color: #9c283c;
+  }
+
+  /*----------- 飲食店会員開拓希望について ------------*/
+  #page_pioneer .pioneer {
+    padding-bottom: 5rem;
+  }
+  #page_pioneer .pioneer > div {
+    max-width: none;
+  }
+  #page_pioneer .pioneer .pioneer_info {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  #page_pioneer .pioneer .pioneer_form {
+    padding: 2.6rem 3rem 4rem 3rem;
+  }
+  #page_pioneer .pioneer .pioneer_form_split {
+    padding: 1.45rem 0;
+  }
+  #page_pioneer .pioneer .pioneer_form_split p {
+    width: 100%;
+  }
+  #page_pioneer .pioneer .pioneer_form_split_title {
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+  }
+  #page_pioneer .pioneer .pioneer_form_split_content_name .narrow {
+    width: 11rem;
+  }
+  #page_pioneer .pioneer .pioneer_form_phone .narrow {
+    width: 7rem;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner {
+    align-items: baseline;
+    margin: 1.45rem 0;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner:first-of-type {
+    margin: 1.45rem 0 1.1rem 0;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner:nth-of-type(2) {
+    margin: 0 0 1.45rem 0;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_box_inner:last-of-type {
+    margin: 1.45rem 0 1.45rem 0;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_split_title {
+    width: 7rem;
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_split_content {
+    width: calc(100% - 7rem);
+  }
+  #page_pioneer .pioneer .pioneer_form_box .pioneer_form_split_title {
+    margin-bottom: 0;
+  }
+  #page_pioneer .content_button_arrow {
+    width: 100%;
+    max-width: 24.5rem;
+    padding: 1.15rem 1rem;
+    margin: 3.6rem auto 0 auto;
+    font-size: 1.3rem;
+  }
+  #page_pioneer .wide {
+    width: 100%;
+  }
+  #page_pioneer .narrow {
+    width: 11rem;
+  }
+  #page_pioneer .middle {
+    width: 100%;
+  }
+  /*----------- 飲食店会員開拓希望について確認 ------------*/
+  #page_pioneerconfirm .pioneer {
+    margin-top: 4rem;
+    padding-bottom: 5rem;
+  }
+  #page_pioneerconfirm .pioneer > div {
+    max-width: none;
+  }
+  #page_pioneerconfirm .pioneer .pioneer_form {
+    padding: 2.6rem 3rem 4rem 3rem;
+  }
+  #page_pioneerconfirm .pioneer .pioneer_form_box .pioneer_form_box_inner {
+    display: block;
+  }
+  #page_pioneerconfirm .pioneer .pioneer_form_split {
+    padding: 1.4rem 0;
+  }
+  #page_pioneerconfirm .pioneer .pioneer_form_split p {
+    display: block;
+    width: 100%;
+  }
+  #page_pioneerconfirm .content_button {
+    width: 100%;
+    max-width: 24.5rem;
+    padding: 1.15rem 1rem;
+    margin: 1.5rem auto 0 auto;
+    font-size: 1.3rem;
+  }
+  #page_pioneerconfirm a.content_button {
+    margin: 0 auto;
+  }
+
+  /*----------- 飲食店会員開拓希望について完了  ------------*/
+  #page_pioneercomplete .pioneer {
+    padding-bottom: 5rem;
+  }
+  #page_pioneercomplete .pioneer .pioneer_form {
+    padding: 0 3rem 4.05rem 3rem;
+  }
+  #page_pioneercomplete .pioneer .pioneer_form h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+    padding-top: 4rem;
+    padding-bottom: 3.4rem;
+  }
+  #page_pioneercomplete .pioneer .pioneer_form p {
+    font-size: 1.3rem;
+  }
+  #page_pioneercomplete .pioneer_form p + p {
+    padding-top: 1.6rem;
+  }
+  #page_pioneercomplete .content_button {
+    max-width: 32rem;
+    width: 100%;
+    margin: 4rem auto 0 auto;
+  }
+}

@@ -34,6 +34,66 @@ Route::get('about', function () {
     return view('about');
 });
 
+Route::group(['prefix' => 'guide'], function () {
+    Route::get('/', function () {
+        return view('guide.index');
+    });
+    Route::get('kaiin', function () {
+        return view('guide.kaiin');
+    });
+    Route::get('shupin', function () {
+        return view('guide.shupin');
+    });
+    Route::get('keiyaku', function () {
+        return view('guide.keiyaku');
+    });
+    Route::get('kounyu', function () {
+        return view('guide.kounyu');
+    });
+    Route::get('mypage', function () {
+        return view('guide.mypage');
+    });
+    Route::get('request', function () {
+        return view('guide.request');
+    });
+    Route::get('blog', function () {
+        return view('guide.blog');
+    });
+    Route::get('sales', function () {
+        return view('guide.sales');
+    });
+});
+
+Route::group(['prefix' => 'hajimete'], function () {
+    Route::get('service', function () {
+        return view('hajimete.service');
+    });
+    Route::get('kinsi', function () {
+        return view('hajimete.kinsi');
+    });
+    Route::get('houritu', function () {
+        return view('hajimete.houritu');
+    });
+    Route::get('system', function () {
+        return view('hajimete.system');
+    });
+    Route::get('sinsei', function () {
+        return view('hajimete.sinsei');
+    });
+    Route::get('direct-trading', function () {
+        return view('hajimete.direct-trading');
+    });
+    Route::get('cancel', function () {
+        return view('hajimete.cancel');
+    });
+});
+
+Route::group(['prefix' => 'pioneer'], function () {
+    Route::get('/', function () {
+        return view('pioneer.index');
+    });
+});
+
 Route::post('contact', 'ContactController@submit');
 
 Route::get('fish/', 'FishController@list');
@@ -98,8 +158,8 @@ Route::group(['middleware' => 'auth:user'], function () {
     Route::post('/identification', 'Auth\IdentificationController@send2Admin');
 
     // 営業許可証確認
-    Route::get('/business-license', 'Auth\BusinessLicenseController@index');
-    Route::post('/business-license', 'Auth\BusinessLicenseController@send2Admin');
+//    Route::get('/business-license', 'Auth\BusinessLicenseController@index');
+//    Route::post('/business-license', 'Auth\BusinessLicenseController@send2Admin');
 
     Route::group(['prefix' => 'mypage'], function () {
         //新しいメールアドレスの変更

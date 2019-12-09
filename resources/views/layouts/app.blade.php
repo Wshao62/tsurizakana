@@ -178,6 +178,7 @@
                         <li><a href="@if (!Request::is('/')){{ url('/') }}@endif#pickup">ピックアップ釣魚</a></li>
                         <li><a href="@if (!Request::is('/')){{ url('/') }}@endif#recommend">サービスの始め方</a></li>
                         <li><a href="@if (!Request::is('/')){{ url('/') }}@endif#faq">よくある質問</a></li>
+                        <li><a href="{{ url('/guide') }}">ご利用ガイド</a></li>
                     </ul>
                     <ul>
                         <li><a href="{{ url('fish') }}">売魚一覧</a></li>

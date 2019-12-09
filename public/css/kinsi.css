@@ -1,0 +1,397 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ 禁止行為出品物 #page_kinsi
+
+ =======================================
+  PC
+======================================= */
+
+.kinsi_info h3 {
+  font-size: 2.7rem;
+  color: #4d4d4d;
+  margin-top: 10.3rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  letter-spacing: 0.12em;
+}
+.kinsi_info h3 span {
+  position: relative;
+  font-size: 3.4rem;
+  color: #005e89;
+  letter-spacing: 0.12em;
+}
+.kinsi_info h3 span::before {
+  position: absolute;
+  content: '・・・・';
+  top: -.6em;
+  font-weight: lighter;
+  color: #f2b42b;
+}
+.kinsi_info .kinsi_info_text {
+  margin-top: 5.45rem;
+  margin-bottom: 4.45rem;
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.6875;
+}
+.kinsi_info .kinsi_info_area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 9.65rem;
+}
+.kinsi_info .kinsi_info_area p {
+  margin-top: 1.55rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.35;
+}
+.kinsi_info .kinsi_info_image {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background-color: #089dd0;
+}
+.kinsi_info .kinsi_info_sell .kinsi_info_image::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 7rem;
+  height: 6.7rem;
+  background: url(../img/icon/icon_rod_white.png) no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+}
+.kinsi_info .kinsi_info_buy .kinsi_info_image::before {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 7.3rem;
+  height: 6.8rem;
+  background: url(../img/icon/icon_basket_white.png) no-repeat;
+  background-size: contain;
+  transform: translate(-50%, -50%);
+}
+.kinsi_info .kinsi_info_arrow {
+  position: relative;
+  width: 5.5rem;
+  height: 16rem;
+  margin-left: 1.3rem;
+  margin-right: 1.1rem;
+}
+.kinsi_info .kinsi_info_arrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5.5rem;
+  height: .9rem;
+  background: url(../img/kinsi/arrow_right_yellow.png) no-repeat;
+  background-size: contain;
+  transform: translate(-50%,-50%);
+}
+.info_block .info_block_box {
+  display: flex;
+}
+.info_block .info_block_box:nth-of-type(2n) {
+  flex-direction: row-reverse;
+}
+.info_block .info_block_box:last-of-type {
+  margin-bottom: 14rem;
+}
+.info_block .info_block_box + .info_block_box {
+  margin-top: 9.8rem;
+}
+.info_block .info_block_image {
+  width: calc(100% - 58rem);
+  height: 30rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.info_block .info_block_box:first-of-type .info_block_image {
+  background-image: url(../img/kinsi/kinsi_fish01.jpg);
+}
+.info_block .info_block_box:last-of-type .info_block_image {
+  background-image: url(../img/kinsi/kinsi_fish02.jpg);
+}
+.info_block .info_block_inner {
+  width: 58rem;
+  padding-left: 2.8rem;
+}
+.info_block .info_block_box:nth-of-type(2n) .info_block_inner {
+  padding-left: 0;
+  padding-right: 2.8rem;
+}
+.info_block .info_block_title {
+  margin-top: -.05rem;
+  padding-bottom: 2.25rem;
+  font-size: 2.6rem;
+  color: #4d4d4d;
+  font-weight: bold;
+  line-height: 1.03846153846154;
+  border-bottom: 1px dotted #000;
+}
+.info_block .info_block_text {
+  font-size: 1.6rem;
+  line-height: 1.6875;
+}
+.info_block .info_block_inner .info_block_text:first-of-type {
+  margin-top: 1.15rem;
+}
+.info_block .info_block_inner .info_block_text + .info_block_text {
+  margin-top: 2.7rem;
+}
+.info_block .info_block_inner .info_block_text:last-of-type {
+  margin-bottom: 2.55rem;
+}
+
+/*----------- 禁止行為出品物 ------------*/
+#page_kinsi .start {
+  background: linear-gradient(to top, #177eae, #39b0e3);
+}
+#page_kinsi .start .start_title {
+  padding: 8.8rem 1rem 0 1rem;
+  font-size: 3.564rem;
+}
+#page_kinsi .start .start_title::before {
+  content: none;
+}
+#page_kinsi .start .start_inner {
+  padding: 4.1rem 1rem 8.5rem 1rem;
+  background: none;
+}
+#page_kinsi .content_button_arrow {
+  max-width: 32rem;
+  width: 100%;
+  padding: 1.25rem 1rem;
+  margin: 0 auto 0 0;
+  color: #fff;
+}
+#page_kinsi .store .store_phone {
+  margin: 0 4.3rem 0 5.1rem;
+}
+#page_kinsi .store .store_title {
+  width: 100%;
+  padding: 1.15rem 2rem;
+  margin-top: 3.5rem;
+  background-color: #f3a530;
+  text-shadow: 0 0 0;
+  font-size: 1.9rem;
+  text-align: center;
+  line-height: 1.42105263157895;
+  border-radius: .5rem;
+}
+#page_kinsi .store .store_text {
+  width: calc(100% - 33.9rem);
+  padding-right: 5.2rem;
+}
+#page_kinsi .store .store_text p {
+  padding-bottom: 2.907rem;
+  margin-top: 3.607rem;
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 1.49416666666667;
+}
+#page_kinsi .store .store_image {
+  justify-content: center;
+}
+.container{justify-content: flex-end;
+padding-left: 10%;
+padding-right: 10%;}
+
+a.reference document {
+font-weight:bold;
+text-decoration:none;
+}
+
+a.reference:link {
+color:#0000FF;
+}
+
+a.reference:visited {
+color:#6600FF;
+}
+
+a.reference:hover {
+color:#00aaff;
+text-decoration:underline;
+}
+
+a.reference:active {
+color:#1760a0;
+}
+
+@media only screen and (max-width: 930px) {
+  #page_kinsi .store .store_phone {
+    margin: 0 auto;
+  }
+  #page_kinsi .store .store_text {
+    width: 58.9rem;
+    padding-right: 0;
+  }
+}
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  .kinsi_info h3 {
+    margin-top: 4.315rem;
+    font-size: 1.7rem;
+    line-height: 2.1;
+  }
+  .kinsi_info h3 span {
+    font-size: 2.6rem;
+  }
+  .kinsi_info h3 span::before {
+    top: -1.1em;
+    font-weight: bold;
+  }
+  .kinsi_info .kinsi_info_text {
+    margin-top: 3.165rem;
+    margin-bottom: 4.6rem;
+    font-size: 1.3rem;
+    line-height: 1.53846153846154;
+  }
+  .kinsi_info .kinsi_info_image {
+    width: 100%;
+    height: 35.040625vw;
+    max-width: 13.4rem;
+    max-height: 13.4rem;
+    margin: 0 auto;
+  }
+  .kinsi_info .kinsi_info_sell,
+  .kinsi_info .kinsi_info_buy {
+    width: 39.762611275964396%;
+  }
+  .kinsi_info .kinsi_info_sell .kinsi_info_image::before {
+    width: 15.7333333333333vw;
+    height: 14.9333333333333vw;
+    max-width: 5.9rem;
+    max-height: 5.6rem;
+  }
+  .kinsi_info .kinsi_info_buy .kinsi_info_image::before {
+    width: 16.4vw;
+    height: 15.2vw;
+    max-width: 6.15rem;
+    max-height: 5.7rem;
+  }
+  .kinsi_info .kinsi_info_arrow {
+    width: 20.4747774480714%;
+    height: 35.040625vw;
+    max-height: 13.4rem;
+    padding-left: 1.05rem;
+    padding-right: .9rem;
+    margin: 0 auto;
+  }
+  .kinsi_info .kinsi_info_arrow::before {
+    left: 50%;
+    width: 100%;
+    max-width: 4.65rem;
+    height: .8rem;
+  }
+  .kinsi_info .kinsi_info_area {
+    margin-bottom: 4.4335rem;
+  }
+  .kinsi_info .kinsi_info_area p {
+    font-size: 1.7rem;
+    line-height: 1.33323529411765;
+    margin-top: 1.0335rem;
+  }
+  .info_block .info_block_box {
+    display: block;
+  }
+  .info_block .info_block_box + .info_block_box {
+    margin-top: 6rem;
+  }
+  .info_block .info_block_box:last-of-type {
+    margin-bottom: 6rem;
+  }
+  .info_block .info_block_image {
+    width: 100%;
+    height: 67.4vw;
+    background-size: cover;
+  }
+  .info_block .info_block_inner {
+    width: 100%;
+    padding-left: 0;
+}
+  .info_block .info_block_title {
+    padding-bottom: 1.5rem;
+    margin-top: 1.45rem;
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .info_block .info_block_box:nth-of-type(2n) .info_block_inner {
+    padding-right: 0;
+  }
+  .info_block .info_block_text {
+    font-size: 1.3rem;
+    line-height: 1.53846153846154;
+  }
+  .info_block .info_block_inner .info_block_text:first-of-type {
+    margin-top: 1.1rem;
+  }
+  .info_block .info_block_inner .info_block_text:last-of-type {
+    margin-bottom: 2.65rem;
+  }
+  .info_block .info_block_inner .info_block_text + .info_block_text {
+    margin-top: 2.4rem;
+  }
+
+  /*----------- 禁止行為出品物 ------------*/
+  #page_kinsi .start .start_title {
+    padding: 4.55rem 1.9rem 0 1.9rem;
+    font-size: 1.8rem;
+  }
+  #page_kinsi .start .start_inner {
+    padding: 3.65rem 1.9rem 4.6rem 1.9rem;
+  }
+  #page_kinsi .store .store_phone {
+    margin: 0;
+  }
+  #page_kinsi .store .store_title {
+    width: calc(100% - 3.8rem);
+    max-width: 47rem;
+    left: 50%;
+    font-size: 1.4rem;
+    transform: translateX(-50%);
+  }
+  #page_kinsi .store .store_text {
+    width: 21.2rem;
+  }
+  #page_kinsi .store .store_text p {
+    font-size: 1.3rem;
+  }
+  #page_kinsi .content_button_arrow {
+    max-width: 24.5rem;
+    padding: 1.15rem 1rem;
+    margin: 0 auto;
+  }
+  #page_kinsi + .footer {
+    background-color: #313131;
+  }
+.item{background: #ffffff;
+color:#666;
+margin: 10px;
+padding:10px;}
+
+.container{justify-content: flex-end;
+padding-left: 10%;
+padding-right: 10%;
+font-size: 0.7em;
+overflow: hidden;}
+img{width: auto;
+    height: auto;}
+}
