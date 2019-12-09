@@ -31,10 +31,25 @@
                     </p>
                 @endif
                 <p class="notice">※tsurizakana-shoten.comの受信許可をお願いします。<br>※「仮登録」ボタンをクリックすると、メールが届きます。</p>
+                <div class="term_check js_checkbox">
+                    <label>
+                        <input type="checkbox" name="agreement" value="1">
+                        <span><a href="{{ url('/term') }}" target="_blank">ご利用規約</a>へ同意する</span>
+                    </label>
+                </div>
             </div>
-            <button class="content_button" type="submit">仮登録</button>
+            <button class="content_button" type="submit" disabled>仮登録</button>
         </form>
     </div>
 </div>
+<script>
+    $('[name=agreement]').change (function() {
+        if ($('[name=agreement]').prop('checked')) {
+            $('.content_button').prop('disabled', false);
+        } else {
+            $('.content_button').prop('disabled', true);
+        }
+    })
+</script>
 @include('parts.template_auth_links')
 @endsection

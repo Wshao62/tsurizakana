@@ -809,5 +809,35 @@ select {
     margin: 4rem auto 0 auto;
     font-size: 1.3rem;
   }
-
 }
+
+.term_check {
+  margin: 0 2.5rem 0 2.5rem;
+  line-height: 1.5;
+  background-color: #fff;
+}
+.term_check label {
+  justify-content: center;
+  padding: 1.95rem 0;
+  margin-top: 1.7rem;
+}
+.term_check label:hover {
+  cursor: pointer;
+}
+.term_check input[type=checkbox] {
+  height: 1.4rem;
+  width: 10px !important;
+}
+.term_check input[type=checkbox]:hover {
+  cursor: pointer;
+}
+.term_check span {
+  padding-left: .9rem;
+}
+.term_check span a {
+  color: #f2b42b;
+}
+.content_button:disabled {
+  background-color: #aaa;
+}
+
