@@ -122,8 +122,8 @@
         <a href="{{ route('register') }}" class="content_button">会員登録</a>
     </div>
     <div class="start_area">
-        <p>サービスに関するお問い合わせはこちら</p>
-        <a href="{{ url('/contact') }}" class="content_button">お問い合わせ</a>
+        <p>サービスのご利用方法はこちら</p>
+        <a href="{{ url('/guide') }}" class="content_button">ご利用ガイド</a>
     </div>
     </div>
 </div>
