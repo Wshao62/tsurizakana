@@ -14,6 +14,7 @@ class Order extends Model
     use SoftDeletes;
     use Register;
     use Updater;
+    const FEE = 0.1;
 
     protected $fillable = [
         'user_id',
@@ -139,8 +140,10 @@ class Order extends Model
         return ['query' => $query, 'filterd_cnt' => $filterd_cnt];
     }
 
-    /*
+    /**
      * 累計売上高を取得
+     *
+     * @return int
      */
     public function getSaleTotal() {
         $res = 0;
@@ -148,7 +151,7 @@ class Order extends Model
             $query->where('seller_id', Auth::user()->id);
         })->get();
         foreach ($orders as $order) {
-            $res += $order->price;
+            $res += $order->price * (1 - self::FEE);
         }
 
         return $res;
@@ -175,7 +178,7 @@ class Order extends Model
             $query->where('seller_id', Auth::user()->id);
         })->where('is_able_transfer', 1)->get();
         foreach ($orders as $order) {
-            $res += $order->price;
+            $res += $order->price * (1 - self::FEE);
         }
         return $res;
     }
