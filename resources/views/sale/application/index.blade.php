@@ -15,6 +15,9 @@
             <a href="{{ url('mypage/sales/application/history') }}">申請履歴</a>
         </div><!-- END sales_tabs -->
         <div class="application_cont">
+            @if (session('error'))
+                <div class="error">{{ session('error') }}</div>
+            @endif
             <div class="application_flow">
                 <p class="current">振込内容</p>
                 <span>></span>

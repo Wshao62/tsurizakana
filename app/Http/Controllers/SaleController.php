@@ -43,7 +43,7 @@ class SaleController extends Controller
      */
     public function history()
     {
-        $orders = $this->order->closed()->sellerOwn()->paginate(12);
+        $orders = $this->order->closed()->sellerOwn()->orderBy('created_at', 'desc')->paginate(12);
         $count = $this->order->closed()->sellerOwn()->count();
         return view('sale.history', compact('orders', 'count'));
     }
@@ -106,42 +106,61 @@ class SaleController extends Controller
      */
     public function complete(Request $request)
     {
-        $bank_form = $request->session()->get('bank_form');
-        $transfer_form = $request->session()->get('transfer_form');
+        \DB::beginTransaction();
+        try {
+            $bank_form = $request->session()->get('bank_form');
+            $transfer_form = $request->session()->get('transfer_form');
 
-        if (is_null($bank_form) || is_null($transfer_form)) {
-            return redirect('/mypage/sales/application');
+            if (is_null($bank_form) || is_null($transfer_form)) {
+                return redirect('/mypage/sales/application');
+            }
+
+            /**
+             * 口座情報更新
+             */
+            $user = Auth::user();
+            $user->update([
+                'bank_name' => $bank_form['bank_name'],
+                'bank_branch_code' => $bank_form['bank_branch_code'],
+                'bank_type' => $bank_form['bank_type'],
+                'bank_number' => $bank_form['bank_number'],
+                'bank_user_name' => $bank_form['bank_user_name'],
+            ]);
+
+            /**
+             * 振込申請テーブル登録
+             */
+            $transfer_form['requested_at'] = Carbon::now();
+            $dt = Carbon::today();
+            // 週の最後を金曜日に設定
+            Carbon::setWeekEndsAt(Carbon::FRIDAY);
+            // 月曜日締め当週支払い
+            // dayOfWeekIsoは 1(月) から 7(日)で曜日を取得
+            if ($dt->dayOfWeekIso == 1  || $dt->dayOfWeekIso == 6 || $dt->dayOfWeekIso == 7) {
+                $transfer_form['transfer_at'] = $dt->endOfWeek();;
+            } else {
+                $transfer_form['transfer_at'] = $dt->addWeek()->endOfWeek();
+            }
+            $transfer_form['status'] = \App\Models\TransferRequest::STATUS_REQUEST;
+            $this->transferRequest->fill($transfer_form)->save();
+            // 振込申請情報登録 (YYYYmmdd + id)
+            $this->transferRequest->update(
+                ['application_number' => Carbon::now()->format('Ymd'). sprintf('%06d', $this->transferRequest->id)]
+            );
+
+            /**
+             * 通知を送る
+             */
+            $user->notify(new TransferRequestedNotificationToUser($this->transferRequest));
+            $tmp_user = new User(['email' => 'support@tsurizakana-shoten.com']);
+            $tmp_user->notify(new TransferRequestedNotificationToAdmin($this->transferRequest));
+
+            \DB::commit();
+        } catch (\Exception $e) {
+            \DB::rollback();
+            return redirect('/mypage/sales/application')
+                ->with(['error' => 'システムエラーが発生しました。しばらく待ってから再度お試しください。それでも失敗する場合はお問い合わせください。']);
         }
-
-        // 口座情報更新
-        $user = Auth::user();
-        $user->update([
-            'bank_name' => $bank_form['bank_name'],
-            'bank_branch_code' => $bank_form['bank_branch_code'],
-            'bank_type' => $bank_form['bank_type'],
-            'bank_number' => $bank_form['bank_number'],
-            'bank_user_name' => $bank_form['bank_user_name'],
-        ]);
-
-        // 振込申請情報登録
-        $transfer_form['requested_at'] = Carbon::now();
-
-        $dt = Carbon::today();
-        // 週の最後を金曜日に設定
-        Carbon::setWeekEndsAt(Carbon::FRIDAY);
-        // 月曜日締め当週支払い
-        // dayOfWeekIsoは 1(月) から 7(日)で曜日を取得
-        if ($dt->dayOfWeekIso == 1  || $dt->dayOfWeekIso == 6 || $dt->dayOfWeekIso == 7) {
-            $transfer_form['transfer_at'] = $dt->endOfWeek();;
-        } else {
-            $transfer_form['transfer_at'] = $dt->addWeek()->endOfWeek();
-        }
-        $transfer_form['status'] = \App\Models\TransferRequest::STATUS_REQUEST;
-        $this->transferRequest->fill($transfer_form)->save();
-
-        $user->notify(new TransferRequestedNotificationToUser($this->transferRequest));
-        $tmp_user = new User(['email' => 'support@tsurizakana-shoten.com']);
-        $tmp_user->notify(new TransferRequestedNotificationToAdmin($this->transferRequest));
 
         return redirect('/mypage/sales/application/get-complete');
     }

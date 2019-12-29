@@ -17,6 +17,7 @@ class TransferRequest extends Model
 
     protected $fillable = [
         'user_id',
+        'application_number',
         'price',
         'fee',
         'transfer_price',

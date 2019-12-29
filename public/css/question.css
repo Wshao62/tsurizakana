@@ -23,13 +23,30 @@
 #page_question .tab_baloon {
   margin-bottom: 9.4rem;
 }
-
+.new-content{display:flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+aside{width: 50%;
+  float: left;
+  padding-left: 30px;
+}
+article{width: 50%;
+  float: right;
+  padding-right: 30px;}
+.tab{font-size: 1.5em;
+  font-weight: bold;
+  color: #6289a4;
+  border-bottom: 0.25em;
+  border-bottom:#6289a4;
+  border-bottom-style:inset;
+  bottom: 3px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;}
 /* =======================================
   SP
 ======================================= */
-@media screen and (max-width:768px) {
-
-  /*----------- よくある質問 ------------*/
+@media screen and (max-width:768px ) {
   #page_question .title {
     margin-bottom: 0;
   }
@@ -39,4 +56,24 @@
   #page_question .tab .tab_select {
     padding-bottom: 2.5rem;
   }
+  .new-content{flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  aside{width: 100%;
+    float: none;
+    padding-left: 10px;
+  }
+  article{width: 100%;
+    float: none;
+    padding-right: 10px;}
+  .tab{font-size: 1.2em;
+    font-weight: bold;
+    color: #6289a4;
+    border-bottom: 0.25em;
+    border-bottom:#6289a4;
+    border-bottom-style:inset;
+    bottom: 3px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;}
 }
