@@ -109,6 +109,9 @@
                         @auth('user')
                         <li><a href="{{ url('fish') }}"><span class="icon_before icon_before_bucket"></span>売魚一覧</a></li>
                         <li><a href="{{ url('/fish/request') }}"><span class="icon_before icon_before_rod"></span>リクエスト魚一覧</a></li>
+                        <li><a href="{{ url('/blog/list') }}"><span class="icon_before icon_before_rod"></span>ブログ一覧</a></li>
+                        <li><a href="{{ url('/fisher/list') }}"><span class="icon_before icon_before_rod"></span>釣人一覧</a></li>
+                        <li><a href="{{ url('/shop/list') }}"><span class="icon_before icon_before_rod"></span>店舗一覧</a></li>
                         <li><a href="{{ url('contact') }}"><span class="icon_before icon_before_mail"></span>お問い合わせ</a></li>
                         @endauth
                         @guest('user')
