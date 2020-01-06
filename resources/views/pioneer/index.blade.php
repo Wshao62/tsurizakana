@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('title', '飲食店会員開拓希望について')
 @section('meta_description', '釣り人と魚を買いたい人を繋げるマッチングサービス「釣魚商店」のサービス概要をご説明しているページです。魚の売り買いが個人間でも出来る画期的なプラットフォームをぜひご利用ください。')
@@ -28,7 +28,8 @@
         <div class="layout_pioneer">
             <p class="pioneer_info">飲食店会員開拓希望についての情報は下記フォームより<br class="hide_pc">お願いいたします。<br>
                 ご希望の飲食店への確認後、<br class="hide_pc">追って担当者よりご連絡させていただきます。</p>
-            <form class="pioneer_form">
+            <form class="pioneer_form" id="form" action="{{ url('/pioneer/confirm') }}" method="post">
+                @csrf
                 <center><b><p>ご登録者様情報</p></b></center><br>
                 <div class="pioneer_form_split require">
                     <p class="pioneer_form_split_title">お名前</p>
@@ -36,21 +37,34 @@
                         <div>
                             <p>
                                 <label for="pioneer_form_family">姓</label>
-                                <input id="pioneer_form_family" class="narrow" placeholder="（例）佐藤">
+                                <input name="first_name" id="pioneer_form_family" class="narrow" placeholder="（例）佐藤">
                             </p>
                             <p>
                                 <label for="pioneer_form_name">名</label>
-                                <input id="pioneer_form_name" class="narrow" placeholder="（例）太郎">
+                                <input name="last_name" id="pioneer_form_name" class="narrow" placeholder="（例）太郎">
                             </p>
                         </div>
-                        <p class="alert">お名前を入力してください。</p>
+                        @if ($errors->has('first_name'))
+                            <p class="alert">
+                                {{ $errors->first('first_name') }}
+                            </p>
+                        @endif
+                        @if ($errors->has('last_name'))
+                            <p class="alert">
+                                {{ $errors->first('last_name') }}
+                            </p>
+                        @endif
                     </div>
                 </div>
                 <div class="pioneer_form_split require">
                     <p class="pioneer_form_split_title">メールアドレス</p>
                     <div class="pioneer_form_split_content">
-                        <input class="wide" placeholder="●●●●●＠oooooo.co.jp">
-                        <p class="alert">メールアドレスを入力してください。</p>
+                        <input name="email" class="wide" placeholder="●●●●●＠oooooo.co.jp">
+                        @if ($errors->has('email'))
+                            <p class="alert">
+                                {{ $errors->first('email') }}
+                            </p>
+                        @endif
                     </div>
                 </div><br><br>
                 <center><p>新規開拓ご希望店舗情報</p></center><br><br>
@@ -58,26 +72,47 @@
 
                     <p class="pioneer_form_split_title">新規開拓希望の店舗種類</p>
                     <div class="pioneer_form_split_content pioneer_radio">
-                        <label class="pioneer_radio_label"><input type="radio" name="pioneer_radio_item" value="居酒屋" checked="checked"><span>居酒屋</span></label>
-                        <label class="pioneer_radio_label"><input type="radio" name="pioneer_radio_item" value="寿司屋"><span>寿司屋</span></label>
-                        <label class="pioneer_radio_label"><input type="radio" name="pioneer_radio_item" value="日本食"><span>日本食</span></label>
-                        <label class="pioneer_radio_label"><input type="radio" name="pioneer_radio_item" value="その他"><span>その他</span></label>
+                        <label class="pioneer_radio_label"><input type="radio" name="shop_type" value="居酒屋" checked="checked"><span>居酒屋</span></label>
+                        <label class="pioneer_radio_label"><input type="radio" name="shop_type" value="寿司屋"><span>寿司屋</span></label>
+                        <label class="pioneer_radio_label"><input type="radio" name="shop_type" value="日本食"><span>日本食</span></label>
+                        <label class="pioneer_radio_label"><input type="radio" name="shop_type" value="その他"><span>その他</span></label>
+                        @if ($errors->has('shop_type'))
+                            <p class="alert">
+                                {{ $errors->first('shop_type') }}
+                            </p>
+                        @endif
                     </div>
                 </div>
                 <div class="pioneer_form_split require">
                     <p class="pioneer_form_split_title">店舗名</p>
                     <div class="pioneer_form_split_content">
-                        <input class="wide" placeholder="居酒屋　釣魚商店">
-                        <p class="alert">店舗名を入力してください。</p>
+                        <input name="shop_name" class="wide" placeholder="居酒屋　釣魚商店">
+                        @if ($errors->has('shop_name'))
+                            <p class="alert">
+                                {{ $errors->first('shop_name') }}
+                            </p>
+                        @endif
                     </div></div>
                 <div class="pioneer_form_split require">
-                    <p class="pioneer_form_split_title">電話番号</p>
-                    <p class="pioneer_form_split_content pioneer_form_split_content_info"><input class="middle" placeholder="000000000"><span class="info">ハイフンなし、半角英数にてご入力ください。</span></p>
+                    <p class="pioneer_form_split_title">電話番号
+
+                    </p>
+                    <p class="pioneer_form_split_content pioneer_form_split_content_info">
+                        <input name="tel" class="middle" placeholder="000000000">
+                        <span class="info">ハイフンなし、半角英数にてご入力ください。</span>
+                    </p>
+                    @if ($errors->has('tel'))
+                        <p class="alert" style="clear: both;">
+                            {{ $errors->first('tel') }}
+                        </p>
+                    @endif
                 </div>
                 <div class="pioneer_form_box">
                     <div class="pioneer_form_box_inner">
                         <p class="pioneer_form_split_title">郵便番号</p>
-                        <p class="pioneer_form_split_content pioneer_form_split_content_info"><input class="narrow" placeholder="000-000"><span class="info">ハイフンなし、半角英数にてご入力ください。</span></p>
+                        <p class="pioneer_form_split_content pioneer_form_split_content_info">
+                            <input name="zip_code" class="narrow" placeholder="000-000"><span class="info">ハイフンなし、半角英数にてご入力ください。</span>
+                        </p>
                     </div>
                     <div class="pioneer_form_box_inner">
                         <span class="pioneer_form_split_title">都道府県</span>
@@ -137,17 +172,17 @@
                     </div>
                     <div class="pioneer_form_box_inner">
                         <span class="pioneer_form_split_title">住所1</span>
-                        <span class="pioneer_form_split_content"><input class="wide" placeholder="日本橋浜町3-29-5"></span>
+                        <span class="pioneer_form_split_content"><input name="address_1" class="wide" placeholder="日本橋浜町3-29-5"></span>
                     </div>
                     <div class="pioneer_form_box_inner">
                         <span class="pioneer_form_split_title">住所2</span>
-                        <span class="pioneer_form_split_content"><input class="wide" placeholder="菱和パレス日本橋浜町303日本橋浜町3-29-5"></span>
+                        <span class="pioneer_form_split_content"><input name="address_2" class="wide" placeholder="菱和パレス日本橋浜町303日本橋浜町3-29-5"></span>
                     </div>
                 </div>
 
                 <div class="pioneer_form_split">
                     <p class="pioneer_form_split_title">ご要望やご希望等</p>
-                    <p class="pioneer_form_split_content"><textarea class="wide"></textarea></p>
+                    <p class="pioneer_form_split_content"><textarea name="request" class="wide"></textarea></p>
                 </div>
                 <div class="pioneer_privacy">
                     <p class="pioneer_privacy_title">個人情報の取り扱いについて</p>
@@ -158,13 +193,15 @@
                             それ以外に利用することはありません。<br>また、いただいた個人情報を第三者に提供することはありません。
                         </p>
                         <p class="pioneer_privacy_box_title">その他</p>
-                        <p class="pioneer_privacy_box_text">その他の個人情報取扱い方針につきましては、<a href="/term/privacy.html" class="point">個人情報保護方針で開く</a>をご覧下さい。</p>
+                        <p class="pioneer_privacy_box_text">その他の個人情報取扱い方針につきましては、<a href="/privacy" class="point">個人情報保護方針で開く</a>をご覧下さい。</p>
                     </div>
                     <div class="pioneer_privacy_check js_checkbox">
                         <label><input type="checkbox"><span>個人情報の取り扱いに同意する</span></label>
                     </div>
                 </div>
-                <button class="content_button_arrow js_checkbox_area" type="submit" disabled><a href="pioneerconfirm.html">入力内容の確認画面へ</a></button>
+                <button class="content_button_arrow js_checkbox_area" type="submit" disabled>
+                    <a onclick="$('#form').submit()">入力内容の確認画面へ</a>
+                </button>
             </form>
         </div>
     </div>
@@ -177,4 +214,16 @@
             <a class="sp_google" href="#"><img src="{{ asset('img/store_google.png') }}"></a>
         </div>
     </div>
+
+    <script>
+        $(function() {
+            const check = $('.js_checkbox input:checkbox').prop('checked');
+            if(check){
+                $(".js_checkbox_area").prop('disabled', false);
+            }
+            else{
+                $(".js_checkbox_area").prop('disabled', true);
+            }
+        });
+    </script>
 @endsection

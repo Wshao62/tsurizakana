@@ -89,9 +89,10 @@ Route::group(['prefix' => 'hajimete'], function () {
 });
 
 Route::group(['prefix' => 'pioneer'], function () {
-    Route::get('/', function () {
-        return view('pioneer.index');
-    });
+    Route::get('/', 'PioneerController@index');
+    Route::post('confirm', 'PioneerController@confirm');
+    Route::post('send-email', 'PioneerController@sendEmail');
+    Route::get('complete', 'PioneerController@complete');
 });
 
 Route::post('contact', 'ContactController@submit');

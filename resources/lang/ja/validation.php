@@ -208,5 +208,7 @@ return [
         'judge' => '本人確認書類の可否',
         'reject_reason' => '否認理由',
 
+        'last_name' => 'お名前 (姓)',
+        'first_name' => 'お名前 (名)',
     ],
 ];
