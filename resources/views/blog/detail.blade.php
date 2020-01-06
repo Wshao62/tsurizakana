@@ -11,7 +11,7 @@
     <div class="blog">
         <div class="blog_title">
             <h2>{{ $blog->title }}</h2>
-            <p class="font_avenirnext">{{ $blog->getFormatedCreatedAt('Y-m-d') }}</p>
+            <p class="font_avenirnext">{{ $blog->getFormatedCreatedAt('Y.m.d') }}</p>
         </div>
         @if (!empty($blog->photos))
         @foreach ($blog->photos as $photo)

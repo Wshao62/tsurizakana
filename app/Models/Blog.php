@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Notifications\Notifiable;
-use Intervention\Image\ImageManagerStatic as Image;
-use App\Models\Blog;
 use App\Models\Blog\Photo;
-use App\Models\User;
 use App\Helpers\FileHelper;
 use App\Notifications\DeleteNotification;
 
@@ -276,6 +273,33 @@ class Blog extends Model
                     ->with('onePhoto')
                     ->latest('created_at')
                     ->paginate($limit);
+    }
+
+    /**
+     * 全ユーザーのブログ一覧を取得
+     *
+     * @param int $limit
+     * @param string $sort
+     * @param null $search
+     * @return mixed
+     */
+    public static function getPublishedListAll($limit = 10, $sort = 'created_at', $search = null)
+    {
+        $query = self::query()->Published()->with('onePhoto')->orderBy($sort, 'desc');
+
+        // 検索条件がある場合
+        if (!empty($search['keyword'])) {
+            $query->where(function ($query) use ($search) {
+                $query->where('title', 'LIKE', "%{$search['keyword']}%")
+                    ->orWhere('description', 'LIKE', "%{$search['keyword']}%");
+            });
+        }
+        if (!empty($search['area'])) {
+            $query->whereHas('user', function ($query) use ($search) {
+                $query->where('fishing_area', 'LIKE', "%{$search['area']}%");
+            });
+        }
+        return $query->paginate($limit);
     }
 
     /**

@@ -5,20 +5,13 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Intervention\Image\ImageManagerStatic as Image;
 use App\Notifications\PasswordResetNotification;
 use App\Notifications\VerifyNewEmailNotification;
-use App\Models\UserPhoto;
-use App\Models\UserRating;
-use App\Models\Fish;
-use App\Models\VerifyNewEmail;
 use App\Helpers\FileHelper;
 use App\Helpers\AWSHelper;
-use App\Models\Message;
 use App\Models\User\IdentificationDoc;
 use App\Models\User\Shop;
 use App\Models\User\DeviceToken;
@@ -66,6 +59,15 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    /**
+     * モデルの配列形態に追加するアクセサ
+     *
+     * @var array
+     */
+    protected $appends = [
+        'rate_counts',
     ];
 
 
@@ -924,5 +926,58 @@ class User extends Authenticatable
         }
         $query->limit($limit);
         return ['query' => $query, 'filterd_cnt' => $filterd_cnt];
+    }
+
+
+    public function getRateCountsAttribute()
+    {
+        $rate = [
+            'good' => 0,
+            'normal' => 0,
+            'bad' => 0,
+        ];
+        foreach ($this->rate()->getResults() as $_r) {
+            switch ($_r['rate']) {
+                case UserRating::GOOD:
+                    $rate['good']++;
+                    break;
+                case UserRating::NORMAL:
+                    $rate['normal']++;
+                    break;
+                case UserRating::BAD:
+                    $rate['bad']++;
+                    break;
+            }
+        }
+        return $rate;
+    }
+
+    /**
+     * 釣り人一覧を取得
+     *
+     * @param int $limit
+     * @param string $sort
+     * @param null $search
+     * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
+     */
+    public static function getFisherListAll($limit = 10, $sort = 'created_at', $search = null)
+    {
+        // 釣り人となる条件: 魚の出品が一度でもなされた場合
+        $query = self::query()
+            ->whereHas('sale')
+            ->orderBy($sort, 'desc');
+
+        // 検索条件がある場合
+        if (!empty($search['keyword'])) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search['keyword']}%")
+                    ->orWhere('furigana', 'LIKE', "%{$search['keyword']}%")
+                    ->orWhere('good_fishing_fish', 'LIKE', "%{$search['keyword']}%");
+            });
+        }
+        if (!empty($search['area'])) {
+            $query->where('fishing_area', 'LIKE', "%{$search['area']}%");
+        }
+        return $query->paginate($limit);
     }
 }

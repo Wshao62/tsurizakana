@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+/* =======================================
+
+  カテゴリ共通 CSS
+
+→ 釣人一覧  #page_fisherlist
+→ 店舗一覧  #page_shoplist
+→ ブログ一覧  #page_bloglist
+
+ =======================================
+  PC
+======================================= */
+
+/*----------- 釣人一覧 ------------*/
+select { height: 2.8rem; }
+
+.search_area {
+  margin-top: 6.3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.search_area label {
+  width: 40%;
+}
+.search_area input {
+    width: 100%;
+    padding: 1.25rem 2.1rem;
+    border-radius: 8px;
+    font-size: 1.4rem;
+}
+.search_submit {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 5rem;
+  background: #4d4d4d;
+}
+.list_area .list_setting {
+  font-size: 1.4rem;
+}
+.list_area .list_area_narrow {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0 .7rem 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+.list_area .list_area_result span {
+  font-size: 1.96rem;
+  font-weight: bold;
+}
+.list_area .list_area_sort {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 auto;
+}
+.list_area .list_area_sort_area {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  margin-right: 1.5rem;
+  border-right: 1px solid #dcdcdc;
+}
+.list_area .list_area_sort_area label {
+  position: relative;
+}
+.list_area .list_area_sort_area label::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 2.8rem;
+  background-color: #005e89;
+  pointer-events: none;
+}
+.list_area .list_area_sort_area label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1.2rem;
+  border-style: solid;
+  border-width: .7rem .55rem 0 .55rem;
+  border-color: #eee transparent transparent transparent;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.list_area .list_area_sort_area select {
+  padding: 0 4.7rem 0 1.2rem;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  border-width: 1px 0 1px 1px;
+}
+.list_area .list_area_sort_area:last-of-type {
+  padding-left: 3rem;
+  padding-right: 0;
+  border: 0;
+}
+.list_area .list_area_sort_area:last-of-type label {
+  width: 19.8rem;
+}
+.list_area .list_area_sort_area:last-of-type select {
+  width: 19.8rem;
+}
+.list_area .list_area_sort_area p {
+  padding-right: 1rem;
+}
+.list_area .list_area_display {
+  display: flex;
+  padding: 1.01rem 0 5.41rem 0;
+}
+.list_area .list_area_display p:last-of-type {
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+.pickup {
+  padding-top: 0;
+  padding-bottom: 5.8rem;
+}
+.pickup .pickup_inner {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+.pickup .pickup_card {
+  width: 	23.46938775510204%;
+  margin: 0 2.04081632653066% 2rem 0;
+  align-self: flex-start;
+}
+.pickup .pickup_card:hover {
+  box-shadow: none;
+  opacity: .7;
+  transition: opacity .2s ease-in-out;
+}
+.pickup .pickup_card:nth-of-type(4n) {
+  margin-right: 0;
+}
+.pickup_textarea .content_fish_tag {
+  font-size: 11px;
+  padding: .3rem .7rem;
+}
+.pickup_title_middle {
+  font-size: 18px;
+  margin-bottom: 14px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.card_info {
+  position: relative;
+  margin-bottom: 8px;
+  text-indent: 26px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card_info::before {
+  position: absolute;
+  display: block;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.crdinf_area::before {
+  top: 3px;
+  left: 1px;
+  width: 17px;
+  height: 17px;
+  background-image: url(../img/list/location.png);
+}
+.crdinf_sales::before {
+  top: 5px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background-image: url(../img/list/list.png);
+}
+.crdinf_fish::before {
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/list/fish.png);
+}
+.card_info span {
+  font-weight: 400;
+}
+.fish_detail_value {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.fish_detail_value > p {
+  position: relative;
+  padding-left: 20px;
+  margin: 0 12px 6px 0;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.fish_detail_value > p::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.fish_detail_value_good::before {
+  background-image: url(../img/icon/icon_circle.png);
+}
+.fish_detail_value_normal::before {
+  background-image: url(../img/icon/icon_triangle.png);
+}
+.fish_detail_value_bad::before {
+  background-image: url(../img/icon/icon_closs_black.png);
+}
+@media only screen and (max-width: 1229px) {
+  .pickup .pickup_card .fit_image {
+    height: 15rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .pickup .pickup_card .fit_image {
+    height: 14.866vw;
+  }
+}
+.pager {
+  margin-top: 3rem;
+}
+
+/*----------- 店舗一覧 ------------*/
+.crdinf_shop::before {
+  top: 4px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/list/shop.png);
+}
+
+/*----------- ブログ一覧 ------------*/
+.list_area_blogs .pickup .pickup_card {
+  width: 30%;
+  margin-right: 5%;
+  margin-bottom: 50px;
+}
+.list_area_blogs .pickup .pickup_card:nth-of-type(4n) {
+  margin-right: 5%;
+}
+.list_area_blogs .pickup .pickup_card:nth-of-type(3n) {
+  margin-right: 0;
+}
+.list_area_blogs .pickup .pickup_card .fit_image {
+  max-width: none;
+}
+.blog_summary {
+  font-size: 13px;
+}
+.blog_names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
+.blog_name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.blog_name .fit_image {
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 13px;
+}
+.blog_name p {
+  font-size: 13px;
+}
+.blog_date {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+
+/* =======================================
+  SP
+======================================= */
+@media screen and (max-width:768px) {
+
+  /*----------- 釣人一覧 ------------*/
+  select { height: 2.35rem; }
+
+  .layout_pickup {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .search_area {
+    margin-top: 4.55rem;
+    display: block;
+  }
+  .list_area .list_setting {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    background-color: #f7f7f7;
+  }
+  .list_area .list_area_narrow {
+    display: block;
+    padding: 1.3rem 0 2rem 0;
+    border-bottom: 0;
+  }
+  .list_area .list_area_result {
+    padding-bottom: .9rem;
+    text-align: center;
+  }
+  .list_area .list_area_result span {
+    font-size: 1.82rem;
+  }
+  .list_area .list_area_sort {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width:374px) {
+    .list_area .list_area_sort {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  }
+  .list_area .list_area_sort_area {
+    padding-right: 0;
+    border: 0;
+    margin-right: 0;
+    margin-bottom: .5rem;
+  }
+  .list_area .list_area_sort_area:last-of-type {
+    padding-left: 1rem;
+  }
+  @media screen and (max-width:374px) {
+    .list_area .list_area_sort_area:last-of-type {
+      padding-left: 2rem;
+      margin-top: 1rem;
+    }
+  }
+  .list_area .list_area_sort_area p {
+    padding-right: .8rem;
+  }
+  .list_area .list_area_sort_area select {
+    padding: 0 3.925rem 0 1.025rem;
+  }
+  .list_area .list_area_sort_area:last-of-type label,
+  .list_area .list_area_sort_area:last-of-type select {
+    width: 13.35rem;
+  }
+  .list_area .list_area_sort_area label::before {
+    width: 2.9rem;
+    height: 2.35rem;
+  }
+  .list_area .list_area_sort_area label::after {
+    right: .95rem;
+    border-width: .55rem .45rem 0 .45rem;
+  }
+  .list_area .list_area_display {
+    display: none;
+  }
+  .list_area .list_area_main {
+    background-color: #fff;
+  }
+  .pickup {
+    padding-top: 4.85rem;
+    padding-bottom: 1.7rem;
+  }
+  .pickup .pickup_card {
+    width: 47.9970326409496%;
+    margin: 0 4.00593471810089% 1.4rem 0;
+  }
+  .pickup .pickup_card:nth-of-type(2n) {
+    margin: 0 0 1.4rem 0;
+  }
+  .pickup .pickup_card .fit_image {
+    height: 27.7792vw;
+  }
+  .pickup .pickup_textarea {
+    padding: .9485rem 1.3rem .944885rem 1.3rem;
+  }
+  .pickup .pickup_title_middle {
+    margin-bottom: 11px;
+    padding-bottom: .297rem;
+  }
+  .pickup .pickup_textarea .icon_before_location::before {
+    width: .75rem;
+    height: 1.2rem;
+  }
+  .pickup .pickup_textarea .icon_before_clock::before {
+    width: 1rem;
+    height: 1rem;
+  }
+  .card_info {
+    margin-bottom: 5px;
+    font-size: 12px !important;
+    text-indent: 23px;
+  }
+  .crdinf_area::before {
+    top: 2px;
+    width: 15px;
+    height: 15px;
+  }
+  .crdinf_sales::before {
+    top: 4px;
+    width: 12px;
+    height: 12px;
+  }
+  .crdinf_fish::before {
+    top: 1px;
+    width: 17px;
+    height: 17px;
+  }
+  .fish_detail_value > p {
+    padding-left: 17px;
+    margin: 0 13px 5px 0;
+    font-size: 12px !important;
+  }
+  .fish_detail_value > p::before {
+    width: 13px;
+    height: 13px;
+    top: 4px;
+  }
+  .pager {
+    margin-top: 2.1rem;
+  }
+
+  /*----------- 店舗一覧 ------------*/
+  .crdinf_shop::before {
+    top: 4px;
+    width: 14px;
+    height: 14px;
+  }
+
+  /*----------- ブログ一覧 ------------*/
+  .list_area_blogs .pickup .pickup_card {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 30px;
+  }
+  .list_area_blogs .pickup .pickup_card .fit_image {
+    height: 45vw;
+  }
+  .blog_summary {
+    font-size: 13px !important;
+  }
+  .blog_names {
+    margin-top: 9px;
+  }
+  .blog_name .fit_image {
+    min-height: 0 !important;
+  }
+  .blog_name p {
+    font-size: 13px !important;
+  }
+  .blog_date {
+    font-size: 12px !important;
+  }
+
+}

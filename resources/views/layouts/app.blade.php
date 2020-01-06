@@ -157,17 +157,17 @@
     <main id="@yield('page_id')" class="@if ($is_app) pt_none4app @endif @if (!trim($__env->yieldContent('not_need_head_img'))) lower_bg @endif ">
         @yield('content')
 
-    @if (!Request::is('/') && $is_app)
-    {{-- ↓SPのみアプリダウンロード（下層全ページ共通）--}}
-    <div class="sp sp_app">
-        <div class="spa_cont">
-            <p class="white">\&nbsp;&nbsp;アプリのダウンロードはこちらから！&nbsp;/</p>
-            <a class="sp_apple" href="#"><img src="{{ url('/') }}/img/store_apple.png"></a>
-            <a class="sp_google" href="#"><img src="{{ url('/') }}/img/store_google.png"></a>
-        </div>
-        </div>
-    </main>
-    @endif
+        @if (!Request::is('/') && $is_app)
+        {{-- ↓SPのみアプリダウンロード（下層全ページ共通）--}}
+        <div class="sp sp_app">
+            <div class="spa_cont">
+                <p class="white">\&nbsp;&nbsp;アプリのダウンロードはこちらから！&nbsp;/</p>
+                <a class="sp_apple" href="#"><img src="{{ url('/') }}/img/store_apple.png"></a>
+                <a class="sp_google" href="#"><img src="{{ url('/') }}/img/store_google.png"></a>
+            </div>
+            </div>
+        </main>
+        @endif
     <footer class="footer">
         <div class="footer_copy">
             <div class="layout">
@@ -183,6 +183,9 @@
                     <ul>
                         <li><a href="{{ url('fish') }}">売魚一覧</a></li>
                         <li><a href="{{ url('/fish/request') }}">リクエスト魚一覧</a></li>
+                        <li><a href="{{ url('/blog/list') }}">ブログ一覧</a></li>
+                        <li><a href="{{ url('/fisher/list') }}">釣人一覧</a></li>
+                        <li><a href="{{ url('/shop/list') }}">店舗一覧</a></li>
                     </ul>
                     <ul>
                         <li><a href="{{ route('company') }}">運営会社</a></li>

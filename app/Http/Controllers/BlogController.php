@@ -165,4 +165,15 @@ class BlogController extends Controller
         return redirect('mypage/blog')
                 ->with('status', '「'.$blog->title.'」を削除しました。');
     }
+
+
+    public function list(Request $request, Blog $blog)
+    {
+        $count = $request->get('count', 20);
+        $search = $request->get('search', null);
+        $blogs = $blog::getPublishedListAll($count, 'created_at', $search);
+        $total_count = $blogs->total();
+        $params = $request->all();
+        return view('blog.list_all', compact('blogs', 'total_count', 'count', 'sort', 'search', 'params'));
+    }
 }

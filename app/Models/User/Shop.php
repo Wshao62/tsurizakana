@@ -38,12 +38,12 @@ class Shop extends Model
         return $this->hasMany('App\Models\UserShopPhoto', 'user_shop_id', 'id')->orderBy('order', 'asc');
     }
 
-    public function onePhoto()
+    public function photo()
     {
         return $this->hasOne('App\Models\UserShopPhoto', 'user_shop_id', 'id')
             ->whereOrder(1)
             ->withDefault(
-                ['file_name' => '']
+                ['file_name' => url(config('const.profile_img_default_icon'))]
             );
     }
 
@@ -74,4 +74,27 @@ class Shop extends Model
         return $rtn;
     }
 
+    /**
+     * 全ユーザーの店舗一覧を取得
+     *
+     * @param int $limit
+     * @param string $sort
+     * @param null $search
+     * @return mixed
+     */
+    public static function getListAll($limit = 10, $sort = 'created_at', $search = null)
+    {
+        $query = self::query()->orderBy($sort, 'desc');
+
+        // 検索条件がある場合
+        if (!empty($search['keyword'])) {
+            $query->where(function ($query) use ($search) {
+                $query->where('name', 'LIKE', "%{$search['keyword']}%");
+            });
+        }
+        if (!empty($search['area'])) {
+            $query->where('full_address', 'LIKE', "%{$search['area']}%");
+        }
+        return $query->paginate($limit);
+    }
 }

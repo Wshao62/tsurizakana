@@ -101,8 +101,6 @@ Route::post('fish/category', 'FishController@category');
 Route::get('fish/request', array('as' => 'all', 'uses' => 'FishRequestController@list'));
 Route::get('fish/{fish}', 'FishController@detail')->name('fish.detail');
 
-Route::get('/shop', 'ShopController@list');
-
 Route::group(['prefix' => 'user'], function () {
     Route::get('{user}/grade', 'GradeController@lists');
     Route::get('{user}/grade/{rate}', 'GradeController@lists');
@@ -111,7 +109,13 @@ Route::group(['prefix' => 'user'], function () {
 });
 
 //ブログ詳細
+Route::get('blog/list', 'BlogController@list');
 Route::get('blog/{blog}', 'BlogController@detailView');
+// 釣人一覧 / 詳細
+Route::get('fisher/list', 'FisherController@list');
+// ショップ一覧 / 詳細
+Route::get('shop/list', 'ShopController@list');
+Route::get('shop/{shop}', 'ShopController@detailView');
 
 Route::group(['middleware' => 'guest:user'], function () {
     //Authのルーティング
