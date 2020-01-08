@@ -71,7 +71,7 @@
                     @if (!empty($shops->total()))
                         @foreach ($shops as $shop)
                             <div class="pickup_card">
-                                <a href="../blog/index.html">
+                                <a href="{{ url('/user', $shop->user) }}">
                                     <div class="fit_image"><img src="{{ $shop->photo->file_name }}" alt=""></div>
                                     <div class="pickup_textarea">
                                         <p class="pickup_title_middle">{{ $shop->name }}</p>
