@@ -257,4 +257,7 @@ Route::group(['middleware' => 'auth:user'], function () {
 Route::get('/.well-known/pki-validation/20203ba2b10e9ffd544b6648a9bdf538.txt', function() {
     return response()->file('../.well-known/pki-validation/20203ba2b10e9ffd544b6648a9bdf538.txt');
 });
+Route::get('/.well-known/pki-validation/3ae0d0acf621d4259dca024cb6a1f69b.txt', function() {
+    return response()->file('../.well-known/pki-validation/3ae0d0acf621d4259dca024cb6a1f69b.txt');
+});
 
