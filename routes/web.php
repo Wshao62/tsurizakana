@@ -253,8 +253,3 @@ Route::group(['middleware' => 'auth:user'], function () {
     //書き込み
     Route::post('fish/{fish}/saveComment', 'FishController@saveComment');
 });
-
-Route::get('/.well-known/pki-validation/ea2a22d0bc278d69dba9952e3cb80e49.txt', function() {
-    return response()->file('../.well-known/pki-validation/ea2a22d0bc278d69dba9952e3cb80e49.txt');
-});
-
